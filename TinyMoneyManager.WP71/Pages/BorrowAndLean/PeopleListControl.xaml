@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="TinyMoneyManager.Pages.BorrowAndLean.PeopleListControl" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" 
+    xmlns:Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls" 
+    xmlns:utlsControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:myApp="clr-namespace:TinyMoneyManager.Component;assembly=TinyMoneyManager" 
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+
+        </Grid.Resources>
+        <!--GroupItemTemplate="{StaticResource mainPageGroupItemHeader}" -->
+        <phone:LongListSelector IsGroupingEnabled="True" JumpListStyle="{StaticResource MainJumpListStyle}" HideEmptyGroups="True" toolkit:TiltEffect.IsTiltEnabled="True" x:Name="ExpensesListBox" 
+                                       ListHeaderTemplate="{StaticResource mainPageRecordListHeader}"
+                    GroupHeaderTemplate="{StaticResource mainPageRecordGroupHeader}"
+                    
+                      ItemsSource="{Binding GroupItems}">
+            <phone:LongListSelector.ItemTemplate>
+                <DataTemplate >
+                    <HyperlinkButton Click="BudgetProjectItemButton_Click" Tag="{Binding}"
+                                         Style="{StaticResource HyperlinkEmptyStyle}"  Margin="0,0,0,12">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2.1*"/>
+                                    <!--<ColumnDefinition Width="1*"/>-->
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}" />
+                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Right" Margin="0,0,24,0" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Notes}"/>
+                            </Grid>
+                            <TextBlock Text="{Binding Path=ShortContractInfo}" Opacity=".5" Style="{StaticResource PhoneTextNormalStyle}"/>
+                        </StackPanel>
+                    </HyperlinkButton>
+                </DataTemplate>
+            </phone:LongListSelector.ItemTemplate>
+        </phone:LongListSelector>
+    </Grid>
+</UserControl>

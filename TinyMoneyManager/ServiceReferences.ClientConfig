@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration >
+  <system.serviceModel  >
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_IDataSynchronizationService"
+          closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00"
+          sendTimeout="00:01:00" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647"
+          textEncoding="utf-8" />
+        <binding name="CurrencyConvertorSoap" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://192.168.3.102:13462/DataSynchronizationService.svc"
+        binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDataSynchronizationService"
+        contract="DataSynchronizationService.IDataSynchronizationService"
+        name="BasicHttpBinding_IDataSynchronizationService" />
+      <endpoint address="http://www.webservicex.net/currencyconvertor.asmx"
+        binding="basicHttpBinding" bindingConfiguration="CurrencyConvertorSoap"
+        contract="CurrencyConverterByWebService.CurrencyConvertorSoap"
+        name="CurrencyConvertorSoap" />
+    </client>
+  </system.serviceModel>
+</configuration>

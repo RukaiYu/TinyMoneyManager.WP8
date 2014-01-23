@@ -1,0 +1,127 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.BudgetManagement.BudgetProjectEditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+ 
+    xmlns:utlsControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Name="MainPivot" Title="{Binding Path=Localizedresources.AppName,Source={StaticResource LocalizedStrings}}" SelectionChanged="Pivot_SelectionChanged">
+            <!--Pivot item one-->
+            <controls:PivotItem Name="ProjectInfoPivot" Header="Edit" >
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <HyperlinkButton  x:Name="NameEditor"
+                                         Style="{StaticResource HyperlinkEmptyStyle}" Click="NameEditorButton_Click">
+                        <StackPanel Margin="0,0,0,24" Grid.Row="0">
+                            <TextBlock Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Path=Localizedresources.Name, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" >
+                            </TextBlock>
+                            <TextBlock x:Name="NameBlock" Text="{Binding Path=Name}" Style="{StaticResource PhoneTextAccentStyle}"/>
+                        </StackPanel>
+                    </HyperlinkButton>
+
+                    <HyperlinkButton  Grid.Row="2" x:Name="AmountEditor"
+                                         Style="{StaticResource HyperlinkEmptyStyle}" Click="AmountEditorButton_Click">
+                        <StackPanel Margin="0,0,0,24">
+                            <TextBlock Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Path=Localizedresources.TotalMoney, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" >
+                            </TextBlock>
+                            <TextBlock Name="AmountInfoTextBlock" Text="{Binding Path=AmountInfo,Mode=TwoWay}" Style="{StaticResource PhoneTextAccentStyle}"/>
+                        </StackPanel>
+                    </HyperlinkButton>
+
+                    <HyperlinkButton  Grid.Row="1" x:Name="NotesEditor"
+                                         Style="{StaticResource HyperlinkEmptyStyle}" Click="NotesEditorButton_Click">
+                        <StackPanel Margin="0,0,0,24" >
+                            <TextBlock Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Path=Localizedresources.Notes, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" >
+                            </TextBlock>
+                            <TextBlock Name="NotesBlock" Text="{Binding Path=Notes}" TextWrapping="Wrap" Style="{StaticResource PhoneTextAccentStyle}"/>
+                        </StackPanel>
+                    </HyperlinkButton>
+                    <HyperlinkButton  Grid.Row="3" x:Name="CreateDatePanel" toolkit:TiltEffect.IsTiltEnabled="False" toolkit:TiltEffect.SuppressTilt="True"
+                                         Style="{StaticResource HyperlinkEmptyStyle}">
+                        <StackPanel Margin="0,0,0,24" >
+                            <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Foreground="Gray" Text="{Binding Path=Localizedresources.CreateAt, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" >
+                            </TextBlock>
+                            <TextBlock Name="CreateAtBlock" Text="{Binding Path=CreateAt}" Opacity=".4" Style="{StaticResource PhoneTextNormalStyle}"/>
+                        </StackPanel>
+                    </HyperlinkButton>
+                    <HyperlinkButton  Grid.Row="4" x:Name="ExpenseOfCurrencyMonthPanel" Visibility="Collapsed" toolkit:TiltEffect.IsTiltEnabled="False" toolkit:TiltEffect.SuppressTilt="True"
+                                         Style="{StaticResource HyperlinkEmptyStyle}">
+                        <StackPanel Margin="0,0,0,24" >
+                            <TextBlock x:Name="ExpenseOfCurrencyMonthTitle" Style="{StaticResource PhoneTextLargeStyle}" Foreground="Gray" Text="" VerticalAlignment="Center" >
+                            </TextBlock>
+                            <TextBlock Name="ExpenseOfCurrencyMonthBlock" Text="N/A" Opacity=".5" Style="{StaticResource PhoneTextNormalStyle}"/>
+                        </StackPanel>
+                    </HyperlinkButton>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Name="ProjectsBudgetItemsListPivot" Header="{Binding Path=Localizedresources.BudgetProjectAssociatedCategories,Source={StaticResource LocalizedStrings}}">
+                <toolkit:LongListMultiSelector Name="BudgetItemListBox" ItemsSource="{Binding BugetItemsForAdd}">
+                    <toolkit:LongListMultiSelector.ItemTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton Style="{StaticResource HyperlinkEmptyStyle}" Tag="{Binding}" x:Name="BudgetItemElement" Click="BudgetItemElement_Click">
+                                <Grid Margin="0,0,12,12">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/> 
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Path=AssociatedCategory.Name}" Grid.Row="0" Grid.Column="0" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Style="{StaticResource PhoneTextNormalStyle}"/>
+                                    <TextBlock Text="{Binding Path=AmountInfo}" Grid.Row="1" Grid.Column="1" Style="{StaticResource PhoneTextNormalStyle }" HorizontalAlignment="Right" FontFamily="{StaticResource PhoneFontFamilySemiBold}"/> 
+                                </Grid> 
+                            </HyperlinkButton>
+                        </DataTemplate>
+                    </toolkit:LongListMultiSelector.ItemTemplate>
+                </toolkit:LongListMultiSelector>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

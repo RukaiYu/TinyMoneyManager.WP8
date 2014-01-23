@@ -1,0 +1,97 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.MonthSelectorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+  xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Height="800" Background="Transparent">
+        <Grid.Resources>
+            <DataTemplate x:Key="YearOrMonthTemplete">
+
+                <Grid>
+                    <toolkit:ContextMenuService.ContextMenu>
+                        <toolkit:ContextMenu>
+                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="DeleteBudgetMenuItem"  />
+                        </toolkit:ContextMenu>
+                    </toolkit:ContextMenuService.ContextMenu>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock FontSize="36" Grid.Row="0" Text="{Binding}" Margin="{StaticResource PhoneTouchTargetOverhang}"/>
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <controls:Pivot  Title="{Binding Path=Localizedresources.ChooseMonth, Source={StaticResource LocalizedStrings},Converter={StaticResource ToUpperConverter}}" Grid.Row="1" Margin="0,10"  x:Name="SelectorPagesPivot">
+            <controls:PivotItem x:Name="FirstPivot" Header="{Binding Path=Localizedresources.ChooseYear, Source={StaticResource LocalizedStrings},Converter={StaticResource ToUpperConverter}}" FontSize="16">
+                <Grid Height="Auto">
+                    <ListBox x:Name="FirstCategoryItems"
+                             SelectionChanged="FirstCategoryItems_SelectionChanged" 
+                             ItemsSource="{Binding Items}"
+                             MinHeight="600" ItemTemplate="{StaticResource YearOrMonthTemplete}" />
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem  x:Name="SecondPivot" Header="{Binding Path=Localizedresources.ChooseMonth, Source={StaticResource LocalizedStrings},Converter={StaticResource ToUpperConverter}}">
+                <Grid Height="Auto">
+                    <ListBox x:Name="SecondCategoryItems" 
+                             ItemsSource="{Binding Items}" Width="460" MinHeight="600"
+                             ItemTemplate="{StaticResource YearOrMonthTemplete}" SelectionChanged="SecondCategoryItems_SelectionChanged" />
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem x:Name="moreConditionSettings" Header="{Binding Path=Localizedresources.More, Source={StaticResource LocalizedStrings},Converter={StaticResource ToUpperConverter}}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <toolkit:ListPicker Header="{Binding Path=Localizedresources.SearchScope, Source={StaticResource LocalizedStrings}}"
+                                                Name="SearchDuringDate" ExpansionMode="ExpansionAllowed" SelectedIndex="{Binding Path=SearchingCondition.SearchingScopeIndex}">
+                            <toolkit:ListPicker.FullModeItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding .}" FontSize="32" Margin="0 0 12 12"/>
+                                </DataTemplate>
+                            </toolkit:ListPicker.FullModeItemTemplate>
+                        </toolkit:ListPicker>
+                    </Grid>
+                    <Grid Grid.Row="1" x:Name="StartDateRow">
+                        <toolkit:DatePicker x:Name="StartDateSelector" Value="{Binding Path=StartDate}"
+                                                    Header="{Binding Path=Localizedresources.StartDate, Source={StaticResource LocalizedStrings}}"
+                                                    ValueStringFormat="{}{0:yyyy/MM/d dddd}"/>
+                    </Grid>
+                    <Grid Grid.Row="2" x:Name="EndDateRow">
+                        <toolkit:DatePicker x:Name="EndDateSelector" Value="{Binding Path=EndDate}"
+                                                    Header="{Binding Path=Localizedresources.EndDate, Source={StaticResource LocalizedStrings}}"
+                                                    ValueStringFormat="{}{0:yyyy/MM/d dddd}" />
+                    </Grid>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="False" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="AdventureCondition" IconUri="/icons/appBar/appbar.feature.search.rest.png" Text="AdventureCondition" Click="AdventureCondition_Click"/>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

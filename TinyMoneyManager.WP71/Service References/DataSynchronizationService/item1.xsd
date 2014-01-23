@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TinyMoneyManager.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TinyMoneyManager.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DataSynchronizationActionOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cover" />
+      <xs:enumeration value="Append" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataSynchronizationActionOption" nillable="true" type="tns:DataSynchronizationActionOption" />
+</xs:schema>

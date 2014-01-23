@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="TinyMoneyManager.Controls.CategorySummary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    mc:Ignorable="d"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    
+    xmlns:Component="clr-namespace:TinyMoneyManager.Component" 
+     
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent"> 
+        <toolkit:ContextMenuService.ContextMenu>
+            <toolkit:ContextMenu IsZoomEnabled="True" >
+                <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.SaveChartAsPicture,Source={StaticResource LocalizedStrings}}" Click="SaveChartAsPictureMenu_Click"/>
+                <toolkit:MenuItem IsEnabled="false"
+                            Header="{Binding Path=Localizedresources.FullScreen,Source={StaticResource LocalizedStrings}}" Click="FullScreenMenu_Click"/>
+                <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.ShowLegend,Source={StaticResource LocalizedStrings}}" Click="ToggleLegendMenu_Click"/>
+            </toolkit:ContextMenu>
+        </toolkit:ContextMenuService.ContextMenu>
+        <Grid.Resources>
+            <Component:SummaryDetailsCollection x:Key="Data" />
+        </Grid.Resources>
+        <vc:Chart x:Name="PieChart" xmlns:vc="clr-namespace:Visifire.Charts;assembly=SLWpVisifire.Charts"
+               Background="{StaticResource PhoneBackgroundBrush}" Theme="Theme1" BorderThickness="0" Bevel="False" 
+                  LightingEnabled="False" >
+            <vc:Chart.Series>
+                <vc:DataSeries RenderAs="Pie" LabelEnabled="true" ColorSet="CandleLight" LabelStyle="Inside" 
+                               LabelFontFamily="Verdana" LabelFontSize="14"
+                               LabelFontColor="White" Bevel="False" 
+                               ShowInLegend="false" IncludePercentageInLegend="True"
+                               FlowDirection="LeftToRight"
+                               Exploded="False">
+                </vc:DataSeries>
+            </vc:Chart.Series>
+        </vc:Chart>
+    </Grid>
+</UserControl>

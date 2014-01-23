@@ -1,0 +1,2130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutButtonText" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="AboutCashAmountOnAsset" xml:space="preserve">
+    <value>將是所有“現金帳戶”的總額。</value>
+  </data>
+  <data name="AboutSwitchScopeForHistoryList" xml:space="preserve">
+    <value>關於切換歷史列表的範圍</value>
+  </data>
+  <data name="AccountAndTransfering" xml:space="preserve">
+    <value>帳戶 + 轉帳</value>
+  </data>
+  <data name="AccountBalanceNotEnoughMessage" xml:space="preserve">
+    <value>餘額不足</value>
+  </data>
+  <data name="AccountCategory" xml:space="preserve">
+    <value>帳戶類別</value>
+  </data>
+  <data name="AccountInfo" xml:space="preserve">
+    <value>帳戶訊息</value>
+  </data>
+  <data name="AccountItemDetailsInfo" xml:space="preserve">
+    <value>詳情</value>
+  </data>
+  <data name="AccountItemList" xml:space="preserve">
+    <value>收支列表</value>
+  </data>
+  <data name="AccountList" xml:space="preserve">
+    <value>帳戶列表</value>
+  </data>
+  <data name="AccountManager" xml:space="preserve">
+    <value>帳戶管理</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>帳戶</value>
+  </data>
+  <data name="AccountSelectorHeader" xml:space="preserve">
+    <value>選擇帳戶</value>
+  </data>
+  <data name="ActionAfterAddNewRecord" xml:space="preserve">
+    <value>新增一筆之後的動作(只對主界面入口有效)</value>
+  </data>
+  <data name="ActionAfterAddNewRecord_Exit" xml:space="preserve">
+    <value>後退或者退出</value>
+  </data>
+  <data name="ActionAfterAddNewRecord_ToHistoryPage" xml:space="preserve">
+    <value>跳轉到歷史頁面</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AddAsFavourite" xml:space="preserve">
+    <value>加入收藏</value>
+  </data>
+  <data name="AddBudgetItemFromCategory" xml:space="preserve">
+    <value>管理分類中的預算條目</value>
+  </data>
+  <data name="AddBudgetItemFromCategoryTips" xml:space="preserve">
+    <value>創建或編輯通過分類進行的預算項目</value>
+  </data>
+  <data name="AddBudgetProject" xml:space="preserve">
+    <value>創建項目</value>
+  </data>
+  <data name="AddButtonText" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AddPerson" xml:space="preserve">
+    <value>新建 債權人 或 債務人</value>
+  </data>
+  <data name="AddRecordName" xml:space="preserve">
+    <value>新增一筆</value>
+  </data>
+  <data name="AfterRestoreDataMessage" xml:space="preserve">
+    <value>建議重新啟動您的帳本。</value>
+  </data>
+  <data name="AlarmNotication" xml:space="preserve">
+    <value>響鈴提示</value>
+  </data>
+  <data name="AlarmTextForRepaymentItem" xml:space="preserve">
+    <value>當啟用 '響鈴提示' 時，在時間範圍內， 將播放“手機帳本提示您，有一筆新的還款記錄等待您完成”的語音提示。</value>
+  </data>
+  <data name="AlertBoxTitle" xml:space="preserve">
+    <value>手機帳本 提示</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>所有</value>
+  </data>
+  <data name="AllAvaliableAssets" xml:space="preserve">
+    <value>總可用資產</value>
+  </data>
+  <data name="AllMyAccount" xml:space="preserve">
+    <value>總資產</value>
+  </data>
+  <data name="AllRateDataIsFromWebServiceNet" xml:space="preserve">
+    <value>最後同步於: {0} 
+           http://www.webservicex.net</value>
+  </data>
+  <data name="AllUsersGivenFeedback" xml:space="preserve">
+    <value>所有發送试用反饋的用家</value>
+  </data>
+  <data name="AlreadyRepayOrReceieveTitle" xml:space="preserve">
+    <value>已{0}金額</value>
+  </data>
+  <data name="AlurmWhenBudgetIsOverByAmount" xml:space="preserve">
+    <value>超出預算時提醒</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="AmountFormatterAfterWord" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="AmountOfThisTimeFormatter" xml:space="preserve">
+    <value>本次{0}金額</value>
+  </data>
+  <data name="AmountOverAccountBalanceMessage" xml:space="preserve">
+    <value>金額超過帳戶{0}</value>
+  </data>
+  <data name="AmountPencentage" xml:space="preserve">
+    <value>占總額比(%)</value>
+  </data>
+  <data name="AmountShouldBeGreatThanZeroMessage" xml:space="preserve">
+    <value>金額需大於 0</value>
+  </data>
+  <data name="AmountValueShouldBeGreatThanMinimixValueAlertMessage" xml:space="preserve">
+    <value>您當前已經關聯類別並擁有單獨的金額設置，所以手動設置預算金額至少需要：{0} 。</value>
+  </data>
+  <data name="AmountWillAddedToRepayToAccountMessage" xml:space="preserve">
+    <value>帳戶餘額将變化至:</value>
+  </data>
+  <data name="Append" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>手機帳本</value>
+  </data>
+  <data name="AppSettingTitle_Common" xml:space="preserve">
+    <value>預設貨幣：{0}，首頁顯示對比訊息：{1}</value>
+  </data>
+  <data name="AppShortDescription" xml:space="preserve">
+    <value>手機帳本，幫你隨時隨地記錄消費習慣和收支條目，並讓您可以對自己的資金去向有一個可以檢視的地方，以及希望能幫您養成一個好的理財習慣。</value>
+  </data>
+  <data name="AppShortDescriptionTitle" xml:space="preserve">
+    <value>應用訊息</value>
+  </data>
+  <data name="AppUpdating" xml:space="preserve">
+    <value>數據中心</value>
+  </data>
+  <data name="AppUpdating_SecondTitleFormatter" xml:space="preserve">
+    <value>訂閱升級通知：{0}</value>
+  </data>
+  <data name="AutoBackupWhenAppUp" xml:space="preserve">
+    <value>App 啟動時備份</value>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>備份</value>
+  </data>
+  <data name="BackupAndRestoreDatabaseTips" xml:space="preserve">
+    <value>* 備份還原操作需要重新啟動手機帳本。</value>
+  </data>
+  <data name="BackupDatabase" xml:space="preserve">
+    <value>備份數據庫</value>
+  </data>
+  <data name="BackupDatabaseTips" xml:space="preserve">
+    <value>使用PC端軟體，執行完整數據庫備份。能夠自助修改帳本訊息。</value>
+  </data>
+  <data name="BackupDataBeforeUpdating" xml:space="preserve">
+    <value>備份數據</value>
+  </data>
+  <data name="BackupdataToLocalFailed" xml:space="preserve">
+    <value>備份失敗，請重啟應用後重試。</value>
+  </data>
+  <data name="BackupdataToLocalSucceed" xml:space="preserve">
+    <value>備份成功，現在你可以到【市集】更新最新版本的應用了。</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>結算</value>
+  </data>
+  <data name="BankCard" xml:space="preserve">
+    <value>銀行卡帳戶</value>
+  </data>
+  <data name="BeforeCloseAddBudgetProjectWithBudgetItemsLinkedMessage" xml:space="preserve">
+    <value>您已經關聯了類別，是否保存這個項目？</value>
+  </data>
+  <data name="BeforeShowExceptionInfoMessage" xml:space="preserve">
+    <value>抱歉，在執行當前操作的時候，我們遇到了一個異常錯誤。
+
+我們非常感謝您，將一下信息發送給我們，以便能更好的調查並解決它。謝謝（點選OK，檢視錯誤信息）</value>
+  </data>
+  <data name="BlanceInfo" xml:space="preserve">
+    <value>收支平衡</value>
+  </data>
+  <data name="BorrowAndLean" xml:space="preserve">
+    <value>借貸</value>
+  </data>
+  <data name="BorrowAndLeanManager" xml:space="preserve">
+    <value>借貸管理</value>
+  </data>
+  <data name="BorrowAndLendAndPeople" xml:space="preserve">
+    <value>借貸 + 人員</value>
+  </data>
+  <data name="BorrowIn" xml:space="preserve">
+    <value>借入</value>
+  </data>
+  <data name="BorrowInOrReceiptFromSbForrmater" xml:space="preserve">
+    <value>从 {1} {0} {2}。</value>
+  </data>
+  <data name="BorrowLeanType" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="BudgetForCertain" xml:space="preserve">
+    <value>{0}預算</value>
+  </data>
+  <data name="BudgetForLastMonthCertainExpenseTitle" xml:space="preserve">
+    <value>上月，“{0}” 相關的實際支出是：</value>
+  </data>
+  <data name="BudgetItemSettleType" xml:space="preserve">
+    <value>结算类别結</value>
+  </data>
+  <data name="BudgetItemSettleTypeTips" xml:space="preserve">
+    <value>預算超出時的計算方式。表示如何判斷某個分類的支出超過了預算金額。比如“手機話費”預算NTD500。按月計算，則當新建一筆“手機話費”支出時，單筆金額超過了500圓，即為超出預算。如果“按天”計算，則單筆超過了“500/月天数”，為超出預算。</value>
+  </data>
+  <data name="BudgetManagement" xml:space="preserve">
+    <value>預算</value>
+  </data>
+  <data name="BudgetManagement_ReportForEachMonth" xml:space="preserve">
+    <value>每月預算結算</value>
+  </data>
+  <data name="BudgetManagement_ReportForEachMonthTips" xml:space="preserve">
+    <value>查看或匯出每月預算和實際收支的報告</value>
+  </data>
+  <data name="BudgetProject" xml:space="preserve">
+    <value>預算項目</value>
+  </data>
+  <data name="BudgetProjectAssociatedCategories" xml:space="preserve">
+    <value>關聯類別</value>
+  </data>
+  <data name="BudgetProjectWithSameNameExists" xml:space="preserve">
+    <value>同名的預算項目已經存在。</value>
+  </data>
+  <data name="BudgetSettle" xml:space="preserve">
+    <value>預算結算</value>
+  </data>
+  <data name="ButtonTextCategoryForCount" xml:space="preserve">
+    <value>分離條目數量圖</value>
+  </data>
+  <data name="ButtonTextCategoryForTotalAmount" xml:space="preserve">
+    <value>分離總額比例圖</value>
+  </data>
+  <data name="ButtonTextForDayOfDuring" xml:space="preserve">
+    <value>週期曲線圖</value>
+  </data>
+  <data name="ByAccountName" xml:space="preserve">
+    <value>按帳戶名稱</value>
+  </data>
+  <data name="ByCategoryName" xml:space="preserve">
+    <value>按分類名稱</value>
+  </data>
+  <data name="ByChildCategoryName" xml:space="preserve">
+    <value>按子類別分組</value>
+  </data>
+  <data name="ByDay" xml:space="preserve">
+    <value>按天</value>
+  </data>
+  <data name="ByEmail" xml:space="preserve">
+    <value>通過電郵</value>
+  </data>
+  <data name="ByMonth" xml:space="preserve">
+    <value>按月</value>
+  </data>
+  <data name="ByParentCategoryName" xml:space="preserve">
+    <value>按父類別分組</value>
+  </data>
+  <data name="BySkyDrive" xml:space="preserve">
+    <value>通過 SkyDrive</value>
+  </data>
+  <data name="ByYear" xml:space="preserve">
+    <value>按年</value>
+  </data>
+  <data name="CalculatingAmountInfoMessage" xml:space="preserve">
+    <value>计算借贷金额数...</value>
+  </data>
+  <data name="Calcutor" xml:space="preserve">
+    <value>計算器</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Canceled" xml:space="preserve">
+    <value>已取消</value>
+  </data>
+  <data name="CanTransferToSameAccount" xml:space="preserve">
+    <value>不可轉帳至相同帳戶。</value>
+  </data>
+  <data name="CantRevertWhenAccountsNoExistsConfirmationMessage" xml:space="preserve">
+    <value>很抱歉告訴您，與轉帳記錄相關的帳戶已經不存在於您的帳本中，是否刪除這條轉帳條目？</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>現金帳戶</value>
+  </data>
+  <data name="CategoryGroupMode" xml:space="preserve">
+    <value>分類分組方式</value>
+  </data>
+  <data name="CategoryIsBeenUsedMessage" xml:space="preserve">
+    <value>該條記錄巳關聯其他數據，暫時無法被刪除。</value>
+  </data>
+  <data name="CategoryManagementPageTitle" xml:space="preserve">
+    <value>類別管理</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>類別</value>
+  </data>
+  <data name="CategoryTitleForAmount" xml:space="preserve">
+    <value>各分類金額數</value>
+  </data>
+  <data name="CategoryTitleForCount" xml:space="preserve">
+    <value>各分類記錄數</value>
+  </data>
+  <data name="CategoryType" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="ChangeFileName" xml:space="preserve">
+    <value>重命名檔案</value>
+  </data>
+  <data name="ChangePasswordButtonText" xml:space="preserve">
+    <value>變更密碼</value>
+  </data>
+  <data name="ChartGroupMode" xml:space="preserve">
+    <value>圖標分組方式</value>
+  </data>
+  <data name="ChartPivotForStatisticsPage" xml:space="preserve">
+    <value>圖表</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="ChooseCategoryPageTitle" xml:space="preserve">
+    <value>選擇類別</value>
+  </data>
+  <data name="ChooseDayOfWeek" xml:space="preserve">
+    <value>選擇星期</value>
+  </data>
+  <data name="ChooseElementForViewModeButtonText" xml:space="preserve">
+    <value>月份</value>
+  </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>選擇文件</value>
+  </data>
+  <data name="ChooseFolder" xml:space="preserve">
+    <value>選擇文件夾</value>
+  </data>
+  <data name="ChooseMonth" xml:space="preserve">
+    <value>選擇月</value>
+  </data>
+  <data name="ChooseOneTypeFile" xml:space="preserve">
+    <value>選擇 {0} 格式的檔案。</value>
+  </data>
+  <data name="ChoosePeople" xml:space="preserve">
+    <value>選擇人員</value>
+  </data>
+  <data name="ChoosePicture" xml:space="preserve">
+    <value>選擇照片</value>
+  </data>
+  <data name="ChooseYear" xml:space="preserve">
+    <value>選擇年</value>
+  </data>
+  <data name="ChoseAsResult" xml:space="preserve">
+    <value>選定為結果</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>顏色</value>
+  </data>
+  <data name="ColumnSummaryChartTitle" xml:space="preserve">
+    <value>線性趨勢圖</value>
+  </data>
+  <data name="CommonCurrency" xml:space="preserve">
+    <value>常用貨幣</value>
+  </data>
+  <data name="CompareTo" xml:space="preserve">
+    <value>比</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>巳完成</value>
+  </data>
+  <data name="CompletedAt" xml:space="preserve">
+    <value>完成於</value>
+  </data>
+  <data name="ConfirmMessageWhenDeletingBorrowOrLoan" xml:space="preserve">
+    <value>該操作將刪除本條目下的所有”{0}“，相關帳戶的餘額訊息也將還原。</value>
+  </data>
+  <data name="ConfirmMessageWhenSelecteAFolderToBackupData" xml:space="preserve">
+    <value>您是否允許在 {1} 目錄下創建一份命名為 '{0}' 的檔案？(稍後您可以重命名)</value>
+  </data>
+  <data name="ConfirmPasswordText" xml:space="preserve">
+    <value>確認密碼</value>
+  </data>
+  <data name="ConfirmToSavePictureToPhone" xml:space="preserve">
+    <value>即將生成圖片並存儲到您的手機相冊中，是否繼續？</value>
+  </data>
+  <data name="ConfirmToTurnOffAutoBackupFeatureMessaage" xml:space="preserve">
+    <value>嘿？是否真的關閉此功能？
+
+如果是，記得在【市集】看到新版本更新之前，手動備份：）</value>
+  </data>
+  <data name="ConversionRateProcessIsOnGoingMessage" xml:space="preserve">
+    <value>同步操作正在進行，這將花費一些時間，請稍候...</value>
+  </data>
+  <data name="CountPencentage" xml:space="preserve">
+    <value>占記錄數比(%)</value>
+  </data>
+  <data name="Cover" xml:space="preserve">
+    <value>覆蓋</value>
+  </data>
+  <data name="CoverOrAppend" xml:space="preserve">
+    <value>覆蓋或追加</value>
+  </data>
+  <data name="CreateAccountItemForSchedule" xml:space="preserve">
+    <value>創建定期詳情</value>
+  </data>
+  <data name="CreateAt" xml:space="preserve">
+    <value>創建于</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="CreateExpenseOrIncomeSchedule" xml:space="preserve">
+    <value>創建週期性的收入支出</value>
+  </data>
+  <data name="CreateNewItem" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="CreateTime" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>信用卡帳戶</value>
+  </data>
+  <data name="Creditor" xml:space="preserve">
+    <value>債權人</value>
+  </data>
+  <data name="CurrencyRateTable_LastSyncTime" xml:space="preserve">
+    <value>最後同步於： {0}</value>
+  </data>
+  <data name="CurrencySetting" xml:space="preserve">
+    <value>匯率管理</value>
+  </data>
+  <data name="CurrencyTableUpdatingNotes" xml:space="preserve">
+    <value>我們更新了貨幣列表，支援更多國貨幣。您的舊貨幣匯率將被默認數據替換。</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>幣別</value>
+  </data>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>餘額</value>
+  </data>
+  <data name="CurrentMonth" xml:space="preserve">
+    <value>本月</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>當前密碼</value>
+  </data>
+  <data name="CurrentPasswordError" xml:space="preserve">
+    <value>密碼錯誤。</value>
+  </data>
+  <data name="CurrentStatus" xml:space="preserve">
+    <value>現狀</value>
+  </data>
+  <data name="CurrentStepReplacer" xml:space="preserve">
+    <value>正在</value>
+  </data>
+  <data name="CurrentWeek" xml:space="preserve">
+    <value>本週</value>
+  </data>
+  <data name="CurrentYear" xml:space="preserve">
+    <value>本年</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>自定義</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="DatabaseVersion" xml:space="preserve">
+    <value>數據庫版本：{0}</value>
+  </data>
+  <data name="DataFile" xml:space="preserve">
+    <value>數據文件</value>
+  </data>
+  <data name="DataSynchronization" xml:space="preserve">
+    <value>同步設定</value>
+  </data>
+  <data name="DataSynchronizationButton" xml:space="preserve">
+    <value>數據同步</value>
+  </data>
+  <data name="DataSyncingOperationSuccessfullyMessage" xml:space="preserve">
+    <value>恭喜! 數據已經成功上載到 SkyDrive !</value>
+  </data>
+  <data name="DataSyncingWithSkyDrive" xml:space="preserve">
+    <value>於 SkyDrive 同步數據</value>
+  </data>
+  <data name="DataSyncing_SecondTitleFormatter" xml:space="preserve">
+    <value>上次使用的PC端伺服器: {0}</value>
+  </data>
+  <data name="DataSyncViaPcClient" xml:space="preserve">
+    <value>通過PC端軟體同步</value>
+  </data>
+  <data name="DataType" xml:space="preserve">
+    <value>數據類型</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="DateFormatterAfterWord" xml:space="preserve">
+    <value>{0}日期</value>
+  </data>
+  <data name="DeathFailedExceptionMessage" xml:space="preserve">
+    <value>很抱歉，手機帳本發生嚴重的異常，您的數據暫時沒有受到影響，我们推薦您到 {0} 反饋問題，或者獲得數據救援的辦法。
+我們將非常感激，您能將錯誤信息發送給我們，以便我們能調查並解決問題。錯誤訊息：
+     {1}</value>
+  </data>
+  <data name="DebitCard" xml:space="preserve">
+    <value>借記卡類帳戶</value>
+  </data>
+  <data name="Debtor" xml:space="preserve">
+    <value>債務人</value>
+  </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>減少</value>
+  </data>
+  <data name="DefaultAmount" xml:space="preserve">
+    <value>預設金額</value>
+  </data>
+  <data name="DefaultCurrency" xml:space="preserve">
+    <value>預設貨幣</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="DeleteAccountItemMessage" xml:space="preserve">
+    <value>确定要刪除這項記錄嗎？</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>巳刪除</value>
+  </data>
+  <data name="DeleteOnGoingRapaymentMessage" xml:space="preserve">
+    <value>該'還款記錄'還沒有完成，是否刪除('語音提醒' 等提醒也將被移除)？</value>
+  </data>
+  <data name="DeleteSelectedItems" xml:space="preserve">
+    <value>確定要刪除選中的所有的記錄嗎？</value>
+  </data>
+  <data name="DeletingObject" xml:space="preserve">
+    <value>確認刪除"{0}“ </value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>明細</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>已禁用</value>
+  </data>
+  <data name="DividerCantBeZero" xml:space="preserve">
+    <value>除數不能為零</value>
+  </data>
+  <data name="DontLeaveSyncPageTips" xml:space="preserve">
+    <value>當操作進行時，請不要離開或者退出應用。</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>到期日期</value>
+  </data>
+  <data name="DueDateTimeMustBeGreatThanStartDateTimeMessage" xml:space="preserve">
+    <value>‘到期時間’ 必須大於 ’起始時間‘。</value>
+  </data>
+  <data name="DuringChartMode" xml:space="preserve">
+    <value>週期圖顯示方式</value>
+  </data>
+  <data name="EandIandCategory" xml:space="preserve">
+    <value>歷史 + 分類</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="EditBudgetItemAmount" xml:space="preserve">
+    <value>編輯預算金額</value>
+  </data>
+  <data name="EditBudgetProjectInfo" xml:space="preserve">
+    <value>編輯條目</value>
+  </data>
+  <data name="EditPerson" xml:space="preserve">
+    <value>編輯 債權人 或 債務人</value>
+  </data>
+  <data name="EditRateFormatter" xml:space="preserve">
+    <value>請鍵入從 {0} 到 {1} 的匯率值:</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>電子郵件</value>
+  </data>
+  <data name="EmailForSummary" xml:space="preserve">
+    <value>個人信箱(用於發送詳情)</value>
+  </data>
+  <data name="EmptyTextMessage" xml:space="preserve">
+    <value>不能為空！</value>
+  </data>
+  <data name="EnableAccountBalanceStatistic" xml:space="preserve">
+    <value>啟用帳戶餘額統計</value>
+  </data>
+  <data name="EnableAlarm" xml:space="preserve">
+    <value>啟用 '響鈴' 提示</value>
+  </data>
+  <data name="EnableLockPassword" xml:space="preserve">
+    <value>帳本密碼</value>
+  </data>
+  <data name="EnableUsingAccountWhenItHasNegativeValue" xml:space="preserve">
+    <value>啟用全局"透支"支援</value>
+  </data>
+  <data name="EnableUsingAccountWhenItHasNegativeValueMessage" xml:space="preserve">
+    <value>該帳戶"透支"支援。請重新選擇帳戶。</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>結束日期</value>
+  </data>
+  <data name="EnsureToRebuildDatabase" xml:space="preserve">
+    <value>是否現在重建數據庫？</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>錯誤訊息：
+       {0}</value>
+  </data>
+  <data name="ErrorMessageWhenLoadingAccounts" xml:space="preserve">
+    <value>抱歉，在加載“帳戶列表”的時候發生異常，請重新啟動【手機帳本】。</value>
+  </data>
+  <data name="ErrorMessageWhenRestoreEmptyDataFailed" xml:space="preserve">
+    <value>抱歉，還原數據時發生異常，請發送以下錯誤信息到 {0} 可以幫助我們解決這個問題。
+另外，請檢視用於還原的數據檔案是否包含有效的‘手機帳本’數據，以及該檔案內容不為空。謝謝。
+{1}</value>
+  </data>
+  <data name="Etc" xml:space="preserve">
+    <value>等...</value>
+  </data>
+  <data name="EveryDay" xml:space="preserve">
+    <value>每天</value>
+  </data>
+  <data name="EveryDayBackup" xml:space="preserve">
+    <value>每日備份</value>
+  </data>
+  <data name="EveryDayBackupTips" xml:space="preserve">
+    <value>· 只有每天開啟程式，才會進行備份。</value>
+  </data>
+  <data name="EveryMonth" xml:space="preserve">
+    <value>每月</value>
+  </data>
+  <data name="EverySpecialDay" xml:space="preserve">
+    <value>每隔指定天</value>
+  </data>
+  <data name="EverySpecialMonth" xml:space="preserve">
+    <value>每隔指定月</value>
+  </data>
+  <data name="EveryWeek" xml:space="preserve">
+    <value>每週</value>
+  </data>
+  <data name="ExcelFileMustBeOpenInLocalOffice" xml:space="preserve">
+    <value>當前版本生成的 Excel 文件，請使用您本地安裝的 Microsoft Excel 程式打開，Web 版的 Excel 目前無法編輯。謝謝。</value>
+  </data>
+  <data name="ExecuteNow" xml:space="preserve">
+    <value>立即執行一次</value>
+  </data>
+  <data name="ExitAppMessage" xml:space="preserve">
+    <value>收起帳本，今天所有的收支都記錄了。</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>支出</value>
+  </data>
+  <data name="ExpenseIncomeHistoryReport" xml:space="preserve">
+    <value>發送自手機帳本 [收入、支出] 報告</value>
+  </data>
+  <data name="ExpenseOrIncomeScheduleInfo" xml:space="preserve">
+    <value>週期性的收入支出</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>支出</value>
+  </data>
+  <data name="ExpensesBudgetType" xml:space="preserve">
+    <value>支出記錄</value>
+  </data>
+  <data name="ExportData" xml:space="preserve">
+    <value>匯出數據</value>
+  </data>
+  <data name="ExportDataMode" xml:space="preserve">
+    <value>匯出方式</value>
+  </data>
+  <data name="ExportReport" xml:space="preserve">
+    <value>匯出</value>
+  </data>
+  <data name="FailedLoadingRequestRefresMsg" xml:space="preserve">
+    <value>資料加載失敗，請稍後重試。</value>
+  </data>
+  <data name="FailedReplacer" xml:space="preserve">
+    <value>失敗</value>
+  </data>
+  <data name="FailedToRestoreWhenObjectIs" xml:space="preserve">
+    <value>無法還原： {0}，該對象將暫時被跳過。
+
+失敗原因：
+	{1}</value>
+  </data>
+  <data name="FailedWhenUpdatingDatabaseMesssage" xml:space="preserve">
+    <value>很抱歉，升級後 app 的數據庫於舊的數據存在異常。
+我們將重建數據庫以保證您能正常進入 app，并将保存您的舊版本數據庫。
+之後您可以訪問 [{0}] ，那裡，您可以獲取到如何恢復數據的工具和嚮導。</value>
+  </data>
+  <data name="Favourite" xml:space="preserve">
+    <value>收藏</value>
+  </data>
+  <data name="FeedBack" xml:space="preserve">
+    <value>反饋</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>檔案名稱</value>
+  </data>
+  <data name="FileNotFoundExceptionMessage" xml:space="preserve">
+    <value>無法進行還原，沒有源文件，請確認是否備份過數據。</value>
+  </data>
+  <data name="FileNotFoundMessage" xml:space="preserve">
+    <value>指定的物件 '{0}' 不存在 SkyDrive 於伺服器上。</value>
+  </data>
+  <data name="FilterSummary" xml:space="preserve">
+    <value>條件</value>
+  </data>
+  <data name="FixedAssets" xml:space="preserve">
+    <value>固定資產</value>
+  </data>
+  <data name="FormatFullWithoutYear" xml:space="preserve">
+    <value>M月d日 ddd HH:mm</value>
+  </data>
+  <data name="FormatFullWithYear" xml:space="preserve">
+    <value>yyyy年M月d日 ddd</value>
+  </data>
+  <data name="FormatShortDateWithoutYear" xml:space="preserve">
+    <value>M月d日 ddd</value>
+  </data>
+  <data name="FormatterForExpenseInShellTile" xml:space="preserve">
+    <value>M/d, 支出</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>頻率</value>
+  </data>
+  <data name="FrequencyDayOfMonthFormatter" xml:space="preserve">
+    <value>{0} 日</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>從</value>
+  </data>
+  <data name="FromName" xml:space="preserve">
+    <value>添加者</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>全屏</value>
+  </data>
+  <data name="GetExceptionMessage" xml:space="preserve">
+    <value>非常抱歉，手機帳本遇到一個運行時的異常，我們非常期待您能將以下錯誤信息發送給我們，幫助讓手機帳本更加完善。謝謝！</value>
+  </data>
+  <data name="GetPCclientDownloadUrl" xml:space="preserve">
+    <value>獲取 PC 端下載地址</value>
+  </data>
+  <data name="GlobleCurrencySymbolStyle" xml:space="preserve">
+    <value>預設貨幣顯示樣式</value>
+  </data>
+  <data name="GoToMainPage" xml:space="preserve">
+    <value>前往主頁</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>分組</value>
+  </data>
+  <data name="HaveDataNeedToRestore" xml:space="preserve">
+    <value>嗨，手機帳本遇到過一次數據庫崩潰，備份的數據現在已經可用，是否馬上進入【數據中心】進行恢復？（建議，馬上進行）。</value>
+  </data>
+  <data name="HelpAndAbout" xml:space="preserve">
+    <value>幫助 + 關於</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>隱藏</value>
+  </data>
+  <data name="HideBlance" xml:space="preserve">
+    <value>隱藏平衡</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>歷史</value>
+  </data>
+  <data name="HistoryOf" xml:space="preserve">
+    <value>{0}歷史</value>
+  </data>
+  <data name="Hold" xml:space="preserve">
+    <value>持平</value>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>如何 {0}？</value>
+  </data>
+  <data name="HowToAddAsFavourite" xml:space="preserve">
+    <value>您可以在“分類選擇”介面中，長按‘子分類‘項，之後點選“加入到收藏”，即可向列表中添入您使用最頻繁的分類條目。</value>
+  </data>
+  <data name="HowToCreateExpenseOrIncomeSchedule" xml:space="preserve">
+    <value>歡迎使用週期計畫任務功能。該功能將使用後臺任務特性，在指定的時間點進行單次或則循環的自動記帳。
+
+鑒於系統後臺任務執行時間的不固定性，所以剛創建的任務可能不會馬上被執行（在一天之中至少會被執行一次）。
+若想馬上執行，可以點選“週期任務列表”頁面菜單中的“立即執行”。
+
+如果一個月15天內沒有開啟過【手機帳本】，則所有後臺任務將被暫停執行，直到下一次開啟程式。</value>
+  </data>
+  <data name="HowToSwitchScopeForHistoryList" xml:space="preserve">
+    <value>        在檢視歷史訊息時，收入列表和支出列表使用各自單獨的日期範圍來顯示條目。</value>
+  </data>
+  <data name="IdealMoneyAccount" xml:space="preserve">
+    <value>虛擬貨幣</value>
+  </data>
+  <data name="IgnoreCalimRecordsInStatistics" xml:space="preserve">
+    <value>有"報銷"的支出記錄不加入到統計。</value>
+  </data>
+  <data name="Income" xml:space="preserve">
+    <value>收入</value>
+  </data>
+  <data name="IncomeBudgetType" xml:space="preserve">
+    <value>收入記錄</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>增加</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>手機帳本</value>
+  </data>
+  <data name="InitialBalance" xml:space="preserve">
+    <value>期初餘額</value>
+  </data>
+  <data name="InitialDateTime" xml:space="preserve">
+    <value>期初時間</value>
+  </data>
+  <data name="InportFromPhoneContacts" xml:space="preserve">
+    <value>導入自“聯絡人”...</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>利息</value>
+  </data>
+  <data name="InTwoWeek" xml:space="preserve">
+    <value>從上週</value>
+  </data>
+  <data name="IsClaimLabel" xml:space="preserve">
+    <value>允许報銷</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>項</value>
+  </data>
+  <data name="ItemUnit" xml:space="preserve">
+    <value>條</value>
+  </data>
+  <data name="JustMe" xml:space="preserve">
+    <value>只有我</value>
+  </data>
+  <data name="LanguateChangeTips" xml:space="preserve">
+    <value>部分界面顯示語言需要重啟應用之後生效。</value>
+  </data>
+  <data name="LastMonth" xml:space="preserve">
+    <value>上月</value>
+  </data>
+  <data name="LastSyncDateInfoLabelFormatter" xml:space="preserve">
+    <value>最後同步：{0}</value>
+  </data>
+  <data name="LastTimeAccess" xml:space="preserve">
+    <value>上一次記帳時間:  #NewLine# {0:yyyy年M月d日 ddd HH點mm分}</value>
+  </data>
+  <data name="LastWeek" xml:space="preserve">
+    <value>上週</value>
+  </data>
+  <data name="LastYear" xml:space="preserve">
+    <value>去年</value>
+  </data>
+  <data name="Legend" xml:space="preserve">
+    <value>圖示</value>
+  </data>
+  <data name="LinkTo" xml:space="preserve">
+    <value>關聯</value>
+  </data>
+  <data name="LiveConnectExceptionMessage" xml:space="preserve">
+    <value>很抱歉，手機帳本 在與 Windows Live 服務通訊的時候發生異常，請稍後重試。</value>
+  </data>
+  <data name="LoadAssociated" xml:space="preserve">
+    <value>檢視近期創建的條目</value>
+  </data>
+  <data name="LoadDefaultCategory" xml:space="preserve">
+    <value>加載預設記帳類別</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>加載...</value>
+  </data>
+  <data name="LoanOut" xml:space="preserve">
+    <value>借出</value>
+  </data>
+  <data name="LoanOutOrRepayToSbFormatter" xml:space="preserve">
+    <value>向 {1} {0} {2}。</value>
+  </data>
+  <data name="LocalizedTableName" xml:space="preserve">
+    <value>Accounts,帳戶記錄;Categories,分類;TransferingItems,轉帳歷史;AccountItems,收支記錄;Repayments,還款+借貸記錄;AppSettings,應用設定;BudgetItems,分類預算;BudgetProjects,預算項目;BudgetMonthlyReports,預算月結算檔案;TallyScheduleTable,週期任務條目;PeopleGroups, 人員分組;Peoples,人員訊息;PictureInfos, 照片;</value>
+  </data>
+  <data name="LoginLiveIDMessage" xml:space="preserve">
+    <value>正在登入 Live.com ...</value>
+  </data>
+  <data name="MainCategoryName" xml:space="preserve">
+    <value>一級類別</value>
+  </data>
+  <data name="MakeSureToCoverCurrentData" xml:space="preserve">
+    <value>單擊確定(ok),還原操作會刪除當前的數據。是否繼續？</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>我</value>
+  </data>
+  <data name="MessageWhenAmountForOneCategoryOverBudgetItem" xml:space="preserve">
+    <value>金額即將超過該分類預算，超額：{0}。</value>
+  </data>
+  <data name="ModifiedDate" xml:space="preserve">
+    <value>修改時間</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="MonthlyBudget" xml:space="preserve">
+    <value>月預算</value>
+  </data>
+  <data name="MonthlyIncomExpenseChangesTitle" xml:space="preserve">
+    <value>{0}、{1}收入支出變化</value>
+  </data>
+  <data name="MonthlyTopNExpenses" xml:space="preserve">
+    <value>{0} 最高支出(前 {1} 項)</value>
+  </data>
+  <data name="MonthlyWeeksExpenseAvgInfo" xml:space="preserve">
+    <value>{0} 平均每週支出</value>
+  </data>
+  <data name="MontlyDailyExpenseAmount" xml:space="preserve">
+    <value>{0}日均支出</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>更多</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>更多訊息</value>
+  </data>
+  <data name="My" xml:space="preserve">
+    <value>我的</value>
+  </data>
+  <data name="MyBook" xml:space="preserve">
+    <value>我的帳本</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="NeedIPandPortMessage" xml:space="preserve">
+    <value>请通過"設定“按鈕，設定PC端IP和端口訊息。這些訊息將用於連接PC端。
+
+您可以從 {0} 下載 PC 端數據同步軟體。</value>
+  </data>
+  <data name="NeedToGoToSdfBackupPage" xml:space="preserve">
+    <value>您是否現在進入 數據庫 備份介面？將有希望備份您的數據庫到PC。（請下載或使用最新 V2.2版本的 手機帳本 PC端）。</value>
+  </data>
+  <data name="NeverSync" xml:space="preserve">
+    <value>從未同步</value>
+  </data>
+  <data name="NewPasswordConfrimError" xml:space="preserve">
+    <value>請確認兩次輸入的密碼一致、有效。</value>
+  </data>
+  <data name="NewPasswordText" xml:space="preserve">
+    <value>新密碼</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="NextItem" xml:space="preserve">
+    <value>下一項</value>
+  </data>
+  <data name="NoAvailableNetworkMessage" xml:space="preserve">
+    <value>抱歉！當前網路狀態不可用，請稍候重試。</value>
+  </data>
+  <data name="NoEnoughMoneyMessage" xml:space="preserve">
+    <value>不是很足夠，沒關係他會被你的真誠感動的~~</value>
+  </data>
+  <data name="NoneBankOrCreditAccountsMessage" xml:space="preserve">
+    <value>抱歉，您沒有任何銀行帳戶或者信用卡帳戶。</value>
+  </data>
+  <data name="NoneCategorySelectedMessage" xml:space="preserve">
+    <value>請選擇有效的類別。或者單擊"添加"按鈕。</value>
+  </data>
+  <data name="NoneItemMessage" xml:space="preserve">
+    <value>沒有記錄收支。</value>
+  </data>
+  <data name="NoneSelectedItem" xml:space="preserve">
+    <value>您沒有選擇任何記錄。</value>
+  </data>
+  <data name="NoneSelectedMessage" xml:space="preserve">
+    <value>沒有選擇任何需要刪除的項。</value>
+  </data>
+  <data name="NormalSettingPageTitle" xml:space="preserve">
+    <value>基本設定</value>
+  </data>
+  <data name="NoSummaryData" xml:space="preserve">
+    <value>當前沒有統計訊息。</value>
+  </data>
+  <data name="NoTallyOverTimemoutDaysNotificationMessage" xml:space="preserve">
+    <value>嘿，您已經近 {0} 天沒有記帳了，記帳貴在堅持噢，有財務記錄遺漏嗎？現在進入創建頁面吧？
+
+（點選‘確定’(ok)，進入‘新建一筆’介面）。</value>
+  </data>
+  <data name="NotAvaliableEmailAddressMessage" xml:space="preserve">
+    <value>不是有效的Email位址。</value>
+  </data>
+  <data name="NotAvaliableFromPCClientUsedToRestoreDBMessage" xml:space="preserve">
+    <value>從PC端傳輸來的文件不包含任何可用於還原數據庫的訊息，請檢查文件之後重試。</value>
+  </data>
+  <data name="NotAvaliableObjectMessage" xml:space="preserve">
+    <value>不是有效的"{0}“信息，請選擇或者創建一項。</value>
+  </data>
+  <data name="NotAvaliableObjectMessageFormatter" xml:space="preserve">
+    <value>“{0}”無效，請重新輸入。</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="NotesContain" xml:space="preserve">
+    <value>備註包含</value>
+  </data>
+  <data name="NotificationAndSchedule" xml:space="preserve">
+    <value>提醒 + 預算</value>
+  </data>
+  <data name="NowLoadingFormatter" xml:space="preserve">
+    <value>正在載入 {0} ...</value>
+  </data>
+  <data name="ObjectNamesForSyncing" xml:space="preserve">
+    <value>配置,分類,帳戶,收支</value>
+  </data>
+  <data name="ObjectShortNamesForSyncing" xml:space="preserve">
+    <value>配置,分類,帳戶,收支</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>關</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>開</value>
+  </data>
+  <data name="OnGoing" xml:space="preserve">
+    <value>即將進行</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>打開</value>
+  </data>
+  <data name="OpenAccountBook" xml:space="preserve">
+    <value>打開</value>
+  </data>
+  <data name="OperationSuccessfullyMessage" xml:space="preserve">
+    <value>操作成功!</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="OptNeedRestart" xml:space="preserve">
+    <value>操作需要重新啟動手機帳本。</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>排序</value>
+  </data>
+  <data name="ParentCategoryClass" xml:space="preserve">
+    <value>頂級類別</value>
+  </data>
+  <data name="ParentCategoryName" xml:space="preserve">
+    <value>所屬類別</value>
+  </data>
+  <data name="Particulars" xml:space="preserve">
+    <value>帳本細目</value>
+  </data>
+  <data name="PasswordToLoginText" xml:space="preserve">
+    <value>輸入密碼，打開手机账本。</value>
+  </data>
+  <data name="PasswordWrongText" xml:space="preserve">
+    <value>:(
+
+抱歉！需要密碼才能為您效勞。</value>
+  </data>
+  <data name="Paypal" xml:space="preserve">
+    <value>網上支付帳戶</value>
+  </data>
+  <data name="PCClientUpdatedNotificationMessage" xml:space="preserve">
+    <value>新版本的PC客戶端已經提供下載，請到[{0}]下載配合使用更佳！</value>
+  </data>
+  <data name="PCClientURL" xml:space="preserve">
+    <value>您可以訪問：{0} 
+
+下載存儲于 SkyDrive 中的手機帳本，最新版本：{1}。
+
+谢谢。</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>人員</value>
+  </data>
+  <data name="PeopleWithLink" xml:space="preserve">
+    <value>有鏈接的人</value>
+  </data>
+  <data name="PersonalEmailAddress" xml:space="preserve">
+    <value>私人電郵</value>
+  </data>
+  <data name="PinQuickAccountItemEditorPageToStart" xml:space="preserve">
+    <value>即將在“開始頁面”創建指向 "新建一筆"頁面的快捷連接。該鏈接指向的編輯頁面，是否繼續？
+該特性有助於快速進行記帳操作。</value>
+  </data>
+  <data name="PinToStart" xml:space="preserve">
+    <value>釘選到"開始畫面"</value>
+  </data>
+  <data name="PivotToday" xml:space="preserve">
+    <value>今天</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>地點</value>
+  </data>
+  <data name="PreferenceSetting" xml:space="preserve">
+    <value>記帳偏愛設定</value>
+  </data>
+  <data name="PreferenceSetting_AddRule" xml:space="preserve">
+    <value>創建新規則</value>
+  </data>
+  <data name="PreferenceSetting_AddRuleTips" xml:space="preserve">
+    <value>創建一項針對某時段的記帳規則</value>
+  </data>
+  <data name="PreferenceSetting_SecondTitleFormatter" xml:space="preserve">
+    <value>設定每個時段的記帳規則</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>上</value>
+  </data>
+  <data name="PrevItem" xml:space="preserve">
+    <value>前一項</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>私人訊息</value>
+  </data>
+  <data name="ProfileSetting" xml:space="preserve">
+    <value>我的帳本</value>
+  </data>
+  <data name="ProfileSetting_SecondFormatter" xml:space="preserve">
+    <value>{0}，帳本鎖：{1}</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>內容</value>
+  </data>
+  <data name="Push" xml:space="preserve">
+    <value>催促</value>
+  </data>
+  <data name="QuickAddBudgetItemTips" xml:space="preserve">
+    <value>快速創建記錄一筆收支記錄!</value>
+  </data>
+  <data name="RangeOfThisTimeTitle" xml:space="preserve">
+    <value>本次{0}範圍</value>
+  </data>
+  <data name="RateSyncingSuccessfullyMessage" xml:space="preserve">
+    <value>同步匯率成功！</value>
+  </data>
+  <data name="RebuildDatabaseDoneMessage" xml:space="preserve">
+    <value>重建數據庫操作完成，現在您可能需要重啟程式，之後進入 【應用設定】-&gt;【升級中心】，還原您的數據。</value>
+  </data>
+  <data name="Receieved" xml:space="preserve">
+    <value>收款</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>收款</value>
+  </data>
+  <data name="Recent" xml:space="preserve">
+    <value>近期</value>
+  </data>
+  <data name="RecentRepaymentNumbersFormatter" xml:space="preserve">
+    <value>最近還款項#: {0}</value>
+  </data>
+  <data name="Record" xml:space="preserve">
+    <value>記錄</value>
+  </data>
+  <data name="RecordAlreadyExist" xml:space="preserve">
+    <value>相同的記錄已經存在﹗</value>
+  </data>
+  <data name="Records" xml:space="preserve">
+    <value>記錄數</value>
+  </data>
+  <data name="RecordsAmount" xml:space="preserve">
+    <value>總記錄數</value>
+  </data>
+  <data name="RecordsAndAmountInfoForAccountRealtedItems" xml:space="preserve">
+    <value>{0} 條項目，總共 {1} {2}。</value>
+  </data>
+  <data name="RedbuildDatabase" xml:space="preserve">
+    <value>重建數據庫 ...</value>
+  </data>
+  <data name="Refine" xml:space="preserve">
+    <value>優化</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="RefreshSchedulePlaningMessage" xml:space="preserve">
+    <value>刷新操作將重置所有任務的狀態為：未執行
+
+是否继续？</value>
+  </data>
+  <data name="Related" xml:space="preserve">
+    <value>相關</value>
+  </data>
+  <data name="RelatedItemsTipsAtHeader" xml:space="preserve">
+    <value>缺省情況下，列表僅顯示與當前檢視的條目記錄“相同年月”於“相同類別”的條目，輕觸‘更多’獲得完整相關列表。</value>
+  </data>
+  <data name="ReminderNotication" xml:space="preserve">
+    <value>提醒</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="RenameFileConfirmMessage" xml:space="preserve">
+    <value>更改檔案名字之後，在SkyDrive同目錄下，相同文件名( {0} )的文件，內容將被替換，是否繼續？</value>
+  </data>
+  <data name="RepayAccountName" xml:space="preserve">
+    <value>還款帳戶</value>
+  </data>
+  <data name="RepayAt" xml:space="preserve">
+    <value>還款日期</value>
+  </data>
+  <data name="RepayDateShouldBeGreatterThanNowMessage" xml:space="preserve">
+    <value>正在進行的'還款記錄'的還款日期必須大於當前日期。</value>
+  </data>
+  <data name="Repayed" xml:space="preserve">
+    <value>還款</value>
+  </data>
+  <data name="RepayFromAccountName" xml:space="preserve">
+    <value>來自帳戶</value>
+  </data>
+  <data name="Repayment" xml:space="preserve">
+    <value>還款</value>
+  </data>
+  <data name="RepaymentItem" xml:space="preserve">
+    <value>還款記錄</value>
+  </data>
+  <data name="RepaymentList" xml:space="preserve">
+    <value>還款項清單</value>
+  </data>
+  <data name="RepaymentManager" xml:space="preserve">
+    <value>還款管理</value>
+  </data>
+  <data name="RepaymentNotificationList" xml:space="preserve">
+    <value>還款提醒</value>
+  </data>
+  <data name="RepayToAccountCannotBeEmptyMessage" xml:space="preserve">
+    <value>還款帳戶不能為空。</value>
+  </data>
+  <data name="ReportTotalCountOfObjectsFromSkyDriveText" xml:space="preserve">
+    <value>總共下載 : {0} 項。</value>
+  </data>
+  <data name="RequestCategoryMessage" xml:space="preserve">
+    <value>請選擇一項類別。</value>
+  </data>
+  <data name="RequestMoneyAvailableMessage" xml:space="preserve">
+    <value>請輸入有效的金額訊息。</value>
+  </data>
+  <data name="RequireInputTextDataMessageWithFormatter" xml:space="preserve">
+    <value>請輸入有效的“{0}”訊息。</value>
+  </data>
+  <data name="RequireRestartAppMessage" xml:space="preserve">
+    <value>請重啟您的[手機帳本]。</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="ResetAllData_Tips" xml:space="preserve">
+    <value>該操作將移除您當前所有數據，是否繼續？</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>還原</value>
+  </data>
+  <data name="RestoreDataAfterUpdating" xml:space="preserve">
+    <value>還原數據</value>
+  </data>
+  <data name="RestoreDatabase" xml:space="preserve">
+    <value>還原數據庫</value>
+  </data>
+  <data name="RestoreDatabaseTips" xml:space="preserve">
+    <value>從PC端軟體還原完整數據庫檔案。</value>
+  </data>
+  <data name="RestoreDatabase_Confirm" xml:space="preserve">
+    <value>即將從版本：{0} 的數據庫檔案還原數據，替換當前的整個數據庫，是否繼續？</value>
+  </data>
+  <data name="RestoreDatabase_UnsupportDatabaseVerionAgainstCurrentVersion" xml:space="preserve">
+    <value>當前用於還原的數據庫檔案的版本：{0}，需要通過升級策略升級到：{1}，過程中可能會導致還原失敗，是否繼續？</value>
+  </data>
+  <data name="RestoreFailedMessage" xml:space="preserve">
+    <value>還原數據失敗，請確認是否備份過數據。</value>
+  </data>
+  <data name="Revert" xml:space="preserve">
+    <value>復原</value>
+  </data>
+  <data name="RevertWillDeleteItemConfirmMessage" xml:space="preserve">
+    <value>該還原操作將 '恢復兩個帳號的金額數'，以及刪除您選中的記錄，依然繼續？</value>
+  </data>
+  <data name="Review" xml:space="preserve">
+    <value>評價</value>
+  </data>
+  <data name="RollIn" xml:space="preserve">
+    <value>轉入</value>
+  </data>
+  <data name="RollOut" xml:space="preserve">
+    <value>轉出</value>
+  </data>
+  <data name="RollOutTo" xml:space="preserve">
+    <value>轉到</value>
+  </data>
+  <data name="RolloutToSomeAccountName" xml:space="preserve">
+    <value>匯出到"{0}“。</value>
+  </data>
+  <data name="SafeMode" xml:space="preserve">
+    <value>安全模式</value>
+  </data>
+  <data name="SameAsSystem" xml:space="preserve">
+    <value>和系統保持一致</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="SaveAndClose" xml:space="preserve">
+    <value>儲存&amp;關閉</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>下一筆</value>
+  </data>
+  <data name="SaveChartAsPicture" xml:space="preserve">
+    <value>存為圖片...</value>
+  </data>
+  <data name="SaveImageToPictureHubSuccessMessage" xml:space="preserve">
+    <value>圖片存儲成功！</value>
+  </data>
+  <data name="SaveStasticChartToLiabraryError" xml:space="preserve">
+    <value>抱歉，保存圖片到手機相冊時發生異常，可能的原因是手機連接到了zune，請斷開鏈接後重試。</value>
+  </data>
+  <data name="SaveSuccessContinueMessage" xml:space="preserve">
+    <value>添加成功。</value>
+  </data>
+  <data name="ScheduledRepayOrReceive" xml:space="preserve">
+    <value>定時{0}</value>
+  </data>
+  <data name="ScheduleItemNameExapmle" xml:space="preserve">
+    <value>例：每月薪資收入</value>
+  </data>
+  <data name="ScheduleItemNameFormatter" xml:space="preserve">
+    <value>{0}，{1}，{2}</value>
+  </data>
+  <data name="ScheduleManager" xml:space="preserve">
+    <value>週期計帳</value>
+  </data>
+  <data name="ScheduleManagerSetting" xml:space="preserve">
+    <value>週期任務</value>
+  </data>
+  <data name="ScheduleManagerSetting_Tips" xml:space="preserve">
+    <value>通過指定某個時間點，讓手機帳本進行自動記帳。</value>
+  </data>
+  <data name="ScheduleManager_BadScheduledItemNeedToRemoveMessage" xml:space="preserve">
+    <value>我們發現當前的週期任務中存在一些無效的關聯資料(帳戶或者類別訊息)，這些訊息可能已經從當前的檔案庫中移除。
+
+因此，我們建議您刪除當前的任務，之後重新創建。</value>
+  </data>
+  <data name="ScheduleManager_RecoveryingRecordsMessage" xml:space="preserve">
+    <value>正在處理週期條目...</value>
+  </data>
+  <data name="ScheduleManager_RequireAsscoiatedAccountItemMessage" xml:space="preserve">
+    <value>請創建一項週期詳情。</value>
+  </data>
+  <data name="Scope" xml:space="preserve">
+    <value>範圍</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
+  <data name="SearchDate" xml:space="preserve">
+    <value>週期</value>
+  </data>
+  <data name="SearchingTips" xml:space="preserve">
+    <value>搜索提示:
+      · 進行搜索時，[類別] 和 [帳戶] 選項將作為過濾條件參與數據查詢。
+      · 可以搜索多個備註關鍵字，使用分號分隔。</value>
+  </data>
+  <data name="SearchScope" xml:space="preserve">
+    <value>檢視範圍</value>
+  </data>
+  <data name="SeeMoreLogsMessage" xml:space="preserve">
+    <value>您可以轉到 '幫助 + 關於' -&gt; '升級日誌', 查看更多該版本的新特性說明!
+欢迎使用!</value>
+  </data>
+  <data name="SelectAccountItemsLabel" xml:space="preserve">
+    <value>收支記錄</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>全選</value>
+  </data>
+  <data name="SelectAppSettingLabel" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="SelectCategoryItemsLabel" xml:space="preserve">
+    <value>分類</value>
+  </data>
+  <data name="SelectDayOfMonth" xml:space="preserve">
+    <value>選擇日期</value>
+  </data>
+  <data name="SelectFolderAsResult" xml:space="preserve">
+    <value>選擇'文件夾'作為結果</value>
+  </data>
+  <data name="SelectInvert" xml:space="preserve">
+    <value>反選</value>
+  </data>
+  <data name="SelectMode" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="SelectTheDataFileCacheBeforeCrashed" xml:space="preserve">
+    <value>當前在您的手機種,儲存了一份上一次【手機帳本】重建數據庫之前備份的數據（備份時間：{0}）。
+是否使用這份檔案作為‘還原’操作的數據源？</value>
+  </data>
+  <data name="SencondaryCategoryName" xml:space="preserve">
+    <value>子類別</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>發送</value>
+  </data>
+  <data name="SendFeedback" xml:space="preserve">
+    <value>回饋</value>
+  </data>
+  <data name="SendFeedBackBody" xml:space="preserve">
+    <value>Hi 作者,
+              您好!
+              我是[手機帳本](版本{0},來自 {1})用家。我在使用中發現一些問題，向您回饋一下，望能助此應用更加完善﹗</value>
+  </data>
+  <data name="SendFeedBackSubject" xml:space="preserve">
+    <value>來自用戶對[手機帳本]的回饋意見和建議</value>
+  </data>
+  <data name="SendReport" xml:space="preserve">
+    <value>發送簡報</value>
+  </data>
+  <data name="SetAsDefault" xml:space="preserve">
+    <value>設定為預設</value>
+  </data>
+  <data name="SetAsDefaultMenuItem" xml:space="preserve">
+    <value>設為預設</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="SettingLanguageLabelName" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="SettingPageTitle" xml:space="preserve">
+    <value>帳本設定</value>
+  </data>
+  <data name="SettingsButtonText" xml:space="preserve">
+    <value>設定...</value>
+  </data>
+  <data name="SettleExpense" xml:space="preserve">
+    <value>實際支出</value>
+  </data>
+  <data name="SettleIncome" xml:space="preserve">
+    <value>實際收入</value>
+  </data>
+  <data name="SharedWith" xml:space="preserve">
+    <value>共享</value>
+  </data>
+  <data name="SharedWithLevelOverHeightMessage" xml:space="preserve">
+    <value>選擇的物件的共享級別是 '{0}'， 他們將能對你的數據進行訪問，是否依然選擇該對象？</value>
+  </data>
+  <data name="ShareWithKeyValue" xml:space="preserve">
+    <value>Just me,只有我;People with a link,好友;</value>
+  </data>
+  <data name="ShellTileAssets" xml:space="preserve">
+    <value>資產</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>顯示</value>
+  </data>
+  <data name="ShowAssociatedAccountItemSummary" xml:space="preserve">
+    <value>首頁顯示對比訊息</value>
+  </data>
+  <data name="ShowBlance" xml:space="preserve">
+    <value>顯示平衡</value>
+  </data>
+  <data name="ShowCashAmountOnAsset" xml:space="preserve">
+    <value>總資產中顯示現金額</value>
+  </data>
+  <data name="ShowGroups" xml:space="preserve">
+    <value>顯示分組</value>
+  </data>
+  <data name="ShowLegend" xml:space="preserve">
+    <value>顯示圖示</value>
+  </data>
+  <data name="ShowRepaymentInfoOnTile" xml:space="preserve">
+    <value>Live Tile 顯示帳本簡要訊息</value>
+  </data>
+  <data name="SignInText" xml:space="preserve">
+    <value>登入</value>
+  </data>
+  <data name="SignOutText" xml:space="preserve">
+    <value>註銷</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="SkyDriveSelectFileMessage" xml:space="preserve">
+    <value>輕觸, 選擇還原的文件</value>
+  </data>
+  <data name="SkyDriveSelectFileOrFolderMessage" xml:space="preserve">
+    <value>輕觸, 選擇{0}的目標檔案(夾)</value>
+  </data>
+  <data name="SomethingIsRequired" xml:space="preserve">
+    <value>請鍵入 {0} 訊息。</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>起始日期</value>
+  </data>
+  <data name="StartDateMustBeLargerThanEndDate" xml:space="preserve">
+    <value>結束日期必須大於起始日期。</value>
+  </data>
+  <data name="StartTo" xml:space="preserve">
+    <value>現下開始記帳吧!^_^</value>
+  </data>
+  <data name="StasticItemsTips_HasItemsFormatter" xml:space="preserve">
+    <value>共包含 {0} 項明細條目。</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>統計訊息</value>
+  </data>
+  <data name="StatisticsAndSearching" xml:space="preserve">
+    <value>統計 + 搜索</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="StepInfo_CheckingData" xml:space="preserve">
+    <value>正在校驗數據有效性...</value>
+  </data>
+  <data name="StepInfo_ConnectingServer" xml:space="preserve">
+    <value>正在連接伺服器...</value>
+  </data>
+  <data name="StepInfo_EndingAction" xml:space="preserve">
+    <value>正在確認完成並斷開伺服器連接...</value>
+  </data>
+  <data name="StepInfo_TransferingData" xml:space="preserve">
+    <value>正在與伺服器傳輸數據...</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="SubjectName" xml:space="preserve">
+    <value>主題</value>
+  </data>
+  <data name="SubscibeNotificationTitle" xml:space="preserve">
+    <value>訂閱 '升級' 通知</value>
+  </data>
+  <data name="SuccessReplacer" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="SummaryDetails" xml:space="preserve">
+    <value>詳情</value>
+  </data>
+  <data name="SummaryTitleFormatter" xml:space="preserve">
+    <value>{0} 的記錄詳情。</value>
+  </data>
+  <data name="SupportInformation" xml:space="preserve">
+    <value>聯絡幫助</value>
+  </data>
+  <data name="SyncAction" xml:space="preserve">
+    <value>同步操作</value>
+  </data>
+  <data name="SynchronizationSettingTips" xml:space="preserve">
+    <value>你可以使用PC同步客戶端去獲取IP位址和端口號。</value>
+  </data>
+  <data name="SyncingObjects" xml:space="preserve">
+    <value>同步對象</value>
+  </data>
+  <data name="SyncLogs" xml:space="preserve">
+    <value>日誌</value>
+  </data>
+  <data name="SyncServerIPAddressLabelText" xml:space="preserve">
+    <value>同步伺服器IP位址</value>
+  </data>
+  <data name="SyncServerPortLabelText" xml:space="preserve">
+    <value>同步伺服器端口號</value>
+  </data>
+  <data name="SystemItemUnDelete" xml:space="preserve">
+    <value>該項為系統內置項,無法刪除。</value>
+  </data>
+  <data name="TapToCrateOrEdit" xml:space="preserve">
+    <value>點按進行創建或者編輯明細</value>
+  </data>
+  <data name="TaskCompletedMessageFormatter" xml:space="preserve">
+    <value>今天創建了 {0} 條週期條目。</value>
+  </data>
+  <data name="TaskCompleteWithZeroMessage" xml:space="preserve">
+    <value>今天沒有週期記錄。</value>
+  </data>
+  <data name="Temp_BorrowLeanFeedBackTitle" xml:space="preserve">
+    <value>關於手機帳本借貸模塊的建議</value>
+  </data>
+  <data name="Temp_BorrowLeanPageFeedbackQ" xml:space="preserve">
+    <value>借貸模塊正在設計的計畫中，您有什麼好的建議和想法？不忘反饋給我們：）</value>
+  </data>
+  <data name="TestingMessage" xml:space="preserve">
+    <value>功能在開發中，後續版本中啟用。</value>
+  </data>
+  <data name="ThanksFor" xml:space="preserve">
+    <value>感謝來自以下人员的幫助</value>
+  </data>
+  <data name="TheCacheFileWillBeDeletedMessage" xml:space="preserve">
+    <value>同時，緩存文件將會被刪除。</value>
+  </data>
+  <data name="TheRecordMissingMessage" xml:space="preserve">
+    <value>您所訪問的記錄不存在於數據庫中。</value>
+  </data>
+  <data name="TileInfoUpdatingAgentDescription" xml:space="preserve">
+    <value>該後臺代理將用於更新【手機帳本】瓷片信息】，並且只在您將【手機帳本】”釘選到開始畫面“之後才會生效。並在每天(0:00:00 - 0:30:00 之間執行)。</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>幫助</value>
+  </data>
+  <data name="TipsAfterSyncRate" xml:space="preserve">
+    <value>匯率數據已經更新，請重新啟動應用，以便所有數據能同步顯示。</value>
+  </data>
+  <data name="TipsToUsePCClientToViewAndExportDataFromSDFfile" xml:space="preserve">
+    <value>您可以訪問 [{0} 下載 或者 [{1}] 搜索 PC端2.2，可以匯出用於 SkyDrive 同步的數據檔案。</value>
+  </data>
+  <data name="TipsWhenSetSafeModeIP" xml:space="preserve">
+    <value>請鍵入伺服器IP地址和端口號，並用：號分割，$Line$例如：192.168.1.5:10010</value>
+  </data>
+  <data name="TipsWhenToBackupDatabase" xml:space="preserve">
+    <value>該操作需要【手機帳本PC端】v2.3 或以上版本。請確認您下載的是否是符合的版本。</value>
+  </data>
+  <data name="TipsWhenUploadingStasticsReport" xml:space="preserve">
+    <value>嗨！歡迎使用 Excel 統計訊息匯出功能。所有統計類型的訊息都可以通過您的 SkyDrive 服務上載並存儲為 Excel（xls）檔案。
+     · 文字明細頁面的報告
+     · 餅圖明細頁面的報告
+     · 折線圖明細頁面的報告
+
+生成的每一種明細報告都有他們各自的檔案內容編排形式！順便說一下，餅圖於文本生成的報告內容將是一致的，他們的訊息可以存儲在同一份檔案中。
+
+建議在搜索結果數據量大的時候，將訊息匯出到 Excel，便於統計和分析。
+
+: )</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>至</value>
+  </data>
+  <data name="ToCurrencyListFormatter" xml:space="preserve">
+    <value>至各個支持的貨幣匯率如下:</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>今天</value>
+  </data>
+  <data name="Toggle" xml:space="preserve">
+    <value>顯示/隱藏</value>
+  </data>
+  <data name="ToggleFavorite" xml:space="preserve">
+    <value>切換收藏</value>
+  </data>
+  <data name="TotalExpenses" xml:space="preserve">
+    <value>總支出</value>
+  </data>
+  <data name="TotalIncome" xml:space="preserve">
+    <value>總收入</value>
+  </data>
+  <data name="TotalInDebt" xml:space="preserve">
+    <value>總負債</value>
+  </data>
+  <data name="TotalLoanOut" xml:space="preserve">
+    <value>總共借出</value>
+  </data>
+  <data name="TotalMoney" xml:space="preserve">
+    <value>總額</value>
+  </data>
+  <data name="TotalNeedRepayOrReceieveTitle" xml:space="preserve">
+    <value>應{0}總額</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>本月轉賬次數</value>
+  </data>
+  <data name="TransferFromAccountName" xml:space="preserve">
+    <value>從“{0}”轉入。</value>
+  </data>
+  <data name="TransferingAccount" xml:space="preserve">
+    <value>轉帳</value>
+  </data>
+  <data name="TransferingPoundage" xml:space="preserve">
+    <value>手續費</value>
+  </data>
+  <data name="TransferingPoundageRate" xml:space="preserve">
+    <value>轉帳手續費比例(%)</value>
+  </data>
+  <data name="TransferingPoundageRateTips" xml:space="preserve">
+    <value>由於當前版本的限制，如要自定義轉帳手續費金額，請講【轉出帳戶】的手續費比例設定為0。後續版本將會改進這一特性。</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>類型</value>
+  </data>
+  <data name="TypeInNewFileNameMessage" xml:space="preserve">
+    <value>請入新文件名(無需擴展名)</value>
+  </data>
+  <data name="UnCreatedYet" xml:space="preserve">
+    <value>未創建</value>
+  </data>
+  <data name="UnSelectAll" xml:space="preserve">
+    <value>撤銷全選</value>
+  </data>
+  <data name="UnsertMonthlyBudget" xml:space="preserve">
+    <value>未設定任何預算條目</value>
+  </data>
+  <data name="Unset" xml:space="preserve">
+    <value>未設定</value>
+  </data>
+  <data name="UntitleItem" xml:space="preserve">
+    <value>未命名項</value>
+  </data>
+  <data name="UpdatingDatabaseStep1" xml:space="preserve">
+    <value>正在升級數據庫，從版本：{0} 到 {1}，請勿退出 ...</value>
+  </data>
+  <data name="UpdatingLogs" xml:space="preserve">
+    <value>升級日誌</value>
+  </data>
+  <data name="UpdatingTips" xml:space="preserve">
+    <value>· 建議每次大版本更新前，備份數據，您可以在升級成功之後還原這些數據。
+
+· 位於: {0}
+
+· 訂閱 '升級' 通知之後，我們將會在新版的【手機帳本】提交審核，即將将更新之前，提前通知您是否需要做一些準備。</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>上載</value>
+  </data>
+  <data name="UploadFileToSkyDriveSuccessfullyMessage" xml:space="preserve">
+    <value>恭喜！檔案上載成功！</value>
+  </data>
+  <data name="UseBackgroundImageForMainPage" xml:space="preserve">
+    <value>啟用首頁背景圖片</value>
+  </data>
+  <data name="UserLocalhostCheckBoxContent" xml:space="preserve">
+    <value>使用本地主機(預設)</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本：{0}</value>
+  </data>
+  <data name="VewMode" xml:space="preserve">
+    <value>視圖...</value>
+  </data>
+  <data name="ViewBudgetProjectInfo" xml:space="preserve">
+    <value>條目訊息</value>
+  </data>
+  <data name="ViewLogs" xml:space="preserve">
+    <value>檢視</value>
+  </data>
+  <data name="ViewMonthlyBalance" xml:space="preserve">
+    <value>月結帳單</value>
+  </data>
+  <data name="ViewTransferingHistory" xml:space="preserve">
+    <value>轉帳歷史</value>
+  </data>
+  <data name="WatermaskForAmountInfo" xml:space="preserve">
+    <value>關聯類別，初始化總額</value>
+  </data>
+  <data name="WatermaskForName" xml:space="preserve">
+    <value>輕按，鍵入名稱</value>
+  </data>
+  <data name="WatermaskForNotes" xml:space="preserve">
+    <value>輕按，鍵入備註</value>
+  </data>
+  <data name="Weekend" xml:space="preserve">
+    <value>週末(週六、週天)</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>歡迎</value>
+  </data>
+  <data name="WithPasswordToLoginText" xml:space="preserve">
+    <value>打開繼續記帳,或者關閉</value>
+  </data>
+  <data name="WontBeUpdateImmediately" xml:space="preserve">
+    <value>當前版本中，對收支條目日期的修改不會立即呈現在介面中，重新加載數據之後，方可看見變化。</value>
+  </data>
+  <data name="Workday" xml:space="preserve">
+    <value>工作日(週一至週五)</value>
+  </data>
+  <data name="YearlyMonthsIncomeExpenseAvgInfo" xml:space="preserve">
+    <value>{0} 平均每月收入/支出</value>
+  </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>昨天</value>
+  </data>
+  <data name="BlankWithFormatter" xml:space="preserve">
+    <value>{0}{1}</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>類別</value>
+  </data>
+  <data name="StatisticsInfoFormatterForCategory" xml:space="preserve">
+    <value>{0}筆{1}，{2}</value>
+  </data>
+  <data name="RecordCountTipsFormatter" xml:space="preserve">
+    <value>大約{0}條{1}條目...</value>
+  </data>
+  <data name="AddPicture" xml:space="preserve">
+    <value>添加照片</value>
+  </data>
+  <data name="Browser" xml:space="preserve">
+    <value>檢視</value>
+  </data>
+  <data name="ChoosePictures" xml:space="preserve">
+    <value>選擇或者設定照片</value>
+  </data>
+  <data name="PictureInfoWithNumberFormatter" xml:space="preserve">
+    <value>{0} 張照片</value>
+  </data>
+  <data name="TakePicture" xml:space="preserve">
+    <value>拍攝</value>
+  </data>
+  <data name="EditComments" xml:space="preserve">
+    <value>編輯備註</value>
+  </data>
+  <data name="ViewFull" xml:space="preserve">
+    <value>檢視大圖</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>照片</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <data name="SyncData" xml:space="preserve">
+    <value>同步數據</value>
+  </data>
+  <data name="SyncDataTips" xml:space="preserve">
+    <value>同步收支、帳戶、借貸、人員、轉賬記錄、應用設定等數據。</value>
+  </data>
+  <data name="SyncPictures" xml:space="preserve">
+    <value>同步照片</value>
+  </data>
+  <data name="SyncPicturesTips" xml:space="preserve">
+    <value>備份新的照片到SkyDrive，或從SkyDrive下載本地不存在的照片。</value>
+  </data>
+  <data name="CreatingFolder" xml:space="preserve">
+    <value>正在創建目錄...</value>
+  </data>
+  <data name="CreatingFolderSuccessfully" xml:space="preserve">
+    <value>創建成功！立即開始同步吧！</value>
+  </data>
+  <data name="DectingDataSyncingRootFolder" xml:space="preserve">
+    <value>正在檢視“數據同步”根目錄...</value>
+  </data>
+  <data name="DataSyncingSuccessfulMessage" xml:space="preserve">
+    <value>數據同步完成!</value>
+  </data>
+  <data name="DectingFile" xml:space="preserve">
+    <value>正在檢視檔案...</value>
+  </data>
+  <data name="FolderNotFoundMessage" xml:space="preserve">
+    <value>無法在"數據同步"更目錄下找到指定的文件夾。</value>
+  </data>
+  <data name="PleaseWaitWhileBusy" xml:space="preserve">
+    <value>另外一個事務正在執行，請稍候重試。</value>
+  </data>
+  <data name="DetectingPictureFolder" xml:space="preserve">
+    <value>正在發現照片目錄...</value>
+  </data>
+  <data name="DetectingPicturesToSync" xml:space="preserve">
+    <value>監視需要同步的照片...</value>
+  </data>
+  <data name="Msg_CreatingFolder" xml:space="preserve">
+    <value>正在建立照片檔案夾...</value>
+  </data>
+  <data name="Msg_StartDownloadFileFromServer" xml:space="preserve">
+    <value>开始下載檔案:{0}/{1}，可能需要一些時間...</value>
+  </data>
+  <data name="Msg_StartTransferingFileToServer" xml:space="preserve">
+    <value>开始上載檔案:{0}/{1}，可能需要一段時間...</value>
+  </data>
+  <data name="Msg_TotalPicturesNeedToBackup" xml:space="preserve">
+    <value>共有{0}張照片需要備份到服務端...</value>
+  </data>
+  <data name="Msg_TotalPicturesNeedToSyncToLocal" xml:space="preserve">
+    <value>共有{0}張照片需要同步至本地...</value>
+  </data>
+  <data name="NeedLoginLiveIdMessage" xml:space="preserve">
+    <value>請先登入您的Live ID 帳號。</value>
+  </data>
+  <data name="HouseLoaning" xml:space="preserve">
+    <value>房貸</value>
+  </data>
+  <data name="AppNameTitle" xml:space="preserve">
+    <value>帳本名稱</value>
+  </data>
+  <data name="MoveTo" xml:space="preserve">
+    <value>移動至...</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>貸款</value>
+  </data>
+  <data name="ChooseParentCategory" xml:space="preserve">
+    <value>選擇父類別</value>
+  </data>
+  <data name="CurrentCategoryParentIs" xml:space="preserve">
+    <value>當前選擇的父類別是：</value>
+  </data>
+  <data name="ConfirmDoingSomething" xml:space="preserve">
+    <value>確認“{0}“</value>
+  </data>
+  <data name="MovingCategory" xml:space="preserve">
+    <value>移動類別</value>
+  </data>
+  <data name="MovingCategoryMessage" xml:space="preserve">
+    <value>所有與“{0}”類別相關的條目都將被移動至“{1}”。</value>
+  </data>
+  <data name="AttachPeople" xml:space="preserve">
+    <value>關聯人員</value>
+  </data>
+  <data name="PeopleInfoWithNumberGreatThanNPeopleFormatter" xml:space="preserve">
+    <value>{0} {1} 相關人員</value>
+  </data>
+  <data name="PeopleInfoWithNumberLessThanNPeopleFormatter" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="BudgetIsInControl" xml:space="preserve">
+    <value>控制范围内</value>
+  </data>
+  <data name="BudgetIsOverTaken" xml:space="preserve">
+    <value>可能会超过</value>
+  </data>
+  <data name="AppearPeriod" xml:space="preserve">
+    <value>顯示時段</value>
+  </data>
+  <data name="ConfirmWhenTemplateIsRecordedForToday" xml:space="preserve">
+    <value>今天已經記錄了一条相同類別的檔案，是否繼續創建？</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>創建</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>每週</value>
+  </data>
+  <data name="TallyTemplate" xml:space="preserve">
+    <value>記賬樣板</value>
+  </data>
+  <data name="CategoryInfo" xml:space="preserve">
+    <value>類別訊息</value>
+  </data>
+  <data name="ConfirmDeletingAccountItems" xml:space="preserve">
+    <value>刪除交易歷史條目</value>
+  </data>
+  <data name="ConfirmRevertAmountToAccount" xml:space="preserve">
+    <value>是否將這些條目的金額訊息同步恢復至對應的帳戶？</value>
+  </data>
+  <data name="DeletingDataInOneMonth" xml:space="preserve">
+    <value>"{0}/{1}" 日期下的數據將會被刪除。</value>
+  </data>
+  <data name="DeletingDataInOneYear" xml:space="preserve">
+    <value>{0} 年的數據將會被刪除。</value>
+  </data>
+  <data name="Templates" xml:space="preserve">
+    <value>記賬樣板</value>
+  </data>
+  <data name="LinkPeoples" xml:space="preserve">
+    <value>關聯人員</value>
+  </data>
+  <data name="CreateScheduleTask" xml:space="preserve">
+    <value>創建週期任務</value>
+  </data>
+  <data name="PinToStartPage" xml:space="preserve">
+    <value>首頁顯示</value>
+  </data>
+  <data name="BaymentByInstalments" xml:space="preserve">
+    <value>分期付款</value>
+  </data>
+  <data name="CreateOrEditBaymentByInstalmentsItem" xml:space="preserve">
+    <value>{0}分期付款項目</value>
+  </data>
+  <data name="InCompleted" xml:space="preserve">
+    <value>未完成</value>
+  </data>
+  <data name="LineOfCredit" xml:space="preserve">
+    <value>信用額度</value>
+  </data>
+  <data name="PaymentDueDate" xml:space="preserve">
+    <value>還款日</value>
+  </data>
+  <data name="LineOfCreditRequestValidMessageFormatter" xml:space="preserve">
+    <value>信用额度必须大于0</value>
+  </data>
+  <data name="SetAsDefaultMenuItem1" xml:space="preserve">
+    <value>設定為缺省菜單</value>
+  </data>
+</root>

@@ -1,0 +1,105 @@
+﻿v2.0.3 1.30
+ · Fix export data funcation issue.
+
+v2.0.2 7.23
+ · Bug fix
+
+v2.0.0 05/03
+ · Bug fix
+ · Voice Command Support (Beta)
+
+What's Next:
+ · Support payment by instalments.
+ · Manually create currency in app.
+ · WP7.8/8 Suport big live tile
+
+v1.9.9 (1800.27) 03/26 R2
+ · Improved reminder function
+ · Details of the perfect
+   Account, category management support sort function
+   Automatic data backup feature (Settings - Data Center)
+
+v1.9.8(1602.1202)
+ · Support single category to build transcation item.
+ · fix bugs from previous version
+
+v1.9.8(1602.1201)
+ · fix bugs from previous version
+
+v1.9.8(1600.1025)
+ · fix bugs from previous version
+ · Scheduled transfering item.
+
+v1.9.7.1222(1530.1222) updates:
+  · Hotfix to previous version.
+
+v1.9.7.1021(1529.1021) updates:
+  · Hotfix to previous version.
+
+v1.9.7 (1528.0720)07/20/12 updates:
+ · enable setting pictures for transaction records.
+ · fix bug in account transfering block.
+ · new Data Syncing page, support sync pictures.
+ · support people in transaction records.
+ · support new "category manager".
+ · feature for quick "new record".
+ · more...
+
+What's Next:
+ · More themes supports.
+ · Pin anything what you care about to startup page of app.
+ · Improve the "Budget management".
+ more...
+
+v1.9.5(1527.5230) updates:
+ · enable "borrow or loan" function now!
+ · add "people" managing capability.
+ · in "schedule task" manager, two frequency options added.
+ · add two currencies: KRW and IDR.
+ · other performance improvments.
+
+v1.9.2(1027.15)
+ · hot-fix for schedule tally transcation supports. 
+
+v1.9.1(1025.50)
+ · Schedule tally transcation supports.
+
+v1.9.0(890.79)
+ · Fix bugs in 1.8.9;
+ · Improve account manager page; 
+
+v1.8.9(811.85)
+ · Improve Main-Page's experience, speed up the 'history' and 'account manager' page;
+ · Now support manage your expense budgets monthly.
+ · Improve 'Data export' function.
+
+v1.8.8(733.12)
+ · Fix the "Cash Account Amount are not correct issue" in version 1.8.6(730.12); 
+
+v1.8.7(731.12)
+ · Fix a block issue bug when app start up in v1.8.6 build 730.12;
+
+v1.8.6(730.12)
+ · Fix unexpected exceptions from v1.8.5 build 535.54 UI issue;
+ · Add support for comparation information in main page of 'Week' and 'last week', 'current month' and 'last month', 'this year' and 'last year'. 
+
+v1.8.5
+ · Fix unexpected exceptions from v1.8.0 beta;
+ · Add favourite categories list for choosing when new income/outcome records;
+ · Enable set a default Account in 'Account Manager' Page;
+ · Add more currency support(now total 8);
+ · Add Income/outcome details view page;
+
+v1.8.0(beta)
+ · Fix bugs.
+ · Add report sent by excel to skydrive.
+ · Fix List represent UI bugs in History + Category Page.
+ · Improve [Updating] in AppSetting Page, enstrong the stability of app, and safty of data.
+
+v1.7.0:
+ · Add 'Syncing data with SkyDrive' support, it will be as default mode of synchronization(PC client can still work).
+ · Improve 'Repayment Notification' (renamed as 'Notication + schedule'), and voice notification for repayment reminding.
+ · Improve 'Accounts Manager' (renamed as 'Accounts + Transfering'), and support transfering rollback feature.
+ · Improve 'Statstics' (renamed as 'Statistics + Searching'), support more conditions for searching, the charts are more clear showing summary.
+ · Improve 'AccountItem List'( renamed as 'History + Category'), support 'multiple selectable items', and to send summary for that by email.
+ · Improve MainPage design, users now can change the background image for it.

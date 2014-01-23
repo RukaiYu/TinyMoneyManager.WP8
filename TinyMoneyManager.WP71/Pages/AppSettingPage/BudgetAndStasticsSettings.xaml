@@ -1,0 +1,89 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.BudgetAndStasticsSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:localControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot x:Name="SettingPagePivots"
+                               Title="{StaticResource GlobalAppName}">
+            <controls:PivotItem Header="{Binding Path=Localizedresources.BudgetAndStasticsSettings, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled"   VerticalScrollBarVisibility="Disabled">
+                    <Grid x:Name="CommonSettingPivot" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" >
+                            <toolkit:ListPicker x:Name="BudgetStasticScope"  
+                                               Header="{Binding Path=Localizedresources.BudgetStaticDateRange, Source={StaticResource LocalizedStrings}}" SelectedIndex="{Binding Path=Settings.BudgetStatsicSettings.BudgetStatsicModeIndex,Mode=TwoWay}" SelectionChanged="BudgetStasticScope_SelectionChanged_1">
+                                <toolkit:ListPicker.Items>
+                                    <toolkit:ListPickerItem  Content="{Binding Path=Localizedresources.BudgetStaticModeOfByMonth, Source={StaticResource lcs}}"/>
+                                    <toolkit:ListPickerItem  Content="{Binding Path=Localizedresources.BudgetStaticModeOfCustomized, Source={StaticResource lcs}}"/>
+                                </toolkit:ListPicker.Items>
+                            </toolkit:ListPicker>
+                        </Grid>
+                        <StackPanel Grid.Row="1" x:Name="BudgetStasticScope_CustomizedPanel">
+                            <TextBlock Foreground="Gray" TextWrapping="Wrap"
+                                       Text="{Binding Path=Localizedresources.StartDate, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+                            <TextBox IsReadOnly="True"
+                                     x:Name="BudgetStasticDate_StartDay"
+                                     Text="1" Tag="1"
+                                     Tap="PaymentDueDate_EveryMonth_Day_Value_Tap"/>
+                            <TextBlock Foreground="Gray" TextWrapping="Wrap"
+                                       Text="{Binding Path=Localizedresources.EndDate, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+                            <TextBox IsReadOnly="True" 
+                                     x:Name="BudgetStasticDate_EndDay" 
+                                     Text="29" Tag="29"
+                                     Tap="PaymentDueDate_EveryMonth_Day_Value_Tap"/>
+                            
+                        </StackPanel>
+                        <TextBlock TextWrapping="Wrap" Foreground="Gray" 
+                                    Grid.Row="2"
+                                   Text="{Binding Path=Localizedresources.BudgetStaticDateRangeTips, Source={StaticResource lcs}}"
+                                   Style="{StaticResource PhoneTextNormalStyle}"/>
+                    </Grid>
+                </ScrollViewer>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+</phone:PhoneApplicationPage>
+

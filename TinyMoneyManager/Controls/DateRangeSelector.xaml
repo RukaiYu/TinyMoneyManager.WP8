@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="TinyMoneyManager.Controls.DateRangeSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left"   >
+            <toolkit:ListPicker HorizontalAlignment="Left" Header="{Binding Path=Localizedresources.SearchScope, Source={StaticResource LocalizedStrings}}"
+                                                Name="SearchDuringDate"  Width="430"  ExpansionMode="ExpansionAllowed" SelectedIndex="{Binding Path=SearchingScopeIndex,Mode=TwoWay}">
+                <toolkit:ListPicker.FullModeItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding .}" FontSize="32" Margin="{StaticResource PhoneTouchTargetOverhang}"/>
+                    </DataTemplate>
+                </toolkit:ListPicker.FullModeItemTemplate>
+            </toolkit:ListPicker>
+        </Grid>
+        <Grid Grid.Row="1" x:Name="StartDateRow" Visibility="Collapsed" HorizontalAlignment="Left" >
+            <toolkit:DatePicker x:Name="StartDateSelector" Value="{Binding Path=StartDate}"
+                                                    Header="{Binding Path=Localizedresources.StartDate, Source={StaticResource LocalizedStrings}}"
+                                                    Width="456" ValueStringFormat="{}{0:yyyy/MM/d dddd}"/>
+        </Grid>
+        <Grid Grid.Row="2"  x:Name="EndDateRow" Visibility="Collapsed" HorizontalAlignment="Left">
+            <toolkit:DatePicker x:Name="EndDateSelector" Width="456" Value="{Binding Path=EndDate}"
+                                                    Header="{Binding Path=Localizedresources.EndDate, Source={StaticResource LocalizedStrings}}"
+                                                    ValueStringFormat="{}{0:yyyy/MM/d dddd}" />
+        </Grid>
+
+    </Grid>
+</UserControl>

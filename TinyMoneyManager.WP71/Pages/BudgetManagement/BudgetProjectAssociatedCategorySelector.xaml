@@ -1,0 +1,88 @@
+﻿<phone:PhoneApplicationPage x:Class="TinyMoneyManager.Pages.BudgetManagement.BudgetProjectAssociatedCategorySelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    mc:Ignorable="d"
+             
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" 
+    d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" >
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <controls:Pivot Title="DialogBoxTitle"  x:Name="SelectorPagesPivot">
+            <controls:PivotItem x:Name="FirstCategoryPivot" Header="{Binding Path=Localizedresources.MainCategoryName, Source={StaticResource LocalizedStrings}}" FontSize="16">
+
+                <ListBox x:Name="FirstCategoryItems" ItemsSource="{Binding Items}" SelectionChanged="FirstCategoryItems_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Left" Margin="{StaticResource PhoneTouchTargetOverhang}">
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu>
+                                        <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.ChoseAsResult,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="ChooseAsResult_Click"/>
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+
+                                <TextBlock FontSize="26"
+                                            Text="{Binding Name}" Style="{StaticResource PhoneTextNormalStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+            <controls:PivotItem  x:Name="SecondCategoryPivot" Header="{Binding Path=Localizedresources.SencondaryCategoryName, Source={StaticResource LocalizedStrings}}">
+
+                <toolkit:LongListMultiSelector x:Name="SecondCategoryItems" ItemsSource="{Binding Items}">
+                    <toolkit:LongListMultiSelector.ItemTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton Click="CategoryItem_Click" Tag="{Binding}"
+                                         Style="{StaticResource HyperlinkEmptyStyle}"  Margin="0,0,0,24">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                        <TextBlock FontSize="26" Text="{Binding Name}" Style="{StaticResource PhoneTextNormalStyle}"/>
+                                    </StackPanel>
+                                    <Grid HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,24,0">
+                                        <Image Source="{Binding Path=FavouriteIconString}" Height="32" Width="32" x:Name="ToggleFavourite"/>
+                                    </Grid>
+                                </Grid>
+                            </HyperlinkButton>
+
+                        </DataTemplate>
+                    </toolkit:LongListMultiSelector.ItemTemplate>
+                </toolkit:LongListMultiSelector>
+
+            </controls:PivotItem>
+        </controls:Pivot>
+        <!--<Button Grid.Row="1" VerticalContentAlignment="Bottom" Width="460" x:Name="AddCategoryButton" Content="{Binding Path=Localizedresources.AddButtonText, Source={StaticResource LocalizedStrings}}" Click="AddCategoryButton_Click"></Button>-->
+    </Grid>
+</phone:PhoneApplicationPage>

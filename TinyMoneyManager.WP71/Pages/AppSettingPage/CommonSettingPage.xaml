@@ -1,0 +1,105 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.CommonSettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:localControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot x:Name="SettingPagePivots"
+                               Title="{StaticResource GlobalAppName}">
+            <controls:PivotItem Header="{Binding Path=Localizedresources.NormalSettingPageTitle, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled"   VerticalScrollBarVisibility="Auto">
+                    <Grid x:Name="CommonSettingPivot" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" >
+                            <toolkit:ListPicker x:Name="DefaultCurrency"  FullModeItemTemplate="{StaticResource CurrencyInfoListTempleteForFull}"
+                                               ItemTemplate="{StaticResource CurrencyInfoListTemplete}" 
+                                               Header="{Binding Path=Localizedresources.DefaultCurrency, Source={StaticResource LocalizedStrings}}">
+                            </toolkit:ListPicker>
+                        </Grid>
+                        <Grid Grid.Row="1" >
+                            <toolkit:ListPicker x:Name="CurrencySymbolStyle" Header="{Binding Path=Localizedresources.GlobleCurrencySymbolStyle, Source={StaticResource LocalizedStrings}}">
+
+                            </toolkit:ListPicker>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <toolkit:ToggleSwitch 
+                                    IsChecked="{Binding Path=AppSetting.EnableAllAccountOverdraft,Mode=TwoWay}" 
+                                     
+                                    x:Name="EnableUsingAccountWhenItHasNegativeValueSwitcher" Header="{Binding Path=Localizedresources.EnableUsingAccountWhenItHasNegativeValue, Source={StaticResource LocalizedStrings}}" ></toolkit:ToggleSwitch>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <toolkit:ToggleSwitch x:Name="chk_ShowRepaymentInfoOnTile" IsChecked="{Binding Path=AppSetting.ShowRepaymentInfoOnTile,Mode=TwoWay}" 
+                                      Header="{Binding Path=Localizedresources.ShowRepaymentInfoOnTile, Source={StaticResource LocalizedStrings}}" />
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <toolkit:ToggleSwitch x:Name="chk_ShowAssociatedAccountItemSummary" IsChecked="{Binding Path=AppSetting.IsFavoritesPageVisibiable,Mode=TwoWay}" 
+                                      Header="{Binding Path=Localizedresources.FavoritesPageVisibiable, Source={StaticResource LocalizedStrings}}"/>
+                        </Grid>
+                        <StackPanel Grid.Row="5">
+                            <toolkit:ToggleSwitch x:Name="chk_ShowCashAmountOnAsset" IsChecked="{Binding Path=AppSetting.ShowCashAmountOnAsset,Mode=TwoWay}" 
+                                      Header="{Binding Path=Localizedresources.ShowCashAmountOnAsset, Source={StaticResource LocalizedStrings}}" />
+                            <TextBlock HorizontalAlignment="Right" Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=Localizedresources.AboutCashAmountOnAsset, Source={StaticResource LocalizedStrings}}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="6">
+                            <toolkit:ToggleSwitch x:Name="chk_EnableCreditCardInAsset" IsChecked="{Binding Path=AppSetting.IncludeCreditCardAmountOnAsset,Mode=TwoWay}" 
+                                      Header="{Binding Path=Localizedresources.IncludeCreditCardAmountOnAsset, Source={StaticResource LocalizedStrings}}" />
+                        </StackPanel>
+
+                        <Rectangle Grid.Row="7" Height="100"/>
+                    </Grid>
+                </ScrollViewer>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

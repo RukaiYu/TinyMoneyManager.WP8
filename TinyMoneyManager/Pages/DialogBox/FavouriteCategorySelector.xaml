@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="TinyMoneyManager.Pages.DialogBox.FavouriteCategorySelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+ 
+             
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+
+    <Grid x:Name="LayoutRoot" Height="800" Background="{StaticResource PhoneBackgroundBrush}">
+        <controls:Pivot Title="DialogBoxTitle" Grid.Row="0" Margin="0,10"  HorizontalAlignment="Left" x:Name="SelectorPagesPivot" Width="480"  >
+            <controls:PivotItem x:Name="FirstCategoryPivot" Header="{Binding Path=Localizedresources.Favourite, Source={StaticResource LocalizedStrings}}" FontSize="16">
+                <Grid >
+                    <ListBox x:Name="FirstCategoryItems" ItemsSource="{Binding Items}" SelectionChanged="FirstCategoryItems_SelectionChanged" Width="480" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="{StaticResource PhoneTouchTargetOverhang}">
+                                    <toolkit:ContextMenuService.ContextMenu>
+                                        <toolkit:ContextMenu IsZoomEnabled="False">
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Remove,Source={StaticResource LocalizedStrings}}" Tag="{Binding}"   Name="RemoveMenuItem" Click="RemoveMenuItem_Click"/>
+                                        </toolkit:ContextMenu>
+                                    </toolkit:ContextMenuService.ContextMenu>
+                                    <TextBlock FontSize="26"
+                                           Text="{Binding CategoryInfo}" />
+                                    <TextBlock Text="{Binding DefaultAmountString}" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Bottom" Foreground="Gray"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+
+    </Grid>
+</UserControl>

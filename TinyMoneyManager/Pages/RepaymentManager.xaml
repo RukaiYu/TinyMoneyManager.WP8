@@ -1,0 +1,176 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.RepaymentManager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utls="clr-namespace:TinyMoneyManager.Component.Converter"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:CodeingForFunControls="clr-namespace:Coding4Fun.Phone.Controls.Converters;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideLeftFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.Resources>
+            <utls:StatusToEnableCompletedConverter x:Name="statusToEnableCompleted"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,0">
+            <TextBlock x:Name="ApplicationTitle" Text="{StaticResource GlobalAppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,2,0">
+            <controls:Pivot x:Name="MainPivot">
+                <controls:PivotItem Name="BudgetManager" Header="{Binding Path=Localizedresources.BudgetManagement, Source={StaticResource LocalizedStrings}}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Margin="0,0,0,24">
+                            <Grid Grid.Row="0" Margin="12,1,0,0" x:Name="MonthlyExpenseGrid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Margin="1" Grid.Row="0" VerticalAlignment="Center" Text="{Binding Path=Title}" ></TextBlock>
+                                <!--#FF1BA1E2-->
+                                <Border Grid.Row="1" HorizontalAlignment="Left" BorderThickness="2" Width="470"
+                                         BorderBrush="{StaticResource BudgetSummaryProgressBorderColorStyle}"/>
+                                <Border Name="Masklayer" Grid.Row="1" HorizontalAlignment="Right" BorderThickness="2.1" BorderBrush="{StaticResource BudgetSummaryProgressMaskLayoutBorderColorBrush}" Width="{Binding Path=MoneyInfo.Money}">
+                                </Border>
+                                <!--Foreground="{StaticResource PhoneSubtleBrush}"-->
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <TextBlock Style="{StaticResource PhoneTextNormalStyle}" FontSize="22" Text="{Binding Path=TotalIncomeAmountInfo}"  Foreground="#FF117928" HorizontalAlignment="Right"></TextBlock>
+                                    <TextBlock Style="{StaticResource PhoneTextNormalStyle}" FontSize="21" Margin="1" VerticalAlignment="Bottom" Text="{Binding Path=TotalExpenseAmountInfo}"  Foreground="{Binding Path=TotalExpenseAmount,Converter={StaticResource moneyInfoColorConvert}}" HorizontalAlignment="Right"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                        <HyperlinkButton Grid.Row="1" NavigateUri="/Pages/BudgetManagement/BudgetProjectListPage.xaml?itemType=Expenses"
+                                         Style="{StaticResource HyperlinkEmptyStyle}">
+                            <StackPanel Margin="0,0,0,24">
+                                <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding Path=Localizedresources.AddBudgetItemFromCategory, Source={StaticResource LocalizedStrings}}" >
+                                </TextBlock>
+                                <TextBlock Text="{Binding Path=Localizedresources.AddBudgetItemFromCategoryTips, Source={StaticResource LocalizedStrings}}" Opacity=".5" Style="{StaticResource PhoneTextNormalStyle}"/>
+                            </StackPanel>
+                        </HyperlinkButton>
+                        <HyperlinkButton Grid.Row="2" NavigateUri="/Pages/BudgetManagement/BudgetProjectListPage.xaml?itemType=Expenses&amp;pivotIndex=1"
+                                         Style="{StaticResource HyperlinkEmptyStyle}">
+                            <StackPanel Margin="0,0,0,24">
+                                <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding Path=Localizedresources.BudgetManagement_ReportForEachMonth, Source={StaticResource LocalizedStrings}}" >
+                                </TextBlock>
+                                <TextBlock Text="{Binding Path=Localizedresources.BudgetManagement_ReportForEachMonthTips, Source={StaticResource LocalizedStrings}}" Opacity=".5" Style="{StaticResource PhoneTextNormalStyle}"/>
+                            </StackPanel>
+                        </HyperlinkButton>
+                    </Grid>
+                </controls:PivotItem>
+                <controls:PivotItem x:Name="RepaymentListPivot" Header="{Binding Path=Localizedresources.RepaymentNotificationList, Source={StaticResource LocalizedStrings}}">
+                    <ListBox x:Name="RepaymentList" ItemsSource="{Binding Repayments}" SelectionChanged="RepaymentList_SelectionChanged">
+                        <ListBox.ItemTemplate >
+                            <DataTemplate >
+                                <Grid Margin="5,5,0,0">
+                                    <toolkit:ContextMenuService.ContextMenu >
+                                        <toolkit:ContextMenu IsZoomEnabled="False">
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Edit,Source={StaticResource LocalizedStrings}}" Tag="{Binding Id}" Click="EditItem_Click"  />
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Completed,Source={StaticResource LocalizedStrings}}" Tag="{Binding}"
+                                                IsEnabled="{Binding Path=Status,Converter={StaticResource statusToEnableCompleted}}" Click="CompleteItem_Click"  />
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}" Tag="{Binding}"  Click="DeleteItem_Click"/>
+                                        </toolkit:ContextMenu>
+                                    </toolkit:ContextMenuService.ContextMenu>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Rectangle Fill="{Binding StatusColor}" Width="14" Height="{Binding LineHeight}"/>
+                                    </Grid>
+                                    <Grid Grid.Column="1" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="330"></ColumnDefinition>
+                                            <ColumnDefinition Width="140"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="2,0,0,0" 
+                                                   HorizontalAlignment="Left" TextTrimming="WordEllipsis"  
+                                                   Text="{Binding Path=RepaymentInfoLine}"  />
+
+                                        <TextBlock Grid.Row="0" Margin="0,0,0,0" 
+                                                   Grid.Column="1" HorizontalAlignment="Left"
+                                                   Text="{Binding AmountInfo}" />
+
+                                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="2,0,0,0"
+                                                    HorizontalAlignment="Left" 
+                                                   TextTrimming="WordEllipsis"
+                                                   Style="{StaticResource PhoneTextSubtleStyle}"
+                                                   Text="{Binding Path=RemindingInfo}"/>
+                                        <TextBlock Text="{Binding Place}"
+                                                   Grid.Row="2" Margin="2,0,0,0" 
+                                                   Grid.ColumnSpan="2" 
+                                                   HorizontalAlignment="Left" 
+                                                   Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                </controls:PivotItem>
+            </controls:Pivot>
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="False" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.add.rest.png" x:Name="AddAccountIconButton" Text="添加" Click="AddItemIconButton_Click"/>
+            <shell:ApplicationBar.MenuItems>
+
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

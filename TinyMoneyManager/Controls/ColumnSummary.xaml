@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="TinyMoneyManager.Controls.ColumnSummary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    
+    xmlns:Component="clr-namespace:TinyMoneyManager.Component" 
+    
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent"> 
+        <toolkit:ContextMenuService.ContextMenu>
+            <toolkit:ContextMenu IsZoomEnabled="True" >
+                <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.SaveChartAsPicture,Source={StaticResource LocalizedStrings}}" Click="SaveChartAsPictureMenu_Click"/>
+                <toolkit:MenuItem IsEnabled="false"
+                            Header="{Binding Path=Localizedresources.FullScreen,Source={StaticResource LocalizedStrings}}" Click="FullScreenMenu_Click"/> 
+            </toolkit:ContextMenu>
+        </toolkit:ContextMenuService.ContextMenu>
+        <vc:Chart x:Name="LineChart" xmlns:vc="clr-namespace:Visifire.Charts;assembly=SLWpVisifire.Charts"  
+                  Background="{StaticResource PhoneBackgroundBrush}"  LightingEnabled="False" Theme="Theme1" BorderThickness="0" Padding="6" IndicatorEnabled="True">
+ 
+            <vc:Chart.AxesX>
+                <vc:Axis Padding="4"/>
+            </vc:Chart.AxesX>
+  
+            <vc:Chart.Series>
+                <vc:DataSeries  RenderAs="Line" IncludePercentageInLegend="True"  MarkerEnabled="True" MarkerType="Circle" LabelEnabled="true"  SelectionEnabled="True" LineThickness="3" ShadowEnabled="False">
+ 
+                </vc:DataSeries>
+                <vc:DataSeries  RenderAs="Line" IncludePercentageInLegend="True"  MarkerEnabled="True" MarkerType="Circle" LabelEnabled="true" SelectionEnabled="True" LineThickness="3" ShadowEnabled="False">
+                    
+                </vc:DataSeries>
+            </vc:Chart.Series>
+        </vc:Chart>
+    </Grid>
+</UserControl>

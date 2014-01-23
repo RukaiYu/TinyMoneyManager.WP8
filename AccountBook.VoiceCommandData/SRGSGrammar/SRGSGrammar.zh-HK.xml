@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<grammar version="1.0" xml:lang="zh-HK" root="confirmation" tag-format="semantics/1.0"
+         xmlns="http://www.w3.org/2001/06/grammar"
+         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+  <!--Sample SRGS Grammar to show syntax.
+      The rule element defines a grammar rule. A rule element 
+      contains text or XML elements that define what speakers can 
+      say, and the order in which they can say it.-->
+
+  <rule id="Cancel">
+    <one-of>
+      <item>取消</item>
+      <item>no</item>
+      <item>不要</item>
+      <item>算了</item>
+    </one-of>
+  </rule>
+  <rule id="Ok">
+    <one-of>
+      <item>確定</item>
+      <item>確認</item>
+      <item>好的</item>
+      <item>創建</item>
+      <item>可以</item>
+      <item>行</item>
+      <item>ok</item>
+      <item>好</item>
+    </one-of>
+  </rule>
+  <rule id="confirmation" scope="public">
+    <one-of>
+      <item >
+        <ruleref uri="#Ok"/>
+        <tag> out.Result = true; </tag>
+      </item>
+      <item>
+        <ruleref uri="#Cancel"/>
+        <tag> out.Result= false; </tag>
+      </item>
+    </one-of>
+  </rule>
+
+</grammar>

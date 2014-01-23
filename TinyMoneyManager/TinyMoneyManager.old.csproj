@@ -1,0 +1,1205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AC976B0-5EB9-48EF-B0A0-C1A6DB077E20}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinyMoneyManager</RootNamespace>
+    <AssemblyName>TinyMoneyManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-TW;zh-CN;zh-SG;zh-HK
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>TinyMoneyManager.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>TinyMoneyManager.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>        <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20901.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Phone.Controls">
+      <HintPath>..\..\TinyMoneyManager1.97\Coding4Fun.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Controls.Toolkit">
+      <HintPath>..\..\TinyMoneyManager1.97\Coding4Fun.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZLib.Phone">
+      <HintPath>..\..\TinyMoneyManager1.97\ICSharpCode.SharpZLib.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools">
+      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Bmp">
+      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.IO.Bmp.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Png">
+      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.IO.Png.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.Utils">
+      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="MessageBoxService">
+      <HintPath>..\..\TinyMoneyManager1.97\MessageBoxService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Live">
+      <HintPath>..\..\TinyMoneyManager1.97\Microsoft.Live.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Live.Controls">
+      <HintPath>..\..\TinyMoneyManager1.97\Microsoft.Live.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="MultiTouch.Behaviors.Silverlight.WP71">
+      <HintPath>..\..\TinyMoneyManager1.97\MultiTouch.Behaviors.Silverlight.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="NkjSoft.WPhone">
+      <HintPath>..\..\TinyMoneyManager1.97\NkjSoft.WPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Phone.Controls">
+      <HintPath>..\..\TinyMoneyManager1.97\Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="PhoneCodeContractsAssemblies">
+      <HintPath>..\..\TinyMoneyManager1.97\PhoneCodeContractsAssemblies.dll</HintPath>
+    </Reference>
+    <Reference Include="RapidRepository">
+      <HintPath>..\..\TinyMoneyManager1.97\RapidRepository.dll</HintPath>
+    </Reference>
+    <Reference Include="SLWpVisifire.Charts">
+      <HintPath>..\..\TinyMoneyManager1.97\SLWpVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Input.Manipulations">
+      <HintPath>..\..\TinyMoneyManager1.97\System.Windows.Input.Manipulations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="TinyMoneyManager.DataSyncing">
+      <HintPath>..\..\TinyMoneyManager1.97\TinyMoneyManager.DataSyncing.dll</HintPath>
+    </Reference>
+    <Reference Include="TinyMoneyManager.ScheduledAgentLib">
+      <HintPath>..\..\TinyMoneyManager1.97\TinyMoneyManager.ScheduledAgentLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Component\AccountBalanceInfoConvert.cs" />
+    <Compile Include="Component\AlarmManager.cs" />
+    <Compile Include="Component\ApplicationHelper.cs" />
+    <Compile Include="Component\AppUpdater.cs" />
+    <Compile Include="Component\CategorySortType.cs" />
+    <Compile Include="Component\ChartGroupMode.cs" />
+    <Compile Include="Component\ColorToBrushConverter.cs" />
+    <Compile Include="Component\CommonExtensions.cs" />
+    <Compile Include="Component\Common\ITitleInfoListener.cs" />
+    <Compile Include="Component\Common\TwoLineListerner.cs" />
+    <Compile Include="Component\Converter\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Component\Converter\CultureNameConverter.cs" />
+    <Compile Include="Component\Converter\DateTimeWeekLocalizationConverter.cs" />
+    <Compile Include="Component\Converter\EnumToLocalizedStringValueConverter.cs" />
+    <Compile Include="Component\Converter\MoneyStringConvertToF2.cs" />
+    <Compile Include="Component\Converter\OnOffConverter.cs" />
+    <Compile Include="Component\Converter\RepaymentStatusToColorConverter.cs" />
+    <Compile Include="Component\Converter\StatusToEnableCompletedConverter.cs" />
+    <Compile Include="Component\Converter\WaterMakerConverter.cs" />
+    <Compile Include="Component\DatabaseVersion.cs" />
+    <Compile Include="Component\DataContextDataHandler.cs" />
+    <Compile Include="Component\DataContextDataHandlerEventArgs.cs" />
+    <Compile Include="Component\DetailsCondition.cs" />
+    <Compile Include="Component\Converter\FormatConverter.cs" />
+    <Compile Include="Component\Converter\ToLowerConverter.cs" />
+    <Compile Include="Component\Helper.cs" />
+    <Compile Include="Component\HolidayTipsHelper.cs" />
+    <Compile Include="Component\IconUirs.cs" />
+    <Compile Include="Component\IndividuationSettings.cs" />
+    <Compile Include="Component\InstanceLoader.cs" />
+    <Compile Include="Component\IsolatedAppSetingsHelper.cs" />
+    <Compile Include="Component\LocalyticsSession.cs" />
+    <Compile Include="Component\MoneyInfoColorConvert.cs" />
+    <Compile Include="Component\NavigationDataInfoFromAccountItem.cs" />
+    <Compile Include="Component\NkjSoftViewModelBase.cs" />
+    <Compile Include="Component\PageActionHandler.cs" />
+    <Compile Include="Component\PageBaseExtensions.cs" />
+    <Compile Include="Component\PictureExportingHelper.cs" />
+    <Compile Include="Component\PublishGrouping.cs" />
+    <Compile Include="Component\RepaymentStatusHelper.cs" />
+    <Compile Include="Component\RepaymentStatusWapper.cs" />
+    <Compile Include="Component\SearchingScope.cs" />
+    <Compile Include="Component\StepSuccessFulConverter.cs" />
+    <Compile Include="Component\SummaryDetails.cs" />
+    <Compile Include="Component\SummaryDetailsCollection.cs" />
+    <Compile Include="Component\TileInfoUpdatingAgent.cs" />
+    <Compile Include="Component\TinyMoneyManagerNavigationService.cs" />
+    <Compile Include="Component\ToLowerConverter.cs" />
+    <Compile Include="Component\ToUpperConverter.cs" />
+    <Compile Include="Component\TrunToFalseWhen.cs" />
+    <Compile Include="Component\ViewMode.cs" />
+    <Compile Include="Component\ViewModeConfig.cs" />
+    <Compile Include="Component\ViewModelLocator.cs" />
+    <Compile Include="Component\ViewPath.cs" />
+    <Compile Include="Component\WebClientHandler.cs" />
+    <Compile Include="Controls\ApplicationBarHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ApplicationBarHelperExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\AssociatedItemsSelectorInAccountViewer.xaml.cs">
+      <DependentUpon>AssociatedItemsSelectorInAccountViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssociatedItemsSelectorOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\AssociatedItemType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\BorrowAndLean\BorrowAndLeanEditorControl.xaml.cs">
+      <DependentUpon>BorrowAndLeanEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BorrowAndLean\BorrowLoanInfoViewer.xaml.cs">
+      <DependentUpon>BorrowLoanInfoViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BorrowAndLean\RepaymentOrReceiptEditor.xaml.cs">
+      <DependentUpon>RepaymentOrReceiptEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BudgetSettleMonthlyReportChart.xaml.cs">
+      <DependentUpon>BudgetSettleMonthlyReportChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calcutor.xaml.cs">
+      <DependentUpon>Calcutor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CalcutorKeyBoard\IKeyHandler.cs" />
+    <Compile Include="Controls\CalcutorKeyBoard\KeyBoardWords.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\CalcutorKeyBoard\PriceInputKeyBoardHandler.cs" />
+    <Compile Include="Controls\CategorySummary.xaml.cs">
+      <DependentUpon>CategorySummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColumnSummary.xaml.cs">
+      <DependentUpon>ColumnSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateRangeSelector.xaml.cs">
+      <DependentUpon>DateRangeSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DialogBoxBase.cs" />
+    <Compile Include="Controls\ExpenseAndIncomeListSelectModeManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ExportDataOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ExportDataOptionPanel.xaml.cs">
+      <DependentUpon>ExportDataOptionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FrequencySelector.xaml.cs">
+      <DependentUpon>FrequencySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GlobalIndicator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\HeaderedContentControl.cs" />
+    <Compile Include="Controls\ISummaryChart.cs" />
+    <Compile Include="Controls\KeyBoardKey.xaml.cs">
+      <DependentUpon>KeyBoardKey.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoginPopupControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\MoneyInputTextBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PasswordTextBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\PeopleManager\PeopleInfoEditor.xaml.cs">
+      <DependentUpon>PeopleInfoEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PeopleManager\PeopleProfileViewer.xaml.cs">
+      <DependentUpon>PeopleProfileViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SkyDriveDataSyncing\ObjectBrowseringChangedHandlerEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SkyDriveDataSyncing\ObjectFromSkyDrive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SkyDriveDataSyncing\ReportStatusHandlerEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SkyDriveDataSyncing\SkyDriveObjectTags.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SkyDriveFileInfoPanel.xaml.cs">
+      <DependentUpon>SkyDriveFileInfoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SkyDriveFolderAndFileBrowser.xaml.cs">
+      <DependentUpon>SkyDriveFolderAndFileBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Summary.xaml.cs">
+      <DependentUpon>Summary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SummaryChartBase.cs" />
+    <Compile Include="Controls\SummaryDataType.cs" />
+    <Compile Include="Data\ActionOption.cs" />
+    <Compile Include="Data\ApplicationStarter.cs" />
+    <Compile Include="Data\BackupDataOption.cs" />
+    <Compile Include="Data\BackupDataRange.cs" />
+    <Compile Include="Data\BudgetManager.cs" />
+    <Compile Include="Data\CategoryRepository.cs" />
+    <Compile Include="Data\DataBackupedFromPhone.cs" />
+    <Compile Include="Data\DataSynchronizationHandler.cs" />
+    <Compile Include="Data\DataSynchronizationHandlerEventArgs.cs" />
+    <Compile Include="Data\DataSynchronizationInfo.cs" />
+    <Compile Include="Data\ExcelSummaryBuilder.cs" />
+    <Compile Include="Data\HandlerAction.cs" />
+    <Compile Include="Data\Model\SynchronizationStepInfo.cs" />
+    <Compile Include="Data\OperationResult.cs" />
+    <Compile Include="Language\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Language\LocalizedFileHelper.cs" />
+    <Compile Include="Language\LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountEditorPage.xaml.cs">
+      <DependentUpon>AccountEditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountItemListPage.xaml.cs">
+      <DependentUpon>AccountItemListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountItemViews\AccountItemViewer.xaml.cs">
+      <DependentUpon>AccountItemViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountItemViews\AttachPeoplePage.xaml.cs">
+      <DependentUpon>AttachPeoplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountManager.xaml.cs">
+      <DependentUpon>AccountManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountTransferingPage.xaml.cs">
+      <DependentUpon>AccountTransferingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppSettingPage\CommonSettingPage.xaml.cs">
+      <DependentUpon>CommonSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppSettingPage\CurrencyRateSettingPage.xaml.cs">
+      <DependentUpon>CurrencyRateSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppSettingPage\DataSettingPage.xaml.cs">
+      <DependentUpon>DataSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppSettingPage\DataSyncingSettingPage.xaml.cs">
+      <DependentUpon>DataSyncingSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppSettingPage\PreferenceSettingPage.xaml.cs">
+      <DependentUpon>PreferenceSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppSettingPage\ProfileSettingPage.xaml.cs">
+      <DependentUpon>ProfileSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AppSettingPage\ScheduleManager.xaml.cs">
+      <DependentUpon>ScheduleManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BorrowAndLean\BorrowLeanEditor.xaml.cs">
+      <DependentUpon>BorrowLeanEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BorrowAndLean\BorrowLoanInfoViewerPage.xaml.cs">
+      <DependentUpon>BorrowLoanInfoViewerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BorrowAndLean\BorrowOrLoanRepayReceiveInfoViewerPage.xaml.cs">
+      <DependentUpon>BorrowOrLoanRepayReceiveInfoViewerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BorrowAndLean\LoanItemEditor.xaml.cs">
+      <DependentUpon>LoanItemEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BorrowAndLean\PeopleListControl.xaml.cs">
+      <DependentUpon>PeopleListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BorrowAndLean\RepayOrReceiveEditorPage.xaml.cs">
+      <DependentUpon>RepayOrReceiveEditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BorrowLeanManager.xaml.cs">
+      <DependentUpon>BorrowLeanManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetManagement\BudgetItemAmountEditor.xaml.cs">
+      <DependentUpon>BudgetItemAmountEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetManagement\BudgetProjectAssociatedCategorySelector.xaml.cs">
+      <DependentUpon>BudgetProjectAssociatedCategorySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetManagement\BudgetProjectEditPage.xaml.cs">
+      <DependentUpon>BudgetProjectEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetManagement\BudgetProjectListPage.xaml.cs">
+      <DependentUpon>BudgetProjectListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetManagement\BudgetProjectMonthlyReport.xaml.cs">
+      <DependentUpon>BudgetProjectMonthlyReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BudgetManagement\INkjSoftPhonePageContract.cs" />
+    <Compile Include="Pages\CategoryManager\CategoryInfoEditor.xaml.cs">
+      <DependentUpon>CategoryInfoEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoryManager\CategoryInfoViewer.xaml.cs">
+      <DependentUpon>CategoryInfoViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoryManager\CategoryManagment.xaml.cs">
+      <DependentUpon>CategoryManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoryManager\FavouritesReviewer.xaml.cs">
+      <DependentUpon>FavouritesReviewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CategoryManager\SelectParentCategoryPage.xaml.cs">
+      <DependentUpon>SelectParentCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomizedTally\CustomizedTallyItemEditorPage.xaml.cs">
+      <DependentUpon>CustomizedTallyItemEditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomizedTally\CustomizedTallyPage.xaml.cs">
+      <DependentUpon>CustomizedTallyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DataSynchronizationPage.xaml.cs">
+      <DependentUpon>DataSynchronizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DataSyncing\SkyDriveDataSyncingPage.xaml.cs">
+      <DependentUpon>SkyDriveDataSyncingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\AccountInfoViewer.xaml.cs">
+      <DependentUpon>AccountInfoViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\AmountInputBox.xaml.cs">
+      <DependentUpon>AmountInputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\DaySelectorPage.xaml.cs">
+      <DependentUpon>DaySelectorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\EditExpenseOrIncomeSchedule.xaml.cs">
+      <DependentUpon>EditExpenseOrIncomeSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\EditValueInTextBoxEditor.xaml.cs">
+      <DependentUpon>EditValueInTextBoxEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\FavouriteCategorySelector.xaml.cs">
+      <DependentUpon>FavouriteCategorySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\PeopleImporter.xaml.cs">
+      <DependentUpon>PeopleImporter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\PeopleImporterControlBase\AllPeople.cs" />
+    <Compile Include="Pages\DialogBox\PeopleImporterControlBase\GroupToBackgroundBrushValueConverter.cs" />
+    <Compile Include="Pages\DialogBox\PeopleImporterControlBase\GroupToForegroundBrushValueConverter.cs" />
+    <Compile Include="Pages\DialogBox\PeopleImporterControlBase\PeopleByFirstName.cs" />
+    <Compile Include="Pages\DialogBox\PictureManager\ImageViewModel.cs" />
+    <Compile Include="Pages\DialogBox\PictureManager\MainPageViewModel.cs" />
+    <Compile Include="Pages\DialogBox\PictureManager\PictureActionHandler.cs" />
+    <Compile Include="Pages\DialogBox\PictureManager\PictureBrowser.xaml.cs">
+      <DependentUpon>PictureBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\PictureManager\PictureViewer.xaml.cs">
+      <DependentUpon>PictureViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\PictureManager\ViewModelBase.cs" />
+    <Compile Include="Pages\DialogBox\PopupCotainer.xaml.cs">
+      <DependentUpon>PopupCotainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\StatisticCharShower.xaml.cs">
+      <DependentUpon>StatisticCharShower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\StatsticSummaryItemsViewer.xaml.cs">
+      <DependentUpon>StatsticSummaryItemsViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DialogBox\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupObject.cs" />
+    <Compile Include="Pages\MonthSelectorPage.xaml.cs">
+      <DependentUpon>MonthSelectorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewOrEditAccountItemPage.xaml.cs">
+      <DependentUpon>NewOrEditAccountItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PasswordSetting.xaml.cs">
+      <DependentUpon>PasswordSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\People\PeopleInfoEditorPage.xaml.cs">
+      <DependentUpon>PeopleInfoEditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\People\PeopleProfileViewerPage.xaml.cs">
+      <DependentUpon>PeopleProfileViewerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RepaymentManager.xaml.cs">
+      <DependentUpon>RepaymentManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RepaymentManagerViews\RepaymentItemEditor.xaml.cs">
+      <DependentUpon>RepaymentItemEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ScheduleManager\ScheduledItemInfoViewer.xaml.cs">
+      <DependentUpon>ScheduledItemInfoViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SkyDriveDataSyncingConfig.cs" />
+    <Compile Include="Pages\SkyDriveDataSyncingPage.xaml.cs">
+      <DependentUpon>SkyDriveDataSyncingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StatisticsPage.xaml.cs">
+      <DependentUpon>StatisticsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Summary\ParticularsDetails.xaml.cs">
+      <DependentUpon>ParticularsDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CurrencyConverterByWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataSynchronizationService\Reference.cs" />
+    <Compile Include="Service References\DataSynchronizationService\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AccountBookDataFolderStructure.cs" />
+    <Compile Include="ViewModels\AccountBookSummaryCompareInfo.cs" />
+    <Compile Include="ViewModels\AccountItemDataLodingHandler.cs" />
+    <Compile Include="ViewModels\AccountItemListViewModel.cs" />
+    <Compile Include="ViewModels\AccountItemManager\AccountItemViewerViewModel.cs" />
+    <Compile Include="ViewModels\AccountManager\AssociatedItemForAccount.cs" />
+    <Compile Include="ViewModels\AccountManager\TransferingHistoryViewModel.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
+    <Compile Include="ViewModels\AnalyziationSummarization.cs" />
+    <Compile Include="ViewModels\AnalyziationSummaryEntry.cs" />
+    <Compile Include="ViewModels\AppSettingManager\AboutPageViewModel.cs" />
+    <Compile Include="ViewModels\AppSettingManager\AppSettingListener.cs" />
+    <Compile Include="ViewModels\AppSettingManager\PasswordSettingViewModel.cs" />
+    <Compile Include="ViewModels\AppSettingManager\SettingPageViewModel.cs" />
+    <Compile Include="ViewModels\BorrowLeanManager\BorrowLeanGroupingViewModel.cs" />
+    <Compile Include="ViewModels\BorrowLeanManager\BorrowLeanSeachingCondition.cs" />
+    <Compile Include="ViewModels\BorrowLeanManager\BorrowLeanViewModel.cs" />
+    <Compile Include="ViewModels\BorrowLeanManager\PeopleGroup.cs" />
+    <Compile Include="ViewModels\BudgetManagement\BudgetProjectManagementViewModel.cs" />
+    <Compile Include="ViewModels\BudgetManagement\BudgetProjectMonthReportViewModel.cs" />
+    <Compile Include="ViewModels\BudgetManagement\GroupedBudgetProjectCollection.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\CommonGroupCollectionForLonglistSelector!2.cs" />
+    <Compile Include="ViewModels\Common\ObjectGroupingViewModel.cs" />
+    <Compile Include="ViewModels\CurrencySettingViewModel.cs" />
+    <Compile Include="ViewModels\CustomizedTallyManager\CustomizedTallyViewModel.cs" />
+    <Compile Include="ViewModels\DataSyncing\DataSyncingHandler.cs" />
+    <Compile Include="ViewModels\DataSyncing\PictureFileDataSyncingHandler.cs" />
+    <Compile Include="ViewModels\DataSyncing\SkyDriveDataSyncingViewModel.cs" />
+    <Compile Include="ViewModels\DataSyncing\XmlFileDataSyncingHandler.cs" />
+    <Compile Include="ViewModels\DateConfigViewModel.cs" />
+    <Compile Include="ViewModels\ExpensesViewModel.cs" />
+    <Compile Include="ViewModels\GroupAccountItemViewModelBase!1.cs" />
+    <Compile Include="ViewModels\GroupByAccountItemTypeViewModel.cs" />
+    <Compile Include="ViewModels\GroupByCreateTimeAccountItemViewModel.cs" />
+    <Compile Include="ViewModels\GroupCollectionForLonglistSelector!2.cs" />
+    <Compile Include="ViewModels\GroupViewModel.cs" />
+    <Compile Include="ViewModels\IGroupedObject.cs" />
+    <Compile Include="ViewModels\IncomeViewModel.cs" />
+    <Compile Include="ViewModels\IncreaseOrDecrease.cs" />
+    <Compile Include="ViewModels\ItemAdding.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\LiveConnectorSyncHandlerEventArgs.cs" />
+    <Compile Include="ViewModels\LiveConnectorSyncObject.cs" />
+    <Compile Include="ViewModels\MenuItemViewModel.cs" />
+    <Compile Include="ViewModels\NoteListItem.cs" />
+    <Compile Include="ViewModels\ParticularsViewModel.cs" />
+    <Compile Include="ViewModels\PeopleAssociationDataViewModel.cs" />
+    <Compile Include="ViewModels\BorrowLeanManager\PeopleViewModel.cs" />
+    <Compile Include="ViewModels\PictureViewModel.cs" />
+    <Compile Include="ViewModels\RepaymentManagerViewModel.cs" />
+    <Compile Include="ViewModels\RepaymentManager\AddOrEditRepaymentViewModel.cs" />
+    <Compile Include="ViewModels\ScheduleManager\ScheduleManagerViewModel.cs" />
+    <Compile Include="ViewModels\SkyDriveDataSyncingPageViewModel.cs" />
+    <Compile Include="ViewModels\SynchronizationManagerViewModel.cs" />
+    <Compile Include="ViewModels\SynchronizationStepViewModel.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Controls\AssociatedItemsSelectorInAccountViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\BorrowAndLean\BorrowAndLeanEditorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\BorrowAndLean\BorrowLoanInfoViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\BorrowAndLean\RepaymentOrReceiptEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\BudgetSettleMonthlyReportChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Calcutor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CategorySummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ColumnSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DateRangeSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ExportDataOptionPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FrequencySelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\KeyBoardKey.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PeopleManager\PeopleInfoEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PeopleManager\PeopleProfileViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SkyDriveFileInfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SkyDriveFolderAndFileBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Summary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AccountEditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AccountItemListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AccountItemViews\AccountItemViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AccountItemViews\AttachPeoplePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AccountManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AccountTransferingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppSettingPage\CommonSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppSettingPage\CurrencyRateSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppSettingPage\DataSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppSettingPage\DataSyncingSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppSettingPage\PreferenceSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppSettingPage\ProfileSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AppSettingPage\ScheduleManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BorrowAndLean\BorrowLeanEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BorrowAndLean\BorrowLoanInfoViewerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BorrowAndLean\BorrowOrLoanRepayReceiveInfoViewerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BorrowAndLean\LoanItemEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BorrowAndLean\PeopleListControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BorrowAndLean\RepayOrReceiveEditorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BorrowLeanManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\BudgetManagement\BudgetItemAmountEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BudgetManagement\BudgetProjectAssociatedCategorySelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BudgetManagement\BudgetProjectEditPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BudgetManagement\BudgetProjectListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\BudgetManagement\BudgetProjectMonthlyReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\CategoryManager\CategoryInfoEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CategoryManager\CategoryInfoViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CategoryManager\CategoryManagment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CategoryManager\FavouritesReviewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CategoryManager\SelectParentCategoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CustomizedTally\CustomizedTallyItemEditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CustomizedTally\CustomizedTallyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DataSynchronizationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DataSyncing\SkyDriveDataSyncingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DialogBox\AccountInfoViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\AmountInputBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\DaySelectorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\EditExpenseOrIncomeSchedule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\EditValueInTextBoxEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\FavouriteCategorySelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\PeopleImporter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\PictureManager\PictureBrowser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\PictureManager\PictureViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\PopupCotainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\StatisticCharShower.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\StatsticSummaryItemsViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DialogBox\WelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MonthSelectorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewOrEditAccountItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PasswordSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\People\PeopleInfoEditorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\People\PeopleProfileViewerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\RepaymentManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RepaymentManagerViews\RepaymentItemEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ScheduleManager\ScheduledItemInfoViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\SkyDriveDataSyncingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StatisticsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Summary\ParticularsDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CommonControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DataTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Announcement.xml" />
+    <Content Include="AppResLib.dll" />
+    <Content Include="icons\appbar.add.rest.png" />
+    <Content Include="icons\appbar.blanceInfo.rest.png" />
+    <Content Include="icons\appbar.calcutor.rest.png" />
+    <Content Include="icons\appbar.cancel.rest.png" />
+    <Content Include="icons\appbar.check.rest.png" />
+    <Content Include="icons\appbar.close.rest.png" />
+    <Content Include="icons\appbar.delete.rest.png" />
+    <Content Include="icons\appbar.edit.rest.png" />
+    <Content Include="icons\appbar.feature.email.rest.png" />
+    <Content Include="icons\appbar.feature.settings.rest.png" />
+    <Content Include="icons\appbar.heart.broken.rest.png" />
+    <Content Include="icons\appbar.heart.rest.png" />
+    <Content Include="icons\appbar.hexchange.rest.png" />
+    <Content Include="icons\appbar.linkto.rest.png" />
+    <Content Include="icons\appbar.path.rest.png" />
+    <Content Include="icons\appbar.questionmark.rest.png" />
+    <Content Include="icons\appbar.save.rest.png" />
+    <Content Include="icons\appbar.show.groups.png" />
+    <Content Include="icons\appbar.stop.rest.png" />
+    <Content Include="icons\appbar.summary.rest.png" />
+    <Content Include="icons\appbar.transfer.rest.png" />
+    <Content Include="icons\appbar.transfering.rest.png" />
+    <Content Include="icons\appbar.transport.ff.rest.png" />
+    <Content Include="icons\appbar.transport.pause.rest.png" />
+    <Content Include="icons\appbar.transport.rew.rest.png" />
+    <Content Include="icons\appbar.vexchange.rest.png" />
+    <Content Include="icons\appBar\appbar.back.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.cloudupload.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.favs.addto.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.feature.camera.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.feature.coloud.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.feature.search.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.next.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.search.refine.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.sync.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appBar\appbar.transport.pause.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="icons\appBar\favorate-write.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\appBar\favorate.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\ListItemIcons\About.png" />
+    <Resource Include="icons\ListItemIcons\AccountManager.png" />
+    <Resource Include="icons\ListItemIcons\BorrowLeanPeople.png" />
+    <Resource Include="icons\ListItemIcons\EandI_White.png" />
+    <Resource Include="icons\ListItemIcons\EditWhite.png" />
+    <Resource Include="icons\ListItemIcons\EditWhite__.png" />
+    <Resource Include="icons\ListItemIcons\Help.png" />
+    <Resource Include="icons\ListItemIcons\Lock_White.png" />
+    <Resource Include="icons\ListItemIcons\PriodItem_Whitebig.png" />
+    <Resource Include="icons\ListItemIcons\settings.png" />
+    <Resource Include="icons\ListItemIcons\StatisticIcon_White.png" />
+    <Resource Include="icons\ListItemIcons\StatisticIcon_Whitebig.png" />
+    <Resource Include="icons\ListItemIcons\Sync_White.png" />
+    <Content Include="icons\Months\appbar.chooseMonth9.png" />
+    <Resource Include="images\arrow_down.png" />
+    <Resource Include="images\arrow_down_Red.png" />
+    <Resource Include="images\arrow_Right.png" />
+    <Resource Include="images\arrow_up.png" />
+    <Resource Include="images\arrow_up_Green.png" />
+    <Resource Include="images\defaultBackgroundImage.png" />
+    <Resource Include="images\Error.png" />
+    <Resource Include="images\fileType\abd.png" />
+    <Resource Include="images\fileType\default.png" />
+    <Resource Include="images\fileType\doc.png" />
+    <Resource Include="images\fileType\folder.png" />
+    <Resource Include="images\fileType\txt.png" />
+    <Resource Include="images\fileType\xls.png" />
+    <Resource Include="images\fileType\xml.png" />
+    <Content Include="images\folder.ico" />
+    <Resource Include="images\group.png" />
+    <Resource Include="images\group_add.png" />
+    <Resource Include="images\group_delete.png" />
+    <Resource Include="images\heart.png" />
+    <Resource Include="images\heart_empty.rest.png" />
+    <Resource Include="images\heart_Full.rest.png" />
+    <Resource Include="images\newRecordBackgroundImage.png" />
+    <Content Include="images\note.ico" />
+    <Resource Include="images\Processing.png" />
+    <Resource Include="images\SkyDriveSyncingPageGB.png" />
+    <Resource Include="images\Success.png" />
+    <Resource Include="Language\Helps\en-US\HelpsInAbout.txt" />
+    <Resource Include="Language\Helps\en-US\HelpsInDataSync.txt" />
+    <Resource Include="Language\Helps\en-US\HelpsInSkyDriveSyncing.txt" />
+    <Resource Include="Language\Helps\en-US\HolidayWords.txt" />
+    <Resource Include="Language\Helps\en-US\WhatsNewAndNext.txt" />
+    <Resource Include="Language\Helps\zh-CN\HelpsInAbout.txt" />
+    <Resource Include="Language\Helps\zh-CN\HelpsInDataSync.txt" />
+    <Resource Include="Language\Helps\zh-CN\HelpsInSkyDriveSyncing.txt" />
+    <Resource Include="Language\Helps\zh-CN\HolidayWords.txt" />
+    <Resource Include="Language\Helps\zh-CN\WhatsNewAndNext.txt" />
+    <Resource Include="Language\Helps\zh-HK\HelpsInAbout.txt" />
+    <Resource Include="Language\Helps\zh-HK\HelpsInDataSync.txt" />
+    <Resource Include="Language\Helps\zh-HK\HelpsInSkyDriveSyncing.txt" />
+    <Resource Include="Language\Helps\zh-HK\HolidayWords.txt" />
+    <Resource Include="Language\Helps\zh-HK\WhatsNewAndNext.txt" />
+    <Resource Include="Language\Helps\zh-SG\HelpsInAbout.txt" />
+    <Resource Include="Language\Helps\zh-SG\HelpsInDataSync.txt" />
+    <Resource Include="Language\Helps\zh-SG\HelpsInSkyDriveSyncing.txt" />
+    <Resource Include="Language\Helps\zh-SG\HolidayWords.txt" />
+    <Resource Include="Language\Helps\zh-SG\WhatsNewAndNext.txt" />
+    <Resource Include="Language\Helps\zh-TW\HelpsInAbout.txt" />
+    <Resource Include="Language\Helps\zh-TW\HelpsInDataSync.txt" />
+    <Resource Include="Language\Helps\zh-TW\HelpsInSkyDriveSyncing.txt" />
+    <Resource Include="Language\Helps\zh-TW\HolidayWords.txt" />
+    <Resource Include="Language\Helps\zh-TW\WhatsNewAndNext.txt" />
+    <Resource Include="Language\LocalizedResources\en-US\DefaultAccounts.xml" />
+    <Resource Include="Language\LocalizedResources\en-US\DefaultCategories.xml" />
+    <Resource Include="Language\LocalizedResources\en-US\DefaultPeopleGroup.xml" />
+    <Resource Include="Language\LocalizedResources\zh-CN\DefaultAccounts.xml" />
+    <Resource Include="Language\LocalizedResources\zh-CN\DefaultCategories.xml" />
+    <Resource Include="Language\LocalizedResources\zh-CN\DefaultPeopleGroup.xml" />
+    <Resource Include="Language\LocalizedResources\zh-TW\DefaultAccounts.xml" />
+    <Resource Include="Language\LocalizedResources\zh-TW\DefaultCategories.xml" />
+    <Resource Include="Language\LocalizedResources\zh-TW\DefaultPeopleGroup.xml" />
+    <Content Include="Properties\AppManifest.xml" />
+    <Content Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="AppResLib.dll.0404.mui" />
+    <Content Include="AppResLib.dll.0407.mui" />
+    <Content Include="AppResLib.dll.0409.mui" />
+    <Content Include="AppResLib.dll.040c.mui" />
+    <Content Include="AppResLib.dll.0410.mui" />
+    <Content Include="AppResLib.dll.0804.mui" />
+    <Content Include="AppResLib.dll.0809.mui" />
+    <Content Include="AppResLib.dll.0c04.mui" />
+    <Content Include="AppResLib.dll.0c0a.mui" />
+    <Content Include="AppResLib.dll.1004.mui" />
+    <Content Include="AppResLib.dll.1404.mui" />
+    <Resource Include="Resources\templetes\summaryTemplete.xls" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\CurrencyConverterByWebService\currencyconvertor.wsdl" />
+    <Resource Include="Resources\currencyRateTableContent.txt" />
+    <Resource Include="Resources\defaultCategorys.xml" />
+    <Content Include="Resources\sounds\RepaymentNotification\RepaymentArrive.en-US.mp3" />
+    <Content Include="Resources\sounds\RepaymentNotification\RepaymentArrive.zh-CN.mp3" />
+    <Content Include="Resources\sounds\RepaymentNotification\RepaymentArrive.zh-TW.mp3" />
+    <Content Include="Service References\DataSynchronizationService\configuration.svcinfo" />
+    <Content Include="Service References\DataSynchronizationService\configuration91.svcinfo" />
+    <Content Include="Service References\DataSynchronizationService\item.disco" />
+    <Content Include="Service References\DataSynchronizationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </Content>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\DataSynchronizationService\DataSynchronizationService.wsdl" />
+    <None Include="Service References\DataSynchronizationService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSynchronizationService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSynchronizationService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSynchronizationService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataSynchronizationService\TinyMoneyManager.DataSynchronizationService.DataSynchronizationArgs.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\CurrencyConverterByWebService\currencyconvertor.disco" />
+    <None Include="Service References\CurrencyConverterByWebService\configuration91.svcinfo" />
+    <None Include="Service References\CurrencyConverterByWebService\configuration.svcinfo" />
+    <None Include="Service References\CurrencyConverterByWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TinyMoneyManager.Data\TinyMoneyManager.Data.csproj">
+      <Project>{4425D2E8-01B1-4355-B920-814255201DD3}</Project>
+      <Name>TinyMoneyManager.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CurrencyConverterByWebService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bin\" />
+    <Folder Include="Controls\AccountManagement\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Language\AppResources.de-DE.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.en-AU.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.en-SG.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.en-US.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.zh-CN.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.zh-HK.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.zh-SG.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\AppResources.zh-TW.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

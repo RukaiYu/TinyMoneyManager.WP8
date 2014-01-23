@@ -1,0 +1,96 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TinyMoneyManager.Pages.VoiceCommand.ChangeNumbericRange"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,40,0,12">
+            <TextBlock x:Name="ApplicationTitle"  Text="{Binding Path=Localizedresources.VoiceCommandSetting, Source={StaticResource lcs},Converter={StaticResource ToUpperConverter}}" Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=Localizedresources.ChangePriceValueRange, Source={StaticResource lcs},Converter={StaticResource ToUpperConverter}}"
+                       Margin="12,12,0,0" Style="{StaticResource PhoneTextTitle2Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Grid.Row="0" Margin="0,0,0,28">
+                    <TextBlock x:Name="KeyNameBlock"  Text="{Binding Path=Localizedresources.MinumValue, Source={StaticResource lcs},Converter={StaticResource ToLowerConverter}}"
+                           Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                    <TextBox x:Name="MininumValue" Text="1" LostFocus="MininumValue_LostFocus_1" InputScope="Number"/>
+
+                    <TextBlock Text="{Binding Path=Localizedresources.MaximumValue, Source={StaticResource lcs},Converter={StaticResource ToLowerConverter}}"
+                           Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                    <Slider SmallChange="0.5" LargeChange="0.5" x:Name="MaximumValue"
+                        Minimum="{Binding ElementName=MininumValue,Path=Text}" />
+
+                    <TextBlock x:Name="MaximumValueShower" Text="1.0" Style="{StaticResource PhoneTextSubtleStyle}"
+                           Margin="12,-24,0,12"/>
+
+                    <CheckBox x:Name="NeedDigits" Content="{Binding Path=Localizedresources.NeedDigitsPart, Source={StaticResource lcs},Converter={StaticResource ToLowerConverter}}" Unchecked="NeedDigits_Unchecked_1" Checked="NeedDigits_Checked_1" IsChecked="true"/>
+
+                    <TextBlock Text="{Binding Path=Localizedresources.UnitOfPriceTitle, Source={StaticResource lcs},Converter={StaticResource ToLowerConverter}}"
+                           Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                    <TextBox x:Name="UnitValue" Text="dollars"/>
+
+                    <TextBlock 
+                           TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}"
+                           Margin="12,24,0,12">
+                    <Run Text="{Binding Path=Localizedresources.Tips_ChangePriceValueRange, Source={StaticResource lcs},Converter={StaticResource ToLowerConverter}}" />
+                    <LineBreak/>
+                    <LineBreak/>
+                    <Run Text="{Binding Path=Localizedresources.Tips_RecommandPriceValueRange, Source={StaticResource lcs},Converter={StaticResource ToLowerConverter}}" Foreground="{StaticResource PhoneForegroundBrush}"/>
+                    </TextBlock>
+                    <Rectangle  Height="70"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.save.rest.png" Text="Save" Click="SaveButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

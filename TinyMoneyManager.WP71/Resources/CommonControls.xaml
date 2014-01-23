@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:visualizationToolkit="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit" xmlns:System_Windows_Controls_DataVisualization_Charting_Primitives="clr-namespace:System.Windows.Controls.DataVisualization.Charting.Primitives;assembly=System.Windows.Controls.DataVisualization.Toolkit">
+	<!-- Resource dictionary entries should be defined here. -->
+    	<Style TargetType="TextBlock"
+		x:Key="detailsSmallTitle">
+		<Setter Property="FontWeight"
+			Value="Bold" />
+		<Setter Property="HorizontalAlignment"
+			Value="Right" />
+		<Setter Property="FontSize"
+			Value="14" />
+	</Style>
+	<Style TargetType="TextBlock"
+		x:Key="detailsSmallText">
+		<Setter Property="FontSize"
+			Value="14" />
+	</Style>
+
+    <Style x:Key="darkBorder"
+           TargetType="Border">
+        <Setter Property="BorderBrush"
+                Value="Gray" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Padding"
+                Value="10" />
+        <Setter Property="Margin"
+                Value="0,10,0,10" />
+    </Style>
+<!-- Copy of the default Chart template with the LabelArea added. -->
+
+</ResourceDictionary>

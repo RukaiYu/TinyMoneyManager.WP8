@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="TinyMoneyManager.Controls.ExportDataOptionPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:CodeingForFunControls="clr-namespace:Coding4Fun.Phone.Controls.Converters;assembly=Coding4Fun.Phone.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="800" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Height="600" Width="480" Margin="12,12,12,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="72"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <TextBlock Text="{StaticResource GlobalAppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=Localizedresources.ExportData, Source={StaticResource LocalizedStrings}}"  Style="{StaticResource PhoneTextTitle2Style}"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Height="440"  VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <toolkit:ListPicker Name="ExportDataModeSelector" Grid.Row="0" Margin="12,0,30,0" IsEnabled="{Binding EnableChangeExportDataMode}"
+                             SelectionChanged="ExportDataModeSelector_SelectionChanged" SelectedIndex="{Binding ExportDataMode,Mode=TwoWay}"  
+                             Header="{Binding Path=Localizedresources.ExportDataMode, Source={StaticResource LocalizedStrings}}"> 
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.ByEmail, Source={StaticResource LocalizedStrings}}"></toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.BySkyDrive, Source={StaticResource LocalizedStrings}}"></toolkit:ListPickerItem> 
+                </toolkit:ListPicker>
+
+                <TextBlock Margin="12,12,0,0" Grid.Row="1" Name="FileOrSubjectNameLabel" Style="{StaticResource PhoneTextSubtleStyle}"
+        Text="{Binding Path=Localizedresources.FileName, Source={StaticResource LocalizedStrings}}"/>
+
+                <TextBox Name="FilenameBox" Text="{Binding Path=Subject,Mode=TwoWay}" GotFocus="FilenameBox_GotFocus" KeyDown="FilenameBox_KeyDown" Margin="0,-4,18,0" Grid.Row="2"/>
+
+                <toolkit:ListPicker Name="ExportDataTypeSelector" Grid.Row="3" Margin="12,0,30,0" SelectedIndex="{Binding ExportDataType}"
+                             IsEnabled="{Binding Path=EnableChangeExportDataType}" SelectionChanged="ExportDataTypeSelector_SelectionChanged"
+                             Header="{Binding Path=Localizedresources.Data, Source={StaticResource LocalizedStrings}}">
+                    <toolkit:ListPicker.Items>
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.Statistics, Source={StaticResource LocalizedStrings}}"></toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.SelectAccountItemsLabel, Source={StaticResource LocalizedStrings}}"></toolkit:ListPickerItem>
+                    </toolkit:ListPicker.Items>
+                </toolkit:ListPicker>
+
+                <Grid Grid.Row="4" Visibility="{Binding Path=EnableChangeSearchingScope,Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <!--Visibility="Collapsed"-->
+                    <toolkit:ListPicker Margin="12,12,30,0" Header="{Binding Path=Localizedresources.SearchScope, Source={StaticResource LocalizedStrings}}"
+                                                Name="SearchScopeSelector" ExpansionMode="ExpansionAllowed" SelectedIndex="{Binding SearchingScopeIndex,Mode=TwoWay}">
+                        <toolkit:ListPicker.FullModeItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding .}" FontSize="32" Margin="{StaticResource PhoneTouchTargetOverhang}"/>
+                            </DataTemplate>
+                        </toolkit:ListPicker.FullModeItemTemplate>
+                    </toolkit:ListPicker>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+    
+        <StackPanel VerticalAlignment="Bottom"  Margin="0,0,18,0" Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Content="{Binding Path=Localizedresources.ExportReport, Source={StaticResource LocalizedStrings}}" Click="OKButton_Click"/>
+                <Button Grid.Column="1" Content="{Binding Path=Localizedresources.Cancel, Source={StaticResource LocalizedStrings}}" Click="CancelButton_Click"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

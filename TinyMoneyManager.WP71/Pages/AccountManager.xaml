@@ -1,0 +1,179 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.AccountManager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:CodeingForFunControls="clr-namespace:Coding4Fun.Phone.Controls.Converters;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+        xmlns:rlb="clr-namespace:ReorderListBoxDemo"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="2,0,2,0">
+            <controls:Pivot x:Name="AccountsManagerPivots" Title="{StaticResource GlobalAppName}" SelectionChanged="Pivot_SelectionChanged">
+                <controls:PivotItem x:Name="AccountsListPivot" Header="{Binding Path=Localizedresources.AccountList, Source={StaticResource LocalizedStrings}}">
+
+                    <rlb:ReorderListBox x:Name="AccountsList" IsReorderEnabled="true"
+                                        ItemsSource="{Binding Accounts}" 
+                                        SelectionChanged="AccountsList_SelectionChanged">
+                        <rlb:ReorderListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="12 5 0 0">
+                                    <toolkit:ContextMenuService.ContextMenu >
+                                        <toolkit:ContextMenu IsZoomEnabled="True">
+                                            <toolkit:MenuItem Header="{Binding Path=Localizedresources.SetAsDefault,Source={StaticResource LocalizedStrings}}" x:Name="SetAsDefaultMenuItem" Tag="{Binding}" Click="SetAsDefaultMenuItem_Click"/>
+                                            <toolkit:Separator/>
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}"  Tag="{Binding}" Click="DeleteItem_Click"  />
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Edit,Source={StaticResource LocalizedStrings}}" Tag="{Binding Id}"  Click="EditItem_Click"/>
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.ViewTransferingHistory,Source={StaticResource LocalizedStrings}}" Tag="{Binding Id}"  Click="ViewTransferingHistory_Click"/>
+                                            <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.ViewMonthlyBalance,Source={StaticResource LocalizedStrings}}" IsEnabled="False" Tag="{Binding}"/>
+                                        </toolkit:ContextMenu>
+                                    </toolkit:ContextMenuService.ContextMenu>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Rectangle Grid.Column="0" Fill="{Binding CategoryColor}" Width="12" Height="60"/>
+
+                                    <StackPanel Grid.Column="1" Orientation="Vertical">
+                                        <TextBlock Text="{Binding NameInfo}"  Style="{StaticResource PhoneTextNormalStyle}" Foreground="{Binding ColorForName}"/>
+                                        <!--BalanceInfo-->
+                                        <TextBlock Text="{Binding BalanceInfo}" VerticalAlignment="Bottom" Style="{StaticResource PhoneTextSubtleStyle}" ></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </rlb:ReorderListBox.ItemTemplate>
+                    </rlb:ReorderListBox>
+
+                </controls:PivotItem>
+                <controls:PivotItem x:Name="HistoryPivotItem" Header="{Binding Path=Localizedresources.ViewTransferingHistory, Source={StaticResource LocalizedStrings}}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" x:Name="Controller"  VerticalAlignment="Top">
+                            <toolkit:ListPicker x:Name="FilterType" Width="129" Margin="72,4,241,0" VerticalAlignment="Top" SelectedIndex="{Binding Path=FilterTypeIndex,Mode=TwoWay}" >
+                                <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.ByMonth, Source={StaticResource LocalizedStrings}}" />
+                                <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.ByDay, Source={StaticResource LocalizedStrings}}" />
+                            </toolkit:ListPicker>
+                            <Button x:Name="PrevMonth" Content="&lt;"  Width="87"  Height="74"  VerticalAlignment="Top"  Margin="-12,1,367,0" Click="PrevMonth_Click"></Button>
+                            <Button x:Name="NextMonth" Content="&gt;" Width="87" Height="74"  VerticalAlignment="Top"  Margin="376,0,-21,0" Click="NextMonth_Click"></Button>
+                            <toolkit:DatePicker x:Name="DateSelector"  Width="191" Margin="201,1,50,0"  ValueStringFormat="{Binding Path=FormatterForDate}"  Value="{Binding Path= FilterDate,Mode=TwoWay}" Height="74" VerticalAlignment="Top" />
+                        </Grid>
+                        <!--GroupItemTemplate="{StaticResource mainPageGroupItemHeader}"-->
+                        <phone:LongListSelector IsGroupingEnabled="True" JumpListStyle="{StaticResource MainJumpListStyle}" HideEmptyGroups="True" toolkit:TiltEffect.IsTiltEnabled="True" Grid.Row="1" x:Name="TransferingHistoryList" ItemsSource="{Binding GroupItems}"
+                  
+                    GroupHeaderTemplate="{StaticResource mainPageRecordGroupHeader}"
+                    
+                                                  SelectionChanged="TransferingHistoryList_SelectionChanged">
+                            <phone:LongListSelector.ItemTemplate>
+                                <DataTemplate  x:Name="TemplateForTransferingAccountItem">
+                                    <Grid Margin="0,5,0,0">
+                                        <toolkit:ContextMenuService.ContextMenu>
+                                            <toolkit:ContextMenu IsZoomEnabled="True" >
+                                                <toolkit:MenuItem
+Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}"  Tag="{Binding}" Click="Revert_MenuItem_Click"  />
+                                            </toolkit:ContextMenu>
+                                        </toolkit:ContextMenuService.ContextMenu>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Rectangle Margin="12,0,12,0"  Grid.Row="0" Grid.Column="0" Height="80" Width="10" Fill="{Binding Path=FromAccount.Color}" />
+
+                                            <Grid  Grid.Row="0" Grid.Column="1" >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource PhoneTextNormalStyle}"
+                           Foreground="SlateGray">
+                                                    
+                                                    <Run Text="{Binding Path=Localizedresources.From,Source={StaticResource lcs}}"/>
+                                                    <Run Text="{Binding Path=FromAccountName}"/>
+                                                </TextBlock>
+
+                                                <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right"
+                                Text="{Binding Path=AmountInfo}" TextWrapping="NoWrap" Margin="0,0,4,0"
+                                Style="{StaticResource PhoneTextSubtleStyle}"
+                                FontFamily="{StaticResource PhoneFontFamilyNormal}"/>
+
+
+
+                                                <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextNormalStyle}">
+                                                     <Run Text="{Binding Path=Localizedresources.To,Source={StaticResource lcs}}"/>
+                                                    <Run Text="{Binding Path=ToAccountName}"/>
+                                                </TextBlock>
+                                                <TextBlock Grid.Row="2"  Grid.ColumnSpan="2"  Text="{Binding Path=Notes}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFBEBBBB" />
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </phone:LongListSelector.ItemTemplate>
+                        </phone:LongListSelector>
+                    </Grid>
+                </controls:PivotItem>
+
+            </controls:Pivot>
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True"  IsMenuEnabled="True"  >
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.add.rest.png" x:Name="AddAccountIconButton" Text="添加" Click="AddAccountIconButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.transfering.rest.png" x:Name="TransferAccountIconButton" Text="转账" Click="TransferAccountIconButton_Click"/>
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

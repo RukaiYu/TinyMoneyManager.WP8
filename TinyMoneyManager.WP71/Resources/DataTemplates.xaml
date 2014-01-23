@@ -1,0 +1,34 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<DataTemplate x:Key="cityDetails">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="90" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+            <TextBlock Text="Activity: "
+				Grid.Column="0"
+				Grid.Row="0"
+				Style="{StaticResource detailsSmallTitle}" />
+            <TextBlock Text="{Binding Activity}"
+				Grid.Column="1"
+				Grid.Row="0"
+				Style="{StaticResource detailsSmallText}" />
+            <TextBlock Text="Count: "
+				Grid.Column="0"
+				Grid.Row="1"
+				Style="{StaticResource detailsSmallTitle}" />
+            <TextBlock Text="{Binding Count}"
+				Grid.Column="1"
+				Grid.Row="1"
+				Style="{StaticResource detailsSmallText}" />
+		</Grid>
+	</DataTemplate>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="TinyMoneyManager.Controls.AssociatedItemsSelectorInAccountViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:CodeingForFunControls="clr-namespace:Coding4Fun.Phone.Controls.Converters;assembly=Coding4Fun.Phone.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="800" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Height="600" Width="480" Margin="12,12,12,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/> 
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <!--<TextBlock Text="{StaticResource GlobalAppName}" Style="{StaticResource PhoneTextNormalStyle}"/>-->
+            <TextBlock Text="{Binding Path=Localizedresources.Refine, Source={StaticResource LocalizedStrings}}"  Style="{StaticResource PhoneTextTitle2Style}"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Height="440"  VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+
+                <toolkit:ListPicker Name="ExportDataTypeSelector" Grid.Row="3" Margin="12,0,30,0" SelectedIndex="{Binding DataTypeIndex,Mode=TwoWay}"
+                             SelectionChanged="ExportDataTypeSelector_SelectionChanged"
+                             Header="{Binding Path=Localizedresources.Type, Source={StaticResource LocalizedStrings}}">
+                    <toolkit:ListPicker.Items>
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.All, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"></toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.TransferingAccount, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"></toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.SelectAccountItemsLabel, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"></toolkit:ListPickerItem>
+                        <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.BorrowAndLean, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"></toolkit:ListPickerItem>
+                    </toolkit:ListPicker.Items>
+                </toolkit:ListPicker>
+
+                <Grid Grid.Row="4" x:Name="SearchScopeSelector">
+                    <!--Visibility="Collapsed"-->
+                 
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+
+        <StackPanel VerticalAlignment="Bottom"  Margin="0,0,18,0" Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Content="{Binding Path=Localizedresources.OK, Source={StaticResource LocalizedStrings}}" Click="OKButton_Click"/>
+                <Button Grid.Column="1" Content="{Binding Path=Localizedresources.Cancel, Source={StaticResource LocalizedStrings}}" Click="CancelButton_Click"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

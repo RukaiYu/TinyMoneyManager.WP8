@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="TinyMoneyManager.Controls.BudgetSettleMonthlyReportChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <toolkit:ContextMenuService.ContextMenu>
+            <toolkit:ContextMenu IsZoomEnabled="True" >
+                <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.SaveChartAsPicture,Source={StaticResource LocalizedStrings}}" Click="SaveChartAsPictureMenu_Click"/>
+                <toolkit:MenuItem IsEnabled="false"
+                            Header="{Binding Path=Localizedresources.FullScreen,Source={StaticResource LocalizedStrings}}" Click="FullScreenMenu_Click"/>
+            </toolkit:ContextMenu>
+        </toolkit:ContextMenuService.ContextMenu>
+        <vc:Chart xmlns:vc="clr-namespace:Visifire.Charts;assembly=SLWpVisifire.Charts" Background="{StaticResource PhoneBackgroundBrush}"
+                Name="BudgetSettleChart"   BorderThickness="0" Theme="Theme1" Padding="12" ScrollingEnabled="false"  LightingEnabled="False">
+
+            <vc:Chart.Titles>
+                <vc:Title Text="{Binding ChartTitle}" Padding="4"/>
+            </vc:Chart.Titles>
+
+            <vc:Chart.AxesY>
+                <vc:Axis Prefix="{Binding MainCurrencySymbol}" LineThickness="0" />
+            </vc:Chart.AxesY>
+
+            <vc:Chart.AxesX>
+                <vc:Axis Padding="4"/>
+            </vc:Chart.AxesX>
+
+            <vc:Chart.Legends>
+                <vc:Legend Name="Legend1" FontSize="12" Background="Black" LightingEnabled="False"/>
+            </vc:Chart.Legends>
+
+            <vc:Chart.Series>
+                <vc:DataSeries LegendText="" RenderAs="Column" LabelFontSize="22" LabelEnabled="true" Legend="Legend1">
+                    <vc:DataSeries.DataPoints>
+
+                    </vc:DataSeries.DataPoints>
+                </vc:DataSeries>
+                <vc:DataSeries LegendText="" RenderAs="Column" LabelEnabled="true" Legend="Legend1">
+                    <vc:DataSeries.DataPoints>
+
+                    </vc:DataSeries.DataPoints>
+                </vc:DataSeries>
+            </vc:Chart.Series>
+        </vc:Chart>
+    </Grid>
+</UserControl>

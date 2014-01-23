@@ -1,0 +1,141 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.CategoryManager.CategoryManagment"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" >
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <toolkit:LockablePivot x:Name="MainPivot" Title="{StaticResource GlobalAppName}"  SelectionChanged="MainPivot_SelectionChanged">
+        <controls:PivotItem x:Name="ParentCategoriesPivot" Header="">
+            <!--<ScrollViewer  VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">-->
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <HyperlinkButton x:Name="ToggleCategoryTypeButton" Grid.Row="0" Click="ToggleCategoryTypeButton_Click"
+                                            Style="{StaticResource HyperlinkEmptyStyle}">
+                    <StackPanel>
+                        <TextBlock  x:Name="ToggleCategoryTypeButtonTitle" Text="切换类别" Style="{StaticResource PhoneTextAccentStyle}"
+                               toolkit:TiltEffect.SuppressTilt="True"/>
+                        <toolkit:ListPicker Grid.Row="0" x:Name="ff" Width="1" Height="0" ExpansionMode="FullScreenOnly">
+                            <toolkit:ListPicker.FullModeItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Value}" Margin="0 0 0 24" FontSize="26"/>
+                                </DataTemplate>
+                            </toolkit:ListPicker.FullModeItemTemplate>
+                        </toolkit:ListPicker>
+                    </StackPanel>
+
+                </HyperlinkButton>
+
+                <ListBox x:Name="FirstCategoryItems" Grid.Row="1" ItemsSource="{Binding Path=CategoryVM.Parents}" SelectionChanged="FirstCategoryItems_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Left" Margin="{StaticResource PhoneTouchTargetOverhang}">
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu IsZoomEnabled="False">
+                                        <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Name="DeleteMenuItem" Click="DeleteMenuItem_Click"/>
+                                        <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Edit,Source={StaticResource LocalizedStrings}}" Tag="{Binding}"  Name="EditMenuItem" Click="EditMenuItem_Click" />
+                                        <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Add,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Name="AddMenuItem"  Click="AddMenuItem_Click" />
+                                        <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.ViewLogs,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Name="ViewEditMenuItem"  Click="ViewMenuItem_Click"  />
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                <TextBlock FontSize="26"
+                                            Text="{Binding Name}"
+                                               Tag="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </Grid>
+        </controls:PivotItem>
+
+        <controls:PivotItem  x:Name="SecondCategoryPivot" Header="{Binding Path=Localizedresources.SencondaryCategoryName, Source={StaticResource LocalizedStrings}}">
+            <ListBox x:Name="SecondCategoryItems" ItemsSource="{Binding Path=Parent.Children}" SelectionChanged="SecondCategoryItems_SelectionChanged" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="{StaticResource PhoneTouchTargetOverhang}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <toolkit:ContextMenuService.ContextMenu>
+                                <toolkit:ContextMenu IsZoomEnabled="False">
+                                    <toolkit:MenuItem 
+                            Header="{Binding Path=Localizedresources.ToggleFavorite,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="AddAsFavourite_Click"  />
+                                    <toolkit:Separator/>
+                                    <toolkit:MenuItem 
+                            Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="DeleteMenuItem_Click"  />
+                                    <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Edit,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Name="SecondEditMenuItem"  Click="SecondEditMenuItem_Click"  />
+                                    <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.MoveTo,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Name="MoveToMenuItem"  Click="MoveToMenuItem_Click"  />
+                                </toolkit:ContextMenu>
+                            </toolkit:ContextMenuService.ContextMenu>
+                            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                <TextBlock FontSize="26" Text="{Binding Name}">
+                                </TextBlock>
+                                <TextBlock Text="{Binding DefaultAmountString}"  Margin="3,0,0,0" FontSize="22"  VerticalAlignment="Bottom" Style="{StaticResource PhoneTextSubtleStyle}">
+                                </TextBlock>
+                            </StackPanel>
+                            <Grid HorizontalAlignment="Right" Grid.Column="1">
+                                <Image Source="{Binding Path=FavouriteIconString}" Height="24" Width="24" x:Name="ToggleFavourite"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </controls:PivotItem>
+
+    </toolkit:LockablePivot>
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.add.rest.png" x:Name="AddAccountIconButton" Text="添加" Click="AddButton_Click"/>
+            <!--<shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>-->
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

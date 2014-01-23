@@ -1,0 +1,178 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.RepaymentManagerViews.RepaymentItemEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:CodeingForFunControls="clr-namespace:Coding4Fun.Phone.Controls.Converters;assembly=Coding4Fun.Phone.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"  
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480" 
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <Grid x:Name="LayoutRoot" Height="790" Width="480" Margin="0,0,0,0" >
+        <Grid.Resources>
+            <CodeingForFunControls:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,12,0,0">
+            <TextBlock x:Name="ApplicationTitle" Text="{StaticResource GlobalAppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="ManagementPageTitle" Text="{Binding EditorPageTitle}"  Style="{StaticResource PhoneTextTitle2Style}"/>
+        </StackPanel>
+        <ScrollViewer  VerticalAlignment="Top" Grid.Row="1" HorizontalScrollBarVisibility="Disabled" Height="620" VerticalScrollBarVisibility="Auto">
+            <Grid Margin="10,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <toolkit:ListPicker x:Name="AccountName" Margin="1,3" IsEnabled="{Binding Path=Current.CanChangeStatus}" ExpansionMode="ExpansionAllowed" 
+                                        FullModeItemTemplate="{StaticResource accountListTemplete}"  
+                                        Header="{Binding Path=Localizedresources.RepayAccountName, Source={StaticResource LocalizedStrings}}"
+                                        Width="439" FullModeHeader="{Binding Path=Localizedresources.AccountSelectorHeader, Source={StaticResource LocalizedStrings}}" 
+                                        ItemsSource="{Binding BankOrCreditAccounts}" SelectedItem="{Binding Path=Current.PayToAccount}" CacheMode="BitmapCache">
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Fill="{Binding CategoryColor}"  Width="14" Height="24"/>
+                                    <TextBlock Text="{Binding Name}" Margin="12 0 0 0"/>
+                                    <TextBlock Text=" , "></TextBlock>
+                                    <TextBlock Text="{Binding BalanceInfo}" FontSize="18" Margin="0,0,0,1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                    </toolkit:ListPicker>
+                    <Grid x:Name="InfoWhenRepaymentCompletedGrid">
+                        <TextBlock x:Name="AmountWillAddedToRepayToAccountMessage" Foreground="LightGray" HorizontalAlignment="Left" Text="{Binding Path=Localizedresources.AmountWillAddedToRepayToAccountMessage, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" ></TextBlock>
+                        <TextBlock x:Name="AmountWillAddedToRepayToAccount" HorizontalAlignment="Right" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneAccentBrush}" Text=""></TextBlock>
+                    </Grid>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <toolkit:ListPicker x:Name="FromAccountName" Margin="1,3" ExpansionMode="ExpansionAllowed" 
+                                        FullModeItemTemplate="{StaticResource accountListTemplete}" IsEnabled="{Binding Path=Current.CanChangeStatus}"
+                                        Header="{Binding Path=Localizedresources.RepayFromAccountName, Source={StaticResource LocalizedStrings}}"
+                                        Width="439" FullModeHeader="{Binding Path=Localizedresources.AccountSelectorHeader, Source={StaticResource LocalizedStrings}}" 
+                                        ItemsSource="{Binding Accounts}" SelectedItem="{Binding Path=Current.PayFromAccount,Mode=TwoWay}" CacheMode="BitmapCache">
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Fill="{Binding CategoryColor}"  Width="14" Height="24"/>
+                                    <TextBlock Text="{Binding Name}" Margin="12 0 0 0"/>
+                                    <TextBlock Text=" , "></TextBlock>
+                                    <TextBlock Text="{Binding BalanceInfo}" FontSize="18" Margin="0,0,0,1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                    </toolkit:ListPicker>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=Localizedresources.Amount, Source={StaticResource LocalizedStrings}}" ></TextBlock>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <TextBox x:Name="MoneyCurrency" IsEnabled="False" FontSize="34"  BorderThickness="0"  Grid.Column="0" Text="" Width="58" VerticalAlignment="Bottom"  HorizontalAlignment="Left" Margin="12,0,0,0"/>
+                    <TextBox x:Name="AmountTextBox" Margin="62,-3,0,0" AcceptsReturn="False" IsEnabled="{Binding Path=Current.CanChangeStatus}" InputScope="Number" VerticalAlignment="Bottom" TextChanged="AmountTextBox_TextChanged"/>
+                </Grid>
+                <StackPanel Grid.Row="4" Orientation="Vertical">
+                    <toolkit:ListPicker  x:Name="RepaymentStatus"
+                                         Header="{Binding Path=Localizedresources.CurrentStatus, Source={StaticResource LocalizedStrings}}"
+                                         IsEnabled="{Binding Path=Current.CanChangeStatus}"
+                                         ItemsSource="{Binding Path=RepaymentStatusList, Source={StaticResource repaymentStatusList}}"
+                                        >
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Fill="{Binding Color}"  Width="14" Height="24"/>
+                                    <TextBlock Text="{Binding Name}" Margin="12 0 0 0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                    </toolkit:ListPicker>
+                </StackPanel>
+                <Grid Grid.Row="5" x:Name="RepayAtDateGrid" >
+                    <StackPanel Orientation="Horizontal">
+                        <toolkit:DatePicker x:Name="RepayAtDate"
+                                        Header="{Binding Path=Localizedresources.StartDate, Source={StaticResource LocalizedStrings}}"
+                                        IsEnabled="{Binding Path=Current.CanChangeStatus}"  Width="235"
+                                        Value="{Binding Current.RepayAt}"/>
+                        <toolkit:TimePicker x:Name="RepayAtDateTime"  Header="{Binding Path=Localizedresources.Time, Source={StaticResource LocalizedStrings}}" 
+                                        IsEnabled="{Binding Path=Current.CanChangeStatus}"  Width="235"
+                                        Value="{Binding Current.RepayAt}"/>
+                    </StackPanel>
+                </Grid>
+                <Grid  Grid.Row="6" x:Name="RepayDueDateGrid" >
+                    <StackPanel Orientation="Horizontal">
+                        <toolkit:DatePicker x:Name="RepayDueDate"
+                                        Header="{Binding Path=Localizedresources.DueDate, Source={StaticResource LocalizedStrings}}"
+                                        IsEnabled="{Binding Path=Current.CanChangeStatus}"
+                                        Value="{Binding Current.DueDate}" Width="235" />
+                        <toolkit:TimePicker x:Name="RepayDueDateTime"  Header="{Binding Path=Localizedresources.Time, Source={StaticResource LocalizedStrings}}"  Width="235"
+                                        IsEnabled="{Binding Path=Current.CanChangeStatus}" Value="{Binding Current.DueDate}"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=Localizedresources.Place, Source={StaticResource LocalizedStrings}}" ></TextBlock>
+                </Grid>
+                <Grid Grid.Row="8">
+                    <TextBox x:Name="Place" IsEnabled="{Binding Path=Current.CanChangeStatus}" Text="{Binding Path=Current.Place,Mode=TwoWay}"/>
+                </Grid>
+                <Grid Grid.Row="9">
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=Localizedresources.Description, Source={StaticResource LocalizedStrings}}" ></TextBlock>
+                </Grid>
+                <Grid Grid.Row="10">
+                    <TextBox x:Name="Description" IsEnabled="{Binding Path=Current.CanChangeStatus}" Text="{Binding Path=Current.Notes,Mode=TwoWay}"/>
+                </Grid>
+                <StackPanel x:Name="AlarmOrReminderSettingPanel" Grid.Row="11" Orientation="Vertical">
+                    <CheckBox x:Name="EnableAlarmNotification" IsChecked="{Binding Path=Current.UseAlarm,Mode=TwoWay}" IsEnabled="{Binding Path=Current.CanChangeStatus}" Content="{Binding Path=Localizedresources.EnableAlarm, Source={StaticResource LocalizedStrings}}" Checked="EnableAlarmNotification_Checked" Unchecked="EnableAlarmNotification_Unchecked"/>
+                    <TextBlock Margin="12,0,0,0" Foreground="Gray" Text="{Binding Path=Localizedresources.AlarmTextForRepaymentItem, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar IsVisible="True" Opacity="1" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="SaveAndStay" IconUri="/icons/appbar.check.rest.png" Text="Save"  Click="SaveButton_Click"/>
+            <shell:ApplicationBarIconButton x:Name="Cancel" IconUri="/icons/appbar.close.rest.png" Text="Cancel"  Click="CancelButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

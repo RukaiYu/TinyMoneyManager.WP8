@@ -1,0 +1,108 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.DialogBox.PictureManager.PictureBrowser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+
+    xmlns:CodeingForFunControls="clr-namespace:Coding4Fun.Phone.Controls.Converters;assembly=Coding4Fun.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="{StaticResource GlobalAppName}">
+            <!--Pivot item one-->
+            <controls:PivotItem>
+                <controls:PivotItem.Header>
+                    <TextBlock Text="{Binding Path=Localizedresources.ChoosePictures, Source={StaticResource LocalizedStrings},Converter={StaticResource ToUpperConverter}}"
+                              Style="{StaticResource PhoneTextTitle2Style}" Margin="2 12 0 0"/>
+                </controls:PivotItem.Header>
+                <ListBox x:Name="menuList" CacheMode="BitmapCache" SelectionChanged="menuList_SelectionChanged"
+                          ItemsSource="{Binding Path=Pictures}" Margin="12 12 0 12">
+                    <!--<ListBox.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                          
+                                <ItemsPresenter Grid.Row="0"/>
+                                <Rectangle Height="100" Grid.Row="1"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </ListBox.Template>-->
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <toolkit:WrapPanel ItemWidth="220" ItemHeight="274"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid VerticalAlignment="Top" Margin="2 0 0 12" HorizontalAlignment="Left" Background="{StaticResource PhoneChromeBrush}">
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu IsZoomEnabled="False">
+                                        <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.Remove,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="DeleteBudgetMenuItem"  />
+                                        <toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.EditComments,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Tag="{Binding}"  Click="EditBudgetMenuItem"/>
+                                        <!--<toolkit:MenuItem
+                            Header="{Binding Path=Localizedresources.ViewFull,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Tag="{Binding}"  Click="ViewFullMenuItem"/>-->
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="32"/>
+                                    <RowDefinition Height="183"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="3" Text="{Binding Comments}" Style="{StaticResource PhoneTextNormalStyle}"  HorizontalAlignment="Left" TextWrapping="NoWrap" Grid.Row="0"/>
+                                <Image Margin="0" Source="{Binding Content}" Stretch="Fill" Grid.Row="1" Width="200" Height="173" CacheMode="BitmapCache" />
+                                <TextBlock Margin="3" Text="{Binding CreateDateInfo}" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Left" TextWrapping="NoWrap" Grid.Row="2"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="BrowserLib" IconUri="/icons/appBar/appbar.feature.search.rest.png" Text="browser" Click="BrowserLib_Click"/>
+            <shell:ApplicationBarIconButton x:Name="TakePicture" IconUri="/icons/appBar/appbar.feature.camera.rest.png" Text="take" Click="TakePicture_Click"/>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfAccount xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Account>
+    <Id>ff94ebd3-468a-45c7-9df3-27cca8aeac42</Id>
+    <Category>Cash</Category>
+    <Name>Cash</Name>
+    <CanBeDeleted>false</CanBeDeleted>
+    <CanChangeCategory>false</CanChangeCategory>
+    <Color>magenta</Color>
+    <InitialBalance>0.0000</InitialBalance>
+    <InitialDateTime xsi:nil="true" />
+    <StasticsBlance>true</StasticsBlance>
+    <Balance>0.0000</Balance>
+    <CurrencyType>USD</CurrencyType>
+    <Poundage>0.0000</Poundage>
+    <Currency>USD</Currency>
+    <Money>0.0000</Money>
+  </Account>
+  <Account>
+    <Id>a7628fae-13b8-4e61-ae55-458041f40927</Id>
+    <Category>BankCard</Category>
+    <Name>Salary Card</Name>
+    <CanBeDeleted>true</CanBeDeleted>
+    <CanChangeCategory>true</CanChangeCategory>
+    <Color>teal</Color>
+    <InitialBalance>0.0000</InitialBalance>
+    <InitialDateTime xsi:nil="true" />
+    <StasticsBlance>true</StasticsBlance>
+    <Balance>0.0000</Balance>
+    <CurrencyType>USD</CurrencyType>
+    <Poundage>0.0000</Poundage>
+    <Currency>USD</Currency>
+    <Money>0.0000</Money>
+  </Account>
+</ArrayOfAccount>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://codernet.net" elementFormDefault="qualified" targetNamespace="http://codernet.net" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DataSynchronizationArgs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountItemListXmlSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppSettingsXmlSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryListXmlSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SdfFileContent" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSynchronizationArgs" nillable="true" type="tns:DataSynchronizationArgs" />
+</xs:schema>

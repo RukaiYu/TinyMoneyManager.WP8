@@ -1,0 +1,119 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.DialogBox.EditExpenseOrIncomeSchedule"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+
+    xmlns:toolkit2="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480" 
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SwivelTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SwivelTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SwivelTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SwivelTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="{StaticResource GlobalAppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=Localizedresources.CreateScheduleTask, Source={StaticResource LocalizedStrings},Converter={StaticResource ToUpperConverter}}" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle2Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--<HyperlinkButton x:Name="ToggleCategoryTypeButton" Grid.Row="0" Click="ToggleCategoryTypeButton_Click"
+                                            Style="{StaticResource HyperlinkEmptyStyle}">
+                <StackPanel>
+                    <TextBlock  x:Name="ToggleCategoryTypeButtonTitle" Text="切换类别" Style="{StaticResource PhoneTextAccentStyle}"
+                               toolkit:TiltEffect.SuppressTilt="True"/>
+                    
+                </StackPanel>
+
+            </HyperlinkButton>-->
+            <toolkit:ListPicker Grid.Row="0" x:Name="ItemSelector" Header="{Binding Path=Localizedresources.Type, Source={StaticResource LocalizedStrings}}" SelectionChanged="ItemSelector_SelectionChanged_1">
+                <toolkit:ListPicker.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Value}" /> 
+                    </DataTemplate>
+                </toolkit:ListPicker.ItemTemplate>
+            </toolkit:ListPicker>
+
+            <HyperlinkButton  x:Name="AccountItemInfoEditor" Grid.Row="1"
+                                         Style="{StaticResource HyperlinkEmptyStyle}" Click="AccountItemInfoEditor_Click">
+                <StackPanel Margin="0,0,0,24">
+                    <TextBlock Style="{StaticResource PhoneTextLargeStyle}"
+                               FontSize="{StaticResource PhoneFontSizeLarge}"
+                               Text="{Binding Path=Localizedresources.AccountItemDetailsInfo, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"
+                               VerticalAlignment="Center"/>
+
+                    <TextBlock x:Name="AccountItemTypeAndCategoryInfo" Text="{Binding Path=Localizedresources.TapToCrateOrEdit, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Opacity=".9" Style="{StaticResource PhoneTextAccentStyle}"/>
+                    <TextBlock x:Name="AccountItemAccountName" Text="" Opacity=".9" Style="{StaticResource PhoneTextNormalStyle}"/>
+                    <TextBlock x:Name="AccountItemAccountAmountInfo" Text="" Opacity=".9" Style="{StaticResource PhoneTextAccentStyle}"/>
+                </StackPanel>
+            </HyperlinkButton>
+
+            <HyperlinkButton Visibility="Collapsed" x:Name="NameEditor" Grid.Row="2" IsEnabled="False" toolkit:TiltEffect.IsTiltEnabled="False" toolkit:TiltEffect.SuppressTilt="True"
+                                         Style="{StaticResource HyperlinkEmptyStyle}" Click="NameEditorButton_Click">
+                <StackPanel Margin="0,0,0,24" Grid.Row="0">
+                    <TextBlock Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Text="{Binding Path=Localizedresources.Name, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" VerticalAlignment="Center" >
+                    </TextBlock>
+                    <TextBlock x:Name="NameBlock" Text="{Binding Path=Localizedresources.WatermaskForName, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+                </StackPanel>
+            </HyperlinkButton>
+
+            <toolkit:ToggleSwitch Name="ToggleActiveSwitch" Grid.Row="3" Header="{Binding Path=Localizedresources.Status, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Visibility="Collapsed" IsChecked="true" />
+
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar IsVisible="True" Opacity="0.78" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="SaveAndClose" IconUri="/icons/appbar.Check.rest.png" Text="保存"  Click="SaveAndClose_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.cancel.rest.png" Text="Save" Click="Calcel_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

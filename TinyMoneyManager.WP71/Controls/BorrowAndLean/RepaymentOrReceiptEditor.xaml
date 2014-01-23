@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="TinyMoneyManager.Controls.BorrowAndLean.RepaymentOrReceiptEditor"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" 
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot"  >
+        <ScrollViewer  VerticalAlignment="Top" Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Margin="0,12,0,0" Orientation="Vertical">
+                    <TextBlock x:Name="PeopleNameTitle" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="PeopleName" Style="{StaticResource PhoneTextNormalStyle}" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <Grid Grid.Row="3" Margin="0,12,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3.2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="TotalNeedRepayOrReceieveTitle" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Text="total amount" Grid.Column="0"/>
+                    <TextBlock x:Name="TotalNeedRepayOrReceieveAmount" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Text="$1000.00" Grid.Column="1"/>
+                    <TextBlock x:Name="AlreadyRepayOrReceieveTitle" Grid.Row="1" Style="{StaticResource PhoneTextNormalStyle}" Text="already" Grid.Column="0"/>
+                    <TextBlock x:Name="AlreadyRepayOrReceieveAmount" Grid.Row="1" Style="{StaticResource PhoneTextNormalStyle}" Text="$0500.00" Grid.Column="1"/>
+                    <TextBlock x:Name="RangeOfThisTimeTitle" Grid.Row="2" Style="{StaticResource PhoneTextNormalStyle}" Text="range of this time" Grid.Column="0"/>
+                    <TextBlock x:Name="RangeOfThisTimeAmount" Grid.Row="2" Style="{StaticResource PhoneTextNormalStyle}" Text="$1 ~ ($1000-$500)" Grid.Column="1"/>
+                </Grid>
+
+                <StackPanel Grid.Row="4" Margin="0,12,0,0">
+                    <toolkit:ListPicker x:Name="AccountName" Margin="1,3"
+                                                    Header="{Binding Path=Localizedresources.AccountName, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"
+                                                FullModeItemTemplate="{StaticResource accountListTemplete}" Width="433" SelectionChanged="AccountName_SelectionChanged"
+                                                FullModeHeader="{Binding Path=Localizedresources.AccountSelectorHeader, Source={StaticResource LocalizedStrings}}"
+                                                ItemsSource="{Binding Accounts}" CacheMode="BitmapCache">
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Fill="{Binding CategoryColor}"  Width="14" Height="24"/>
+                                    <TextBlock Text="{Binding Name}" Margin="12 0 0 0"/>
+                                    <TextBlock Text=" , "></TextBlock>
+                                    <TextBlock Text="{Binding BalanceInfo}" FontSize="18" Margin="0,0,0,1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                    </toolkit:ListPicker>
+                </StackPanel>
+                <Grid Grid.Row="5" Margin="0,12,0,0">
+                    <TextBlock x:Name="amountValueTitle" Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=Localizedresources.TotalMoney, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" VerticalAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="6" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="72"></ColumnDefinition>
+                        <ColumnDefinition Width="240"></ColumnDefinition>
+                        <ColumnDefinition Width="72"></ColumnDefinition>
+                        <ColumnDefinition Width="72"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="MoneyCurrency" Foreground="{StaticResource PhoneAccentBrush}" IsEnabled="False" BorderThickness="0" Grid.Column="0" Width="50" HorizontalAlignment="Left"  Text="￥" Margin="12,12,0,10"/>
+                    <TextBox Height="72" InputScope="Number" HorizontalAlignment="Left" Margin="68,8,0,0" x:Name="TotalMoneyBox" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="2" />
+                    <Button x:Name="UpAmountButton"  Grid.Column="2" Margin="0,8,0,0" Content="+" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72" Click="UpAmountButton_Click"></Button>
+                    <Button x:Name="DownAmountButton" Grid.Column="3" Content="-" Margin="0,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72" Click="DownAmountButton_Click"></Button>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}"  Text="{Binding Path=Localizedresources.Notes, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="8">
+                    <TextBox VerticalAlignment="Top"  Height="72" InputScope="Text" HorizontalAlignment="Left" Margin="0,2" x:Name="DescriptionTextBox"  Width="456" />
+                </Grid>
+
+                <Button x:Name="MoreInfoButton" HorizontalAlignment="Left" Height="72" Width="120" Grid.Row="9" Content="{Binding Path=Localizedresources.More, Source={StaticResource LocalizedStrings}}" Click="MoreInfoButton_Click"></Button>
+
+                <Grid Opacity="0" Grid.Row="10" x:Name="MoreInfoPanel" IsHitTestVisible="False">
+                    <StackPanel x:Name="DetailsPanel" >
+                        <toolkit:DatePicker x:Name="ExecuteDate"
+                                                    ValueStringFormat="{}{0:yyyy/MM/dd dddd}" 
+                                                    Header="{Binding Path=Localizedresources.Date, Source={StaticResource LocalizedStrings}}"/>
+
+                        <!--<toolkit:ListPicker x:Name="PeopleSelector" SelectionMode="Multiple" FullModeHeader="{Binding Path=Localizedresources.ChoosePeople, Source={StaticResource LocalizedStrings}}" Header="{Binding Path=Localizedresources.People, Source={StaticResource LocalizedStrings}}" ItemsSource="{Binding Peoples}">
+                                        <toolkit:ListPicker.FullModeItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding DisplayName}"/>
+                                            </DataTemplate>
+                                        </toolkit:ListPicker.FullModeItemTemplate>
+                                    </toolkit:ListPicker>-->
+                        <StackPanel Orientation="Vertical" Visibility="Collapsed">
+                            <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=Localizedresources.Interest, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" VerticalAlignment="Center" />
+                            <TextBox VerticalAlignment="Top" InputScope="Number" HorizontalAlignment="Left" Margin="0,2" x:Name="InterestBox"  Width="456" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Rectangle Height="100" Grid.Row="11"/>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

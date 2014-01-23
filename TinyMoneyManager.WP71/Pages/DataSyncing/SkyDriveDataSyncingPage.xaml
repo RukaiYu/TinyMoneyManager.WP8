@@ -1,0 +1,100 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.DataSyncing.SkyDriveDataSyncingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="clr-namespace:Microsoft.Live.Controls;assembly=Microsoft.Live.Controls" 
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="{StaticResource GlobalAppName}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=Localizedresources.DataSynchronizationButton,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Margin="12,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <HyperlinkButton Click="GoForMoreDataSyncingModeButton_Click"
+                                            Style="{StaticResource HyperlinkEmptyStyle}">
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock  x:Name="DataSyncingMode" Text="{Binding Path=Localizedresources.BySkyDrive,Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextAccentStyle}"
+                               toolkit:TiltEffect.SuppressTilt="True"/>
+                </StackPanel>
+            </HyperlinkButton>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <my:SignInButton x:Name="signInBtn"
+  ClientId="000000004806FB4D" Scopes="wl.signin wl.skydrive_update" IsEnabled="False"
+                             Width="180" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            <toolkit:ListPicker x:Name="SyncActionPicker" IsEnabled="{Binding IsLogonToLiveId}" SelectedIndex="{Binding Path=SyncActionIndex,Mode=TwoWay}" Header="{Binding Path=Localizedresources.SyncAction,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}">
+                <toolkit:ListPicker.Items>
+                    <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.Backup,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"/>
+                    <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.Restore,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}"/>
+                </toolkit:ListPicker.Items>
+            </toolkit:ListPicker>
+
+            <HyperlinkButton Style="{StaticResource HyperlinkEmptyStyle}" IsEnabled="{Binding IsLogonToLiveId}" Click="SyncDataButton_Click">
+                <StackPanel Margin="0,0,0,24">
+                    <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding Path=Localizedresources.SyncData,Converter={StaticResource ToLowerConverter},Source={StaticResource LocalizedStrings}}" >
+                    </TextBlock>
+                    <TextBlock Text="{Binding Path=Localizedresources.SyncDataTips,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Opacity=".7" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}"/>
+                </StackPanel>
+            </HyperlinkButton>
+
+            <HyperlinkButton Style="{StaticResource HyperlinkEmptyStyle}" IsEnabled="{Binding IsLogonToLiveId}" Click="SyncPicturesButton_Click">
+                <StackPanel Margin="0,0,0,24">
+                    <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding Path=Localizedresources.SyncPictures,Converter={StaticResource ToLowerConverter},Source={StaticResource LocalizedStrings}}" >
+                    </TextBlock>
+                    <TextBlock Text="{Binding Path=Localizedresources.SyncPicturesTips,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" Opacity=".7" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}"/>
+                </StackPanel>
+            </HyperlinkButton>
+        </StackPanel>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="V1.9.5" Click="ApplicationBarMenuItem_Click"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

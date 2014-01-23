@@ -1,0 +1,179 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.PreferenceSettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" 
+    xmlns:Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls" 
+    xmlns:utlsControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:localControls="clr-namespace:System.Windows.Controls"
+    xmlns:myApp="clr-namespace:TinyMoneyManager.Component;assembly=TinyMoneyManager" 
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" xmlns:my="clr-namespace:System;assembly=mscorlib">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" >
+        <!--Pivot Control-->
+        <controls:Pivot x:Name="MainPivot" Title="{Binding Path=Localizedresources.AppName,Source={StaticResource LocalizedStrings}}" >
+            <controls:PivotItem Header="{Binding Path=Localizedresources.PreferenceSetting,Source={StaticResource LocalizedStrings}}">
+                <ScrollViewer Margin="0,0,-12,0" VerticalScrollBarVisibility="Disabled">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <toolkit:ListPicker x:Name="ActionAfterAddNewRecord" Header="{Binding Path=Localizedresources.ActionAfterAddNewRecord,Source={StaticResource LocalizedStrings}}" 
+                                          >
+                            <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.ActionAfterAddNewRecord_ToHistoryPage,Source={StaticResource LocalizedStrings}}"/>
+                            <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.ActionAfterAddNewRecord_Exit,Source={StaticResource LocalizedStrings}}"/>
+                        </toolkit:ListPicker>
+
+                        <toolkit:ListPicker x:Name="CategoriesSelectionMode" Header="{Binding Path=Localizedresources.CategoriesSelectionMode,Source={StaticResource LocalizedStrings}}" 
+                                            SelectedIndex="{Binding CategorySelectionModeIndex,Mode=TwoWay}"  Grid.Row="1">
+                            <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.CategoriesSelectionMode_ParentOnly,Source={StaticResource LocalizedStrings}}"/>
+                            <toolkit:ListPickerItem Content="{Binding Path=Localizedresources.CategoriesSelectionMode_SubEnabled,Source={StaticResource LocalizedStrings}}"/>
+                        </toolkit:ListPicker>
+
+                        <toolkit:ToggleSwitch Header="{Binding Path=Localizedresources.AlurmWhenBudgetIsOverByAmount,Source={StaticResource LocalizedStrings}}" Grid.Row="2"
+                                              IsChecked="{Binding Path=AlertWhenBudgetIsOver,Mode=TwoWay}" ></toolkit:ToggleSwitch>
+
+                        <toolkit:ToggleSwitch Header="{Binding Path=Localizedresources.IgnoreCalimRecordsInStatistics,Source={StaticResource LocalizedStrings}}" Grid.Row="3"
+                                              IsChecked="{Binding Path=IgnoreCalimRecords,Mode=TwoWay}" ></toolkit:ToggleSwitch>
+
+
+                        <StackPanel Orientation="Vertical" Grid.Row="4">
+                            <HyperlinkButton Visibility="Collapsed"
+                                         Style="{StaticResource HyperlinkEmptyStyle}" IsEnabled="False">
+                                <StackPanel Margin="0,0,0,24">
+                                    <TextBlock Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding Path=Localizedresources.PreferenceSetting_AddRule,Source={StaticResource LocalizedStrings}}" >
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding Path=Localizedresources.PreferenceSetting_AddRuleTips,Source={StaticResource LocalizedStrings}}" Opacity=".5" Style="{StaticResource PhoneTextNormalStyle}"/>
+                                </StackPanel>
+                            </HyperlinkButton>
+                        </StackPanel>
+                    </Grid>
+
+                </ScrollViewer>
+            </controls:PivotItem>
+
+            <controls:PivotItem x:Name="RulesPivot" Header="{Binding Path=Localizedresources.Templates,Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <HyperlinkButton x:Name="ToggleCategoryTypeButton" Grid.Row="0" Click="ToggleCategoryTypeButton_Click"
+                                            Style="{StaticResource HyperlinkEmptyStyle}">
+                        <StackPanel Margin="0 0 0 24">
+                            <TextBlock  x:Name="ToggleCategoryTypeButtonTitle" Text="切换类别" Style="{StaticResource PhoneTextAccentStyle}"
+                               toolkit:TiltEffect.SuppressTilt="True"/>
+                            <toolkit:ListPicker Grid.Row="0" x:Name="ff" Width="1" Height="0" Visibility="Collapsed" ExpansionMode="FullScreenOnly">
+                                <toolkit:ListPicker.FullModeItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Value}" Margin="0 0 0 24" FontSize="26"/>
+                                    </DataTemplate>
+                                </toolkit:ListPicker.FullModeItemTemplate>
+                            </toolkit:ListPicker>
+                        </StackPanel>
+                    </HyperlinkButton>
+
+                    <toolkit:LongListMultiSelector x:Name="Rulelistbox" Grid.Row="1" ItemsSource="{Binding AccountItemTemplates}" IsSelectionEnabledChanged="MultiselectList_IsSelectionEnabledChanged">
+                        <toolkit:LongListMultiSelector.ItemTemplate>
+                            <DataTemplate>
+                                <!--<Grid>-->
+
+                                <HyperlinkButton Click="BudgetProjectItemButton_Click" Tag="{Binding}"
+                                                 Style="{StaticResource HyperlinkEmptyStyle}" Margin="-32,0,12,12">
+                                    <toolkit:ContextMenuService.ContextMenu>
+                                        <toolkit:ContextMenu  IsZoomEnabled="false">
+                                            <toolkit:MenuItem
+        Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="Delete_Item_Click"  />
+                                            <toolkit:MenuItem
+        Header="{Binding Path=Localizedresources.Edit,Source={StaticResource LocalizedStrings}}" Tag="{Binding}"  Click="Edit_Item_Click"/>
+                                        </toolkit:ContextMenu>
+                                    </toolkit:ContextMenuService.ContextMenu>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Rectangle  Margin="0,0,0,0"  Grid.Row="0" Grid.Column="0" Height="80" Width="10" Fill="{Binding Path=ActiveColor}" />
+
+                                        <Grid Grid.Row="0" Grid.Column="1" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Margin="0,0,0,0" Grid.Row="0"
+                             Style="{StaticResource PhoneTextNormalStyle}" Foreground="SlateGray"
+                              Text="{Binding Path=FrequencyName}"></TextBlock>
+                                            <TextBlock Grid.Row="1" Text="{Binding Path=FromAccount.Name}" Style="{StaticResource PhoneTextNormalStyle}"  Margin="0,0,0,0" />
+                                            <TextBlock Grid.Row="2" Text="{Binding Path=AssociatedCategory.CategoryInfo}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFBEBBBB" Margin="0,0,0,0" />
+                                        </Grid>
+                                    </Grid>
+                                </HyperlinkButton>
+                                <!--</Grid>-->
+                            </DataTemplate>
+                        </toolkit:LongListMultiSelector.ItemTemplate>
+                        <toolkit:LongListMultiSelector.ItemInfoTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Right"
+                                    Text="{Binding Path=MoneyInfo}" TextWrapping="NoWrap" Margin="0,0,0,0"
+                                    Style="{StaticResource PhoneTextSubtleStyle}"
+                                    FontFamily="{StaticResource PhoneFontFamilyNormal}"/>
+                            </DataTemplate>
+                        </toolkit:LongListMultiSelector.ItemInfoTemplate>
+                    </toolkit:LongListMultiSelector>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

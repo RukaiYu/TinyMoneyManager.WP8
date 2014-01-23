@@ -1,0 +1,103 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.VoiceCommandSettings"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:localControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="{StaticResource GlobalAppName}">
+            <controls:PivotItem x:Name="AppUpdating" Header="{Binding Path=Localizedresources.VoiceCommandSetting, Source={StaticResource lcs},Converter={StaticResource ToUpperConverter}}" >
+                <ScrollViewer VerticalScrollBarVisibility="Disabled">
+                    <Grid>
+                        <StackPanel Grid.Row="0">
+                            <!--<toolkit:ToggleSwitch Header="语音记账功能"
+                                              IsChecked="{Binding EnableVoiceCommand,Mode=TwoWay}" x:Name="EnableVoiceCommandSwitcher"/>-->
+
+                            <TextBlock Text="{Binding Path=Localizedresources.VoiceCommandPrefix, Source={StaticResource lcs}}" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            <TextBox x:Name="CommandPrefix" Text="{Binding Path=AppSettng.VoiceCommandSetting_CommandPrefix,Mode= TwoWay}"/>
+                            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12 0 0 24"
+                                       Opacity="0.6"
+                                       Text="{Binding Path=Localizedresources.VoiceCommandPrefix_Tips, Source={StaticResource lcs}}"
+                                       TextWrapping="Wrap"/>
+                            <TextBlock Name="SettupCategoriesForVoiceCommandInfoBlock"
+                                       Text="{Binding Path=Localizedresources.Lable_CurrentVoiceLanguage, Source={StaticResource lcs}}" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            <TextBlock Text="{Binding SpeechLanguage}" Style="{StaticResource PhoneTextAccentStyle}"/>
+                            <TextBlock Text="{Binding Path=Localizedresources.Lable_CurrentVoiceLanguage_Tips, Source={StaticResource lcs}}"
+                                       TextWrapping="Wrap" Margin="12,12" Style="{StaticResource PhoneTextNormalStyle}"/>
+                            <!--
+                            <Button x:Name="SettupCategoriesForVoiceCommand"
+                                    HorizontalAlignment="Left"
+                                    Content="管理参与语音记账的类别列表" Click="SettupCategoriesForVoiceCommand_Click" />
+
+                            <TextBlock Name="SettupCategoriesForVoiceCommandInfoBlock"
+                                       Text="当前包含：5个类别" Style="{StaticResource PhoneTextSubtleStyle}"/>
+
+                          <Button x:Name="AccountsForVoiceCommand" Margin="0,24,0,0"
+                                    HorizontalAlignment="Left"
+                                    Content="管理参与语音记账的账户列表" Click="SettupAccountsForVoiceCommand_Click" />
+
+                            <TextBlock Name="AccountsForVoiceCommanddInfoBlock"
+                                       Text="当前包含：全部账户" Style="{StaticResource PhoneTextSubtleStyle}"/>-->
+
+                            <Button x:Name="UpdateVoiceCommand"
+                                    HorizontalAlignment="Left"
+                                    Content="{Binding Path=Localizedresources.UpdateVoiceCommandData, Source={StaticResource lcs}}" Click="UpdateVoiceCommand_Click" />
+                            <TextBlock
+                                       TextWrapping="Wrap"
+                                       Style="{StaticResource PhoneTextSubtleStyle}">
+                                <Run Text="{Binding Path=Localizedresources.Message_NoticeForPriceValueInVoiceCommandData, Source={StaticResource lcs}}"/>
+                                <LineBreak/>
+                                <Run Text="{Binding Path=AppSettng.VoiceCommandSettingMininumValue}"/>
+                                <Run Text=" ~ "/>
+                                <Run Text="{Binding Path=AppSettng.VoiceCommandSettingMaximumValue}"/>
+                                <Run Text="{Binding Path=AppSettng.VoiceCommandSettingUnitOfPrice}"/>
+                                <Run Text=","/>
+                                <Run Text="{Binding Path=AppSettng.VoiceCommandSettingWithDigitsText}"/>
+                            </TextBlock>
+                            <HyperlinkButton Content="{Binding Path=Localizedresources.ChangeNumbericRange, Source={StaticResource lcs}}" Margin="0,12,0,0" Click="ChangeNumbericRange_Click" HorizontalAlignment="Left"/>
+                            <HyperlinkButton Content="{Binding Path=Localizedresources.PrivaryStatement, Source={StaticResource lcs}}" Click="PrivaryStatement_Click" HorizontalAlignment="Left" Margin="0,12,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

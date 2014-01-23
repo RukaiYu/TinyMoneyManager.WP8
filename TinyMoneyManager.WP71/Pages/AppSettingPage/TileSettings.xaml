@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.TileSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:localControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="{StaticResource GlobalAppName}">
+            <controls:PivotItem x:Name="AppUpdating" Header="磁贴设置" >
+
+                <StackPanel>
+
+                    <!--<toolkit:ToggleSwitch Header="丰富内容磁贴支持"
+                                           x:Name="EnableRichContentTileSwitcher">
+                    </toolkit:ToggleSwitch>-->
+                    <toolkit:ListPicker x:Name="TileType" Header="磁贴">
+                        <toolkit:ListPicker.Items>
+                            <toolkit:ListPickerItem Content="主程序磁贴"/>
+                            <toolkit:ListPickerItem Content="新建一笔磁贴"/>
+                        </toolkit:ListPicker.Items>
+                    </toolkit:ListPicker>
+
+                    <toolkit:ListPicker x:Name="TileStyle" Header="磁贴风格">
+                        <toolkit:ListPicker.Items>
+                            <toolkit:ListPickerItem Content="默认(不显示任何信息)"/>
+                            <toolkit:ListPickerItem Content="显示简要的统计信息(今日+本周)"/>
+                            <toolkit:ListPickerItem Content="*显示即将进行的计划(3条)"/>
+                        </toolkit:ListPicker.Items>
+                    </toolkit:ListPicker>
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}"
+                               Text="带“*”项需要 Windows Phone 7.8 以上版本。"/>
+
+                    <Button Click="Button_Click_1" Content="test"/>
+                </StackPanel>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

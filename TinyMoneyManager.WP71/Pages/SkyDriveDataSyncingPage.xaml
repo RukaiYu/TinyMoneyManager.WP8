@@ -1,0 +1,157 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.SkyDriveDataSyncingPage"
+    xmlns:my="clr-namespace:Microsoft.Live.Controls;assembly=Microsoft.Live.Controls"  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" 
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:CodeingForFunControls="clr-namespace:Coding4Fun.Phone.Controls.Converters;assembly=Coding4Fun.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.Resources>
+            <CodeingForFunControls:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <!--stepSuccessFulConvert -->
+            <Style x:Key="StepImageStyle" TargetType="Image">
+                <Setter Property="Width" Value="16"></Setter>
+                <Setter Property="Height" Value="16"></Setter>
+                <Setter Property="Margin" Value="0,0,2,0"></Setter>
+            </Style>
+        </Grid.Resources>
+        <!--Pivot Control-->
+        <controls:Pivot x:Name="PivotItemContainer" Title="{StaticResource GlobalAppName}" SelectionChanged="Pivot_SelectionChanged">
+            <!--Pivot item one-->
+            <controls:PivotItem x:Name="DataSynchronizationPivot" Header="{Binding Path=Localizedresources.DataSyncingWithSkyDrive, Source={StaticResource LocalizedStrings}}">
+                <!--<ScrollViewer HorizontalScrollBarVisibility="Disabled"   VerticalScrollBarVisibility="Auto">-->
+                <Grid x:Name="ContentPanel">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid  Grid.Row="0" >
+                        <StackPanel x:Name="SyncActionPickerRow" Orientation="Horizontal">
+                            <my:SignInButton x:Name="signInBtn"
+  ClientId="000000004806FB4D" 
+                             Scopes="wl.signin wl.skydrive_update" IsEnabled="False"
+                             Margin="0,0,0,0" Width="180"  VerticalAlignment="Top"/>
+                            <toolkit:ListPicker x:Name="SyncActionPicker" IsEnabled="False" Margin="12,2,12,0" Width="260"  >
+
+                            </toolkit:ListPicker>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1" x:Name="FileNameTextBoxBtnRow">
+                        <Button x:Name="FileNameTextBoxBtn" Content="File name" FontSize="24" toolkit:TiltEffect.IsTiltEnabled="True" Click="FileNameTextBoxBtn_Click"
+                                VerticalAlignment="Center"/>
+                    </Grid>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <Button x:Name="StartButton" Height="72" Content="{Binding Path=Localizedresources.Start, Source={StaticResource LocalizedStrings}}" Click="StartButton_Click"></Button>
+                        <Button x:Name="StopButton" Height="72" IsEnabled="False" Content="{Binding Path=Localizedresources.Stop, Source={StaticResource LocalizedStrings}}" Click="StopButton_Click"></Button>
+                        <Button x:Name="ChangeFileNameButton" Height="72" IsEnabled="False" Content="{Binding Path=Localizedresources.ChangeFileName, Source={StaticResource LocalizedStrings}}" Click="ChangeFileNameButton_Click"></Button>
+                    </StackPanel>
+                    <Grid Grid.Row="3">
+                        <TextBlock Style="{StaticResource PhoneTextNormalStyle}"  TextWrapping="Wrap"  Foreground="Gray" Text="{Binding Path=Localizedresources.DontLeaveSyncPageTips, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" />
+                    </Grid>
+                    <Grid Grid.Row="4" Margin="20,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Margin="0,2,0,0"  x:Name="ConnectServerStepPanel"  Visibility="{Binding Path=Step.IsStart,Converter={StaticResource BooleanToVisibilityConverter}}"  HorizontalAlignment="Left"  Orientation="Horizontal">
+                            <Image  Style="{StaticResource StepImageStyle}" Source="{Binding  Step.StepStatusImage}" Stretch="None"></Image>
+                            <TextBlock FontSize="20"  Text="{Binding Path=Step.StepInfo}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1"  Margin="0,2,0,0" x:Name="DatatransferingStepPanel" Visibility="{Binding Path=Step.IsStart,Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Left"  Orientation="Horizontal">
+                            <Image  Style="{StaticResource StepImageStyle}"  Source="{Binding Step.StepStatusImage}" Stretch="None"></Image>
+                            <TextBlock FontSize="20"   Text="{Binding Path=Step.StepInfo}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Margin="0,2,0,0"  x:Name="DataCheckStepPanel" Visibility="{Binding Path=Step.IsStart,Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"  HorizontalAlignment="Left"  Orientation="Horizontal">
+                            <Image Style="{StaticResource StepImageStyle}"  Source="{Binding  Step.StepStatusImage}" Stretch="None"></Image>
+                            <TextBlock FontSize="20"  Text="{Binding Path=Step.StepInfo}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Margin="0,2,0,0" x:Name="RestoreCheckingStatusPanel" Visibility="{Binding Path=IsFinished, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Margin="0,2,0,0" x:Name="ActionEndingStepPanel"  Visibility="{Binding Path=Step.IsStart,Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Left"  Orientation="Horizontal">
+                            <Image Style="{StaticResource StepImageStyle}" Source="{Binding Path= Step.StepStatusImage}" Stretch="None"></Image>
+                            <TextBlock FontSize="20"   Text="{Binding Path=Step.StepInfo}"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="5" x:Name="ProcessBarRow" Margin="20,0,0,0" Visibility="Collapsed">
+                        <toolkit:PerformanceProgressBar  IsIndeterminate="True"  x:Name="MainProcess" >
+                        </toolkit:PerformanceProgressBar>
+                    </Grid>
+                </Grid>
+                <!--</ScrollViewer>-->
+            </controls:PivotItem>
+            <controls:PivotItem x:Name="HelpPivot"  Header="{Binding Path=Localizedresources.Tips, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <ListBox x:Name="TipsListBox"  ItemsSource="{Binding SynchronizationTips}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="{Binding ID}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="1">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="{Binding Text}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    <!--<phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar IsVisible="True" Opacity="0.78" IsMenuEnabled="True" Mode="Minimized">
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+</phone:PhoneApplicationPage>

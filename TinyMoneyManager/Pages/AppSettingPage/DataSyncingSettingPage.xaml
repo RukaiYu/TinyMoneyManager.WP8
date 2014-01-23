@@ -1,0 +1,112 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.DataSyncingSettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:localControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="{StaticResource GlobalAppName}">
+            <controls:PivotItem  x:Name="DataSynchronizationPivot" Header="{Binding Path=Localizedresources.DataSynchronization, Source={StaticResource LocalizedStrings}}">
+                <Grid x:Name="SyncSettingGrid" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Path=Localizedresources.SyncServerIPAddressLabelText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Margin="12,0,0,4" />
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackPanel x:Name="IPRow" Grid.Row="0" Orientation="Horizontal">
+                                <TextBox Height="72"  TabIndex="10" KeyDown="IPNodeKeyDown" IsTabStop="True"   Width="100" Tag="" AcceptsReturn="False"  InputScope="Number" GotFocus="IPTextBoxFocus" Text="{Binding Path=AppSetting.ServerSyncIPAddress.IPAddressA,Mode=TwoWay}" Margin="0,2" MaxLength="3" Name="ServerIPOne" VerticalAlignment="Center"/>
+                                <TextBlock  VerticalAlignment="Bottom" Margin="0,0,0,9" FontWeight="Bold" Width="7" Text="."></TextBlock>
+                                <TextBox Height="72"  Width="100" KeyDown="IPNodeKeyDown"   IsTabStop="True"  TabIndex="11"  AcceptsReturn="False"  InputScope="Number" GotFocus="IPTextBoxFocus" Text="{Binding Path=AppSetting.ServerSyncIPAddress.IPAddressB,Mode=TwoWay}" Margin="0,2" MaxLength="3" Name="ServerIPTwo" VerticalAlignment="Center"/>
+                                <TextBlock  VerticalAlignment="Bottom" Margin="0,0,0,9" FontWeight="Bold" Width="7" Text="."></TextBlock>
+
+                                <TextBox Height="72" Width="100" KeyDown="IPNodeKeyDown"   IsTabStop="True"  TabIndex="12"  AcceptsReturn="False"  InputScope="Number" GotFocus="IPTextBoxFocus" Text="{Binding Path=AppSetting.ServerSyncIPAddress.IPAddressC,Mode=TwoWay}" Margin="0,2" MaxLength="3" Name="ServerIPThree" VerticalAlignment="Center"/>
+                                <TextBlock  VerticalAlignment="Bottom" Margin="0,0,0,9" FontWeight="Bold" Width="7" Text="."></TextBlock>
+
+                                <TextBox Height="72" Width="100" KeyDown="IPNodeKeyDown"   IsTabStop="True" TabIndex="13" AcceptsReturn="False"  InputScope="Number" GotFocus="IPTextBoxFocus" Text="{Binding Path=AppSetting.ServerSyncIPAddress.IPAddressD,Mode=TwoWay}" Margin="0,2" MaxLength="3" Name="ServerIPFour" VerticalAlignment="Center"/>
+
+                            </StackPanel >
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBlock Foreground="Gray" TextWrapping="Wrap" Text="{Binding Path=Localizedresources.SynchronizationSettingTips, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Path=Localizedresources.SyncServerPortLabelText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Margin="12,0,0,4" />
+                    </Grid>
+                    <Grid Grid.Row="4" HorizontalAlignment="Left">
+                        <TextBox Height="72" KeyDown="IPNodeKeyDown"  TabIndex="14"  Text="{Binding Path=AppSetting.ServerSyncIPAddress.ServerSyncPort,Mode=TwoWay}" Width="205" KeyUp="CommonTextBox_KeyUp" AcceptsReturn="False"  InputScope="Number" GotFocus="IPTextBoxFocus" MaxLength="5"  Margin="0,2" Name="ServerPortTextBox" VerticalAlignment="Center"  />
+                    </Grid>
+                    <Grid  Grid.Row="5">
+                        <!--<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Path=Localizedresources.SyncLogs, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Margin="12,0,0,4" />-->
+                        <Button x:Name="GetPCclientDownloadUrlButton" Content="{Binding Path=Localizedresources.GetPCclientDownloadUrl, Source={StaticResource LocalizedStrings}}" Click="GetPCclientDownloadUrlButton_Click"></Button>
+                    </Grid>
+                    <StackPanel Grid.Row="6" x:Name="LogsRow" Visibility="Collapsed" Orientation="Horizontal" >
+                        <Button x:Name="SendFeedBackButton" Content="{Binding Path=Localizedresources.SendFeedback, Source={StaticResource LocalizedStrings}}"></Button>
+                        <Button x:Name="ViewLogsButton" Content="{Binding Path=Localizedresources.ViewLogs, Source={StaticResource LocalizedStrings}}"></Button>
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

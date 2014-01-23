@@ -1,0 +1,2357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutButtonText" xml:space="preserve">
+    <value>sobre</value>
+  </data>
+  <data name="AboutCashAmountOnAsset" xml:space="preserve">
+    <value>É quantidade de todos as contas de dinheiro.</value>
+  </data>
+  <data name="AboutSwitchScopeForHistoryList" xml:space="preserve">
+    <value>dicas sobre mudar o intervalo de datas para a história</value>
+  </data>
+  <data name="AccountAndTransfering" xml:space="preserve">
+    <value>Conta + Transferência</value>
+  </data>
+  <data name="AccountBalanceNotEnoughMessage" xml:space="preserve">
+    <value>balanço não é suficiente</value>
+  </data>
+  <data name="AccountCategory" xml:space="preserve">
+    <value>categoria da conta</value>
+  </data>
+  <data name="AccountInfo" xml:space="preserve">
+    <value>Informação da conta</value>
+  </data>
+  <data name="AccountItemDetailsInfo" xml:space="preserve">
+    <value>Informações dos detalhes</value>
+  </data>
+  <data name="AccountItemList" xml:space="preserve">
+    <value>lista dos itens da conta</value>
+  </data>
+  <data name="AccountList" xml:space="preserve">
+    <value>lista de contas</value>
+  </data>
+  <data name="AccountManager" xml:space="preserve">
+    <value>gerenciamento da conta</value>
+  </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>conta</value>
+  </data>
+  <data name="AccountSelectorHeader" xml:space="preserve">
+    <value>selecionar conta</value>
+  </data>
+  <data name="ActionAfterAddNewRecord" xml:space="preserve">
+    <value>ação após Adicionar novo registro </value>
+  </data>
+  <data name="ActionAfterAddNewRecord_Exit" xml:space="preserve">
+    <value>voltar ou sair</value>
+  </data>
+  <data name="ActionAfterAddNewRecord_ToHistoryPage" xml:space="preserve">
+    <value>mudar para histórico + página de categorias</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>novo</value>
+  </data>
+  <data name="AddAsFavourite" xml:space="preserve">
+    <value>marcar como favorito</value>
+  </data>
+  <data name="AddBudgetItemFromCategory" xml:space="preserve">
+    <value>fixar orçamento</value>
+  </data>
+  <data name="AddBudgetItemFromCategoryTips" xml:space="preserve">
+    <value>criar ou modificar orçamento</value>
+  </data>
+  <data name="AddBudgetProject" xml:space="preserve">
+    <value>criar projeto</value>
+  </data>
+  <data name="AddButtonText" xml:space="preserve">
+    <value>adicionar</value>
+  </data>
+  <data name="AddPerson" xml:space="preserve">
+    <value>Novo devedor ou credor</value>
+  </data>
+  <data name="AddPicture" xml:space="preserve">
+    <value>adicionar imagem</value>
+  </data>
+  <data name="AddRecordName" xml:space="preserve">
+    <value>Novo Registro</value>
+  </data>
+  <data name="AfterRestoreDataMessage" xml:space="preserve">
+    <value>Reiniciar aplicativo após a restauração de dados.</value>
+  </data>
+  <data name="AlarmNotication" xml:space="preserve">
+    <value>Alarme do lembrete</value>
+  </data>
+  <data name="AlarmTextForRepaymentItem" xml:space="preserve">
+    <value>Se ativo, notificará quando houver um reembolso ativo para concluir.</value>
+  </data>
+  <data name="AlertBoxTitle" xml:space="preserve">
+    <value>Livro Caixa</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tudo</value>
+  </data>
+  <data name="AllAvaliableAssets" xml:space="preserve">
+    <value>Toda verba disponível</value>
+  </data>
+  <data name="AllMyAccount" xml:space="preserve">
+    <value>Verbas</value>
+  </data>
+  <data name="AllRateDataIsFromWebServiceNet" xml:space="preserve">
+    <value>Última sincronizaçãot: {0}
+            http://www.webservicex.net</value>
+  </data>
+  <data name="AllUsersGivenFeedback" xml:space="preserve">
+    <value>traduzido por Rafael Campos.</value>
+  </data>
+  <data name="AlreadyRepayOrReceieveTitle" xml:space="preserve">
+    <value>já {0} </value>
+  </data>
+  <data name="AlurmWhenBudgetIsOverByAmount" xml:space="preserve">
+    <value>Alerta quando o orçamento acabar.</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>quantidade</value>
+  </data>
+  <data name="AmountFormatterAfterWord" xml:space="preserve">
+    <value> quantidade</value>
+  </data>
+  <data name="AmountOfThisTimeFormatter" xml:space="preserve">
+    <value>Quantidade dessa vez {0}</value>
+  </data>
+  <data name="AmountOverAccountBalanceMessage" xml:space="preserve">
+    <value>Quantidade está acima do máximo de {0}.</value>
+  </data>
+  <data name="AmountPencentage" xml:space="preserve">
+    <value>Percentual da quantidade total(%)</value>
+  </data>
+  <data name="AmountShouldBeGreatThanZeroMessage" xml:space="preserve">
+    <value>Quantidade deve ser maior do que 0.00</value>
+  </data>
+  <data name="AmountValueShouldBeGreatThanMinimixValueAlertMessage" xml:space="preserve">
+    <value>Valor montante deve ser maior ou igual que o valor minimizado: {0}</value>
+  </data>
+  <data name="AmountWillAddedToRepayToAccountMessage" xml:space="preserve">
+    <value>O valor será de até:</value>
+  </data>
+  <data name="AppearPeriod" xml:space="preserve">
+    <value>Aparecerá em</value>
+  </data>
+  <data name="Append" xml:space="preserve">
+    <value>Anexar</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>LIVRO CAIXA</value>
+  </data>
+  <data name="AppNameTitle" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="AppSettingTitle_Common" xml:space="preserve">
+    <value>moeda padrão: {0} Comparar informações,: {1}</value>
+  </data>
+  <data name="AppShortDescription" xml:space="preserve">
+    <value>Livro Caixa, vai ajudá-lo a gravar seus registros financeiros, parar melhorar seus hábitos em operações financeiras.</value>
+  </data>
+  <data name="AppShortDescriptionTitle" xml:space="preserve">
+    <value>informações do aplicativo</value>
+  </data>
+  <data name="AppUpdating" xml:space="preserve">
+    <value>dados centrais</value>
+  </data>
+  <data name="AppUpdating_SecondTitleFormatter" xml:space="preserve">
+    <value>atualização de assinatura: {0}</value>
+  </data>
+  <data name="AttachPeople" xml:space="preserve">
+    <value>pessoas ligadas</value>
+  </data>
+  <data name="AutoBackupWhenAppUp" xml:space="preserve">
+    <value>primeiro backup</value>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>backup</value>
+  </data>
+  <data name="BackupAndRestoreDatabaseTips" xml:space="preserve">
+    <value>* Reiniciar aplicativo é necessária para o processamento do backup ou restaurar a operação de banco de dados.</value>
+  </data>
+  <data name="BackupDatabase" xml:space="preserve">
+    <value>grave o banco de dados</value>
+  </data>
+  <data name="BackupDatabaseTips" xml:space="preserve">
+    <value>Grave seu arquivo de banco de dados inteiro, permitindo que você modifique informações diretamente.</value>
+  </data>
+  <data name="BackupDataBeforeUpdating" xml:space="preserve">
+    <value>Backup current version data to local, whenerrors occur when app is upgrading, the file can  be used to restore data.</value>
+  </data>
+  <data name="BackupdataToLocalFailed" xml:space="preserve">
+    <value>Backup de dados falhou! Por favor, reinicie e tente novamente.</value>
+  </data>
+  <data name="BackupdataToLocalSucceed" xml:space="preserve">
+    <value>Backup de sucesso. Você pode ir ao marketplace para atualizar o aplicativo agora!</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>saldo</value>
+  </data>
+  <data name="BankCard" xml:space="preserve">
+    <value>conta bancária</value>
+  </data>
+  <data name="PaymentByInstalments" xml:space="preserve">
+    <value>Pagamento em prestações</value>
+  </data>
+  <data name="BeforeCloseAddBudgetProjectWithBudgetItemsLinkedMessage" xml:space="preserve">
+    <value>Você acrescentou itens ao orçamento, você quer salvar este projeto antes de fechar?</value>
+  </data>
+  <data name="BeforeShowExceptionInfoMessage" xml:space="preserve">
+    <value>Desculpe! Fomos atingidos por uma excepção inesperada! Poderia ajudar-nos envie as informações de erro? (Toque OK para ver e enviar por e-mail).</value>
+  </data>
+  <data name="BlanceInfo" xml:space="preserve">
+    <value>saldo</value>
+  </data>
+  <data name="BlankWithFormatter" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="BorrowAndLean" xml:space="preserve">
+    <value>Emprestado ou empréstimo</value>
+  </data>
+  <data name="BorrowAndLeanManager" xml:space="preserve">
+    <value>Emprestado ou empréstimo</value>
+  </data>
+  <data name="BorrowAndLendAndPeople" xml:space="preserve">
+    <value>Em empréstimo + Pessoas</value>
+  </data>
+  <data name="BorrowIn" xml:space="preserve">
+    <value>Emprestado em</value>
+  </data>
+  <data name="BorrowInOrReceiptFromSbForrmater" xml:space="preserve">
+    <value>{0} {2} from {1}.</value>
+  </data>
+  <data name="BorrowLeanType" xml:space="preserve">
+    <value>tipo de empréstimo</value>
+  </data>
+  <data name="Browser" xml:space="preserve">
+    <value>Navegador</value>
+  </data>
+  <data name="BudgetForCertain" xml:space="preserve">
+    <value>Orçamento para {0}</value>
+  </data>
+  <data name="BudgetForLastMonthCertainExpenseTitle" xml:space="preserve">
+    <value>No mês passado, a despesa da categoria relacionada "{0}" foi:</value>
+  </data>
+  <data name="BudgetIsInControl" xml:space="preserve">
+    <value>Em controle</value>
+  </data>
+  <data name="BudgetIsOverTaken" xml:space="preserve">
+    <value>Superior</value>
+  </data>
+  <data name="BudgetItemSettleType" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="BudgetItemSettleTypeTips" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BudgetManagement" xml:space="preserve">
+    <value>Orçamento</value>
+  </data>
+  <data name="BudgetManagement_ReportForEachMonth" xml:space="preserve">
+    <value>relatório de orçamento mensal</value>
+  </data>
+  <data name="BudgetManagement_ReportForEachMonthTips" xml:space="preserve">
+    <value>ver ou exportar relatório entre orçamento mensal</value>
+  </data>
+  <data name="BudgetProject" xml:space="preserve">
+    <value>projetos</value>
+  </data>
+  <data name="BudgetProjectAssociatedCategories" xml:space="preserve">
+    <value>categorias relacionadas</value>
+  </data>
+  <data name="BudgetProjectWithSameNameExists" xml:space="preserve">
+    <value>Já existe um projeto com o mesmo nome.</value>
+  </data>
+  <data name="BudgetSettle" xml:space="preserve">
+    <value>Estabelecer orçamento</value>
+  </data>
+  <data name="ButtonTextCategoryForCount" xml:space="preserve">
+    <value>Percentual da categoria</value>
+  </data>
+  <data name="ButtonTextCategoryForTotalAmount" xml:space="preserve">
+    <value>Quantidade percentual da categoria</value>
+  </data>
+  <data name="ButtonTextForDayOfDuring" xml:space="preserve">
+    <value>gráfico da duração</value>
+  </data>
+  <data name="ByAccountName" xml:space="preserve">
+    <value>por conta</value>
+  </data>
+  <data name="ByCategoryName" xml:space="preserve">
+    <value>por categoria</value>
+  </data>
+  <data name="ByChildCategoryName" xml:space="preserve">
+    <value>grupo por categoria infantil</value>
+  </data>
+  <data name="ByDay" xml:space="preserve">
+    <value>por dia</value>
+  </data>
+  <data name="ByEmail" xml:space="preserve">
+    <value>por email</value>
+  </data>
+  <data name="ByMonth" xml:space="preserve">
+    <value>por mês</value>
+  </data>
+  <data name="ByParentCategoryName" xml:space="preserve">
+    <value>grupo por categoria adulta</value>
+  </data>
+  <data name="BySkyDrive" xml:space="preserve">
+    <value>do SkyDrive</value>
+  </data>
+  <data name="ByYear" xml:space="preserve">
+    <value>por ano</value>
+  </data>
+  <data name="CalculatingAmountInfoMessage" xml:space="preserve">
+    <value>Calculando informação de quantidade</value>
+  </data>
+  <data name="Calcutor" xml:space="preserve">
+    <value>Calculadora</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>cancelar</value>
+  </data>
+  <data name="Canceled" xml:space="preserve">
+    <value>cancelado</value>
+  </data>
+  <data name="CanTransferToSameAccount" xml:space="preserve">
+    <value>Não pode transferir para mesma conta</value>
+  </data>
+  <data name="CantRevertWhenAccountsNoExistsConfirmationMessage" xml:space="preserve">
+    <value>Lamentamos dizer, as contas relativas a este item não existia em sua lista de conta. Você deseja remover este item? (Toque Ok, para ver as informações.)</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>dinheiro</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="CategoryGroupMode" xml:space="preserve">
+    <value>modo de agrupamento de categoria</value>
+  </data>
+  <data name="CategoryInfo" xml:space="preserve">
+    <value>Informação da categoria</value>
+  </data>
+  <data name="CategoryIsBeenUsedMessage" xml:space="preserve">
+    <value>O objeto de conta que você deseja excluir está sendo utilizado por outras pessoas.</value>
+  </data>
+  <data name="CategoryManagementPageTitle" xml:space="preserve">
+    <value>gerenciamento de categoria</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>nome da categoria</value>
+  </data>
+  <data name="CategoryTitleForAmount" xml:space="preserve">
+    <value>Percentagem do montante total de cada categoria</value>
+  </data>
+  <data name="CategoryTitleForCount" xml:space="preserve">
+    <value>Percentagem de contagem de cada categoria</value>
+  </data>
+  <data name="CategoryType" xml:space="preserve">
+    <value>tipo da categoria</value>
+  </data>
+  <data name="ChangeFileName" xml:space="preserve">
+    <value>renomear</value>
+  </data>
+  <data name="ChangePasswordButtonText" xml:space="preserve">
+    <value>mudar senha</value>
+  </data>
+  <data name="ChartGroupMode" xml:space="preserve">
+    <value>modo de gráfico grupal</value>
+  </data>
+  <data name="ChartPivotForStatisticsPage" xml:space="preserve">
+    <value>gráfico</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Escolher</value>
+  </data>
+  <data name="ChooseCategoryPageTitle" xml:space="preserve">
+    <value>categoria</value>
+  </data>
+  <data name="ChooseDayOfWeek" xml:space="preserve">
+    <value>Escolher dia da semana</value>
+  </data>
+  <data name="ChooseElementForViewModeButtonText" xml:space="preserve">
+    <value>Mês</value>
+  </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>Escolher um arquivo</value>
+  </data>
+  <data name="ChooseFolder" xml:space="preserve">
+    <value>Escolher uma pasta</value>
+  </data>
+  <data name="ChooseMonth" xml:space="preserve">
+    <value>Escolher um mês</value>
+  </data>
+  <data name="ChooseOneTypeFile" xml:space="preserve">
+    <value>Escolher um {0} arquivo</value>
+  </data>
+  <data name="ChooseParentCategory" xml:space="preserve">
+    <value>Escolher categoria principal</value>
+  </data>
+  <data name="ChoosePeople" xml:space="preserve">
+    <value>escolher pessoa</value>
+  </data>
+  <data name="ChoosePicture" xml:space="preserve">
+    <value>Escolher imagem</value>
+  </data>
+  <data name="ChoosePictures" xml:space="preserve">
+    <value>Escolher e colocar imagem</value>
+  </data>
+  <data name="ChooseYear" xml:space="preserve">
+    <value>Escolher ano</value>
+  </data>
+  <data name="ChoseAsResult" xml:space="preserve">
+    <value>escolher como resultado</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>fechar</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Bandeira</value>
+  </data>
+  <data name="ColumnSummaryChartTitle" xml:space="preserve">
+    <value>linear de despesas/receitas</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentários</value>
+  </data>
+  <data name="CommonCurrency" xml:space="preserve">
+    <value>Atualmente em uso</value>
+  </data>
+  <data name="CompareTo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>completado</value>
+  </data>
+  <data name="CompletedAt" xml:space="preserve">
+    <value>completado em</value>
+  </data>
+  <data name="ConfirmDeletingAccountItems" xml:space="preserve">
+    <value>Deletando transações</value>
+  </data>
+  <data name="ConfirmDoingSomething" xml:space="preserve">
+    <value>confirma '{0}' ...</value>
+  </data>
+  <data name="ConfirmMessageWhenDeletingBorrowOrLoan" xml:space="preserve">
+    <value>Esta operação irá remover todos os itens {0} do registro atual. O saldo das contas relacionadas será alterado de volta também.</value>
+  </data>
+  <data name="ConfirmMessageWhenSelecteAFolderToBackupData" xml:space="preserve">
+    <value>Você permite AccountBook criar um arquivo chamado '{0}' na pasta {1} automaticamente? (Você pode renomeá-lo, mais tarde)</value>
+  </data>
+  <data name="ConfirmPasswordText" xml:space="preserve">
+    <value>Confirmar senha</value>
+  </data>
+  <data name="ConfirmRevertAmountToAccount" xml:space="preserve">
+    <value>Você quer que eu reverta o montante para a conta em transação?</value>
+  </data>
+  <data name="ConfirmToSavePictureToPhone" xml:space="preserve">
+    <value>Isso irá gerar imagem e salvar em seu Hub, continuar?</value>
+  </data>
+  <data name="ConfirmToTurnOffAutoBackupFeatureMessaage" xml:space="preserve">
+    <value>Tem certeza que você não quer esta forma automática de proteger seus dados? Se sim, desligue.</value>
+  </data>
+  <data name="ConfirmWhenTemplateIsRecordedForToday" xml:space="preserve">
+    <value>Você gravou o item a partir desse modelo de hoje. Ainda criar um item novo?</value>
+  </data>
+  <data name="ConversionRateProcessIsOnGoingMessage" xml:space="preserve">
+    <value>A sincronização está processando, o que vai demorar alguns minutos para terminar. Por favor, aguarde ...</value>
+  </data>
+  <data name="CountPencentage" xml:space="preserve">
+    <value>Porcentagem de contagens (%)</value>
+  </data>
+  <data name="Cover" xml:space="preserve">
+    <value>proteger</value>
+  </data>
+  <data name="CoverOrAppend" xml:space="preserve">
+    <value>proteger ou anexar?</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="CreateAccountItemForSchedule" xml:space="preserve">
+    <value>Item programado</value>
+  </data>
+  <data name="CreateAt" xml:space="preserve">
+    <value>Criar em</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Data de criação</value>
+  </data>
+  <data name="CreateExpenseOrIncomeSchedule" xml:space="preserve">
+    <value>Criar agendamento</value>
+  </data>
+  <data name="CreateNewItem" xml:space="preserve">
+    <value>novo</value>
+  </data>
+  <data name="CreateOrEditBaymentByInstalmentsItem" xml:space="preserve">
+    <value>{0} item de pagamento parcelado</value>
+  </data>
+  <data name="CreateScheduleTask" xml:space="preserve">
+    <value>Criar agendamento</value>
+  </data>
+  <data name="CreateTime" xml:space="preserve">
+    <value>criar tempo</value>
+  </data>
+  <data name="CreatingFolder" xml:space="preserve">
+    <value>Criando pasta...</value>
+  </data>
+  <data name="CreatingFolderSuccessfully" xml:space="preserve">
+    <value>A pasta raiz foi criada, pode sincronizar agora.</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Crédito</value>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Cartão de crédito</value>
+  </data>
+  <data name="Creditor" xml:space="preserve">
+    <value>Credor</value>
+  </data>
+  <data name="CurrencyRateTable_LastSyncTime" xml:space="preserve">
+    <value>última vez em sincronia: {0}</value>
+  </data>
+  <data name="CurrencySetting" xml:space="preserve">
+    <value>taxa de câmbio</value>
+  </data>
+  <data name="CurrencyTableUpdatingNotes" xml:space="preserve">
+    <value>Mesa de câmbio atualizada.</value>
+  </data>
+  <data name="CurrencyType" xml:space="preserve">
+    <value>moeda</value>
+  </data>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>saldo</value>
+  </data>
+  <data name="CurrentCategoryParentIs" xml:space="preserve">
+    <value>Categoria selecionada:</value>
+  </data>
+  <data name="CurrentDatabase" xml:space="preserve">
+    <value>Banco de dados principal</value>
+  </data>
+  <data name="CurrentMonth" xml:space="preserve">
+    <value>Mês atual</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>senha atual</value>
+  </data>
+  <data name="CurrentPasswordError" xml:space="preserve">
+    <value>a senha atual está incorreta.</value>
+  </data>
+  <data name="CurrentStatus" xml:space="preserve">
+    <value>status atual.</value>
+  </data>
+  <data name="CurrentStepReplacer" xml:space="preserve">
+    <value>ado</value>
+  </data>
+  <data name="CurrentWeek" xml:space="preserve">
+    <value>Semana atual</value>
+  </data>
+  <data name="CurrentYear" xml:space="preserve">
+    <value>Ano atual</value>
+  </data>
+  <data name="Customize" xml:space="preserve">
+    <value>Personalize</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>dados</value>
+  </data>
+  <data name="DatabaseVersion" xml:space="preserve">
+    <value>Database versão: {0}</value>
+  </data>
+  <data name="DataFile" xml:space="preserve">
+    <value>arquivo de dados</value>
+  </data>
+  <data name="DataSynchronization" xml:space="preserve">
+    <value>Sincronização</value>
+  </data>
+  <data name="DataSynchronizationButton" xml:space="preserve">
+    <value>Sincronizando dados</value>
+  </data>
+  <data name="DataSyncingOperationSuccessfullyMessage" xml:space="preserve">
+    <value>Congregação! Os dados foram enviados para o servidor!</value>
+  </data>
+  <data name="DataSyncingSuccessfulMessage" xml:space="preserve">
+    <value>sincronização de dados completa</value>
+  </data>
+  <data name="DataSyncingWithSkyDrive" xml:space="preserve">
+    <value>sincronizando com o SkyDrive</value>
+  </data>
+  <data name="DataSyncing_SecondTitleFormatter" xml:space="preserve">
+    <value>PC cliente IP e porta: {0}</value>
+  </data>
+  <data name="DataSyncViaPcClient" xml:space="preserve">
+    <value>Sincronizado com o PC</value>
+  </data>
+  <data name="DataType" xml:space="preserve">
+    <value>tipo de dados</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>data</value>
+  </data>
+  <data name="DateFormatterAfterWord" xml:space="preserve">
+    <value>{0} data</value>
+  </data>
+  <data name="DeathFailedExceptionMessage" xml:space="preserve">
+    <value>Lamentamos muito, o AccountBook encontrou um erro. Felizmente, seus dados estão seguros! Aconselhamos que você envie essa informação para{0}, para nos ajudar a resolver esse problema. Obrigado!
+A exceção é:
+        {1}</value>
+  </data>
+  <data name="DebitCard" xml:space="preserve">
+    <value>Conta do cartão de débito</value>
+  </data>
+  <data name="Debtor" xml:space="preserve">
+    <value>Devedor</value>
+  </data>
+  <data name="Decrease" xml:space="preserve">
+    <value>Diminuir</value>
+  </data>
+  <data name="DectingDataSyncingRootFolder" xml:space="preserve">
+    <value>Detectando "sincronização de dados" na pasta raíz...</value>
+  </data>
+  <data name="DectingFile" xml:space="preserve">
+    <value>Detectando arquivo agora...</value>
+  </data>
+  <data name="DefaultAmount" xml:space="preserve">
+    <value>quantidade padrão</value>
+  </data>
+  <data name="DefaultCurrency" xml:space="preserve">
+    <value>Moeda padrão</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>deletar</value>
+  </data>
+  <data name="DeleteAccountItemMessage" xml:space="preserve">
+    <value>Você deletou esse registro.</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>deletado</value>
+  </data>
+  <data name="DeleteOnGoingRapaymentMessage" xml:space="preserve">
+    <value>Este é um reembolso em curso, o alarme ou lembrete serão removidos, bem como, deseja apagá-lo?</value>
+  </data>
+  <data name="DeleteSelectedItems" xml:space="preserve">
+    <value>Tem certeza que deseja excluir todos os registros selecionados?</value>
+  </data>
+  <data name="DeletingDataInOneMonth" xml:space="preserve">
+    <value>Dados em "{0} / {1}" seria excluído.</value>
+  </data>
+  <data name="DeletingDataInOneYear" xml:space="preserve">
+    <value>Dados em anos {0} será excluído.</value>
+  </data>
+  <data name="DeletingObject" xml:space="preserve">
+    <value>Confirme a exclusão de '{0}' recorde.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>descrição</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value> detalhes</value>
+  </data>
+  <data name="DetectingPictureFolder" xml:space="preserve">
+    <value>Detectando pasta da imagem...</value>
+  </data>
+  <data name="DetectingPicturesToSync" xml:space="preserve">
+    <value>Detectando imagens para sincronizar...</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>desativado</value>
+  </data>
+  <data name="DividerCantBeZero" xml:space="preserve">
+    <value>Divisor não pode ser zero.</value>
+  </data>
+  <data name="DontLeaveSyncPageTips" xml:space="preserve">
+    <value>Não deixe a página atual ou aplicativo de saída após a comerçar.</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>data de vencimento</value>
+  </data>
+  <data name="DueDateTimeMustBeGreatThanStartDateTimeMessage" xml:space="preserve">
+    <value>A data de vencimento tem que ser maior que a data de emissão.</value>
+  </data>
+  <data name="DuringChartMode" xml:space="preserve">
+    <value>modo gráfico</value>
+  </data>
+  <data name="EandIandCategory" xml:space="preserve">
+    <value>Histórico + Categorias</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>editar</value>
+  </data>
+  <data name="EditBudgetItemAmount" xml:space="preserve">
+    <value>Editar valor do orçamento</value>
+  </data>
+  <data name="EditBudgetProjectInfo" xml:space="preserve">
+    <value>editar projeto</value>
+  </data>
+  <data name="EditComments" xml:space="preserve">
+    <value>Editar comentários</value>
+  </data>
+  <data name="EditPerson" xml:space="preserve">
+    <value>Editar devedor ou credor</value>
+  </data>
+  <data name="EditRateFormatter" xml:space="preserve">
+    <value>Por favor, coloque a  taxa de conversão de entrada de {0} para {1}:</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailForSummary" xml:space="preserve">
+    <value>Email for envio do sumário</value>
+  </data>
+  <data name="EmptyTextMessage" xml:space="preserve">
+    <value> não pode ser vazio!</value>
+  </data>
+  <data name="EnableAccountBalanceStatistic" xml:space="preserve">
+    <value>permitir estatística saldo</value>
+  </data>
+  <data name="EnableAlarm" xml:space="preserve">
+    <value>ativar alarme</value>
+  </data>
+  <data name="EnableLockPassword" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="EnableUsingAccountWhenItHasNegativeValue" xml:space="preserve">
+    <value>Ativar o recurso 'cheque especial' em todas as contas.</value>
+  </data>
+  <data name="EnableUsingAccountWhenItHasNegativeValueMessage" xml:space="preserve">
+    <value>Esta conta não suporta capacidade de cheque especial. Por favor seleccione outro.</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Data final</value>
+  </data>
+  <data name="EnsureToRebuildDatabase" xml:space="preserve">
+    <value>Você quer reconstruir banco de dados?</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Detalhes do Erro:
+       {0}</value>
+  </data>
+  <data name="ErrorMessageWhenLoadingAccounts" xml:space="preserve">
+    <value>Desculpe, ocorreu um erro ao carregar lista de contas. Por favor, reinicie AccountBook para recarregar dados.</value>
+  </data>
+  <data name="ErrorMessageWhenRestoreEmptyDataFailed" xml:space="preserve">
+    <value>Desculpe! Tivemos uma exceção quando desserializar dados de backup. Por favor, verifique se seus dados são válidos e que o arquivo de dados (xml) não vazio. Você pode gentilmente ajudar enviando a mensagem abaixo para {0} Obrigado.
+{1}</value>
+  </data>
+  <data name="Etc" xml:space="preserve">
+    <value>etc...</value>
+  </data>
+  <data name="EveryDay" xml:space="preserve">
+    <value>Todo dia</value>
+  </data>
+  <data name="EveryDayBackup" xml:space="preserve">
+    <value>Gravar todo dia</value>
+  </data>
+  <data name="EveryDayBackupTips" xml:space="preserve">
+    <value>· Apenas quando você iniciar o aplicativo vai fazer esta tarefa.</value>
+  </data>
+  <data name="EveryMonth" xml:space="preserve">
+    <value>Todo mês</value>
+  </data>
+  <data name="EverySpecialDay" xml:space="preserve">
+    <value>Todo dia especial</value>
+  </data>
+  <data name="EverySpecialMonth" xml:space="preserve">
+    <value>Todo mês especial</value>
+  </data>
+  <data name="EveryWeek" xml:space="preserve">
+    <value>Toda semana</value>
+  </data>
+  <data name="ExcelFileMustBeOpenInLocalOffice" xml:space="preserve">
+    <value>O arquivo excel só deve ser aberto por programa Microsoft Excel instalado em seu PC local. (Excel Web App não pode abrí-lo)</value>
+  </data>
+  <data name="ExecuteNow" xml:space="preserve">
+    <value>Executar agora</value>
+  </data>
+  <data name="ExitAppMessage" xml:space="preserve">
+    <value>Sair agora?</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>despesa</value>
+  </data>
+  <data name="ExpenseIncomeHistoryReport" xml:space="preserve">
+    <value>Relatório do histórico de despesas/receitas do AccountBook.</value>
+  </data>
+  <data name="ExpenseOrIncomeScheduleInfo" xml:space="preserve">
+    <value>Agende informações</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>despesas</value>
+  </data>
+  <data name="ExpensesBudgetType" xml:space="preserve">
+    <value>registro de despesas</value>
+  </data>
+  <data name="ExportData" xml:space="preserve">
+    <value>exportar dados</value>
+  </data>
+  <data name="ExportDataMode" xml:space="preserve">
+    <value>modo de exportação</value>
+  </data>
+  <data name="ExportReport" xml:space="preserve">
+    <value>exportar</value>
+  </data>
+  <data name="FailedLoadingRequestRefresMsg" xml:space="preserve">
+    <value>Falha ao carregar dados, por favor, tente novamente mais tarde.</value>
+  </data>
+  <data name="FailedReplacer" xml:space="preserve">
+    <value> ×</value>
+  </data>
+  <data name="FailedToRestoreWhenObjectIs" xml:space="preserve">
+    <value>Falha ao restaurar objeto chamado: {0}. Este objeto será ignorado. Causa de: {1}</value>
+  </data>
+  <data name="FailedWhenUpdatingDatabaseMesssage" xml:space="preserve">
+    <value>Fui atingido por um erro ao atualizar o seu banco de dados até à data, e eu reconstruí-lo. Os dados antigos foram backup para local. Você pode ir "Setting-&gt; Dados Centeral" página para restaurar os dados</value>
+  </data>
+  <data name="FavoritesPageVisibiable" xml:space="preserve">
+    <value>Modelo rápido na inicialização</value>
+  </data>
+  <data name="Favourite" xml:space="preserve">
+    <value>favoritos</value>
+  </data>
+  <data name="FeedBack" xml:space="preserve">
+    <value>obtener ayuda &amp; retroalimentación</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>arquivo</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>nome do arquivo</value>
+  </data>
+  <data name="FileNotFoundExceptionMessage" xml:space="preserve">
+    <value>O aplicativo não pode encontrar o arquivo para restaurar os dados. Por favor, certifique-se de ter tido os dados gravados.</value>
+  </data>
+  <data name="FileNotFoundMessage" xml:space="preserve">
+    <value>O arquivo '{0}' não existe no Servidor SkyDrive.</value>
+  </data>
+  <data name="FileToBackup" xml:space="preserve">
+    <value>Arquivo para fazer backup</value>
+  </data>
+  <data name="FilterSummary" xml:space="preserve">
+    <value>condição</value>
+  </data>
+  <data name="FixedAssets" xml:space="preserve">
+    <value>Fundos fixos</value>
+  </data>
+  <data name="FolderNotFoundMessage" xml:space="preserve">
+    <value>Não é possível encontrar a pasta específica no servidor!</value>
+  </data>
+  <data name="FormatFullWithoutYear" xml:space="preserve">
+    <value>M/d ddd HH:mm</value>
+  </data>
+  <data name="FormatFullWithYear" xml:space="preserve">
+    <value>M/d/aaaa ddd</value>
+  </data>
+  <data name="FormatShortDateWithoutYear" xml:space="preserve">
+    <value>M/d ddd</value>
+  </data>
+  <data name="FormatterForExpenseInShellTile" xml:space="preserve">
+    <value>M/d, custo</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequencia</value>
+  </data>
+  <data name="FrequencyDayOfMonthFormatter" xml:space="preserve">
+    <value>{0}º</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="FromName" xml:space="preserve">
+    <value>Criado por</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>tela cheia</value>
+  </data>
+  <data name="GetExceptionMessage" xml:space="preserve">
+    <value>Ocorreu um erro inesperado! Por favor mande essa mensagem para yurukai@hotmail.com. Obrigado!</value>
+  </data>
+  <data name="GetPCclientDownloadUrl" xml:space="preserve">
+    <value>Obter PC cliente download</value>
+  </data>
+  <data name="GlobleCurrencySymbolStyle" xml:space="preserve">
+    <value>Estilo padrão símbolo de moeda</value>
+  </data>
+  <data name="GoToMainPage" xml:space="preserve">
+    <value>Ir para a página principal</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value> Grupo</value>
+  </data>
+  <data name="HaveDataNeedToRestore" xml:space="preserve">
+    <value>AccountBook encontrou um erro na última atualização do banco de dados, e felizmente, seu backup está disponivel. Ir para [Updating center] para restaurar?</value>
+  </data>
+  <data name="HelpAndAbout" xml:space="preserve">
+    <value>Ajuda + Sobre</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>ocultar</value>
+  </data>
+  <data name="HideBlance" xml:space="preserve">
+    <value>ocultar saldo</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>histórico</value>
+  </data>
+  <data name="HistoryOf" xml:space="preserve">
+    <value>{0} histórico</value>
+  </data>
+  <data name="Hold" xml:space="preserve">
+    <value>Manter</value>
+  </data>
+  <data name="HouseLoaning" xml:space="preserve">
+    <value>Aluguel</value>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>Como {0}?</value>
+  </data>
+  <data name="HowToAddAsFavourite" xml:space="preserve">
+    <value>Você pode 'segurar' o item 'categoria secundária', e toque em "adicionar aos favoritos" para pegar as categorias que você irá usar normalmente.</value>
+  </data>
+  <data name="HowToCreateExpenseOrIncomeSchedule" xml:space="preserve">
+    <value>Bem vindo ao uso do "registro programado de tarefas", que permite a você configurar registros de transações automáticas. 
+
+Isso aproveita o 'Agente de fundo' construído em SO, e o ciclo de execução não é regular que a nova tarefa pode não ser executado imediatamente.(Mas em uma última vez em um dia).
+
+se você quer deixá-lo executar agora mesmo, você pode "tocar" o "executar agora 'menu na página' ajuste tarefa agendada".
+
+AVISO:
+      If 15 days app hasn't been opened, the background tasks would be turn off, until next time open.</value>
+  </data>
+  <data name="HowToSwitchScopeForHistoryList" xml:space="preserve">
+    <value>Na lista de registros de receitas e despesas, ele irá usar um período de tempo para mostrar entradas.</value>
+  </data>
+  <data name="IdealMoneyAccount" xml:space="preserve">
+    <value>Dinheiro Ideal</value>
+  </data>
+  <data name="IgnoreCalimRecordsInStatistics" xml:space="preserve">
+    <value>Ignorar registros pedidos para estatísticas</value>
+  </data>
+  <data name="IncludeCreditCardAmountOnAsset" xml:space="preserve">
+    <value>Incluir verba do cartão de crédito</value>
+  </data>
+  <data name="Income" xml:space="preserve">
+    <value>receita</value>
+  </data>
+  <data name="IncomeBudgetType" xml:space="preserve">
+    <value>registro de receita</value>
+  </data>
+  <data name="InCompleted" xml:space="preserve">
+    <value>Incompleto</value>
+  </data>
+  <data name="Increase" xml:space="preserve">
+    <value>Aumentar</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>手机账本</value>
+  </data>
+  <data name="InitialBalance" xml:space="preserve">
+    <value>Saldo inicial</value>
+  </data>
+  <data name="InitialDateTime" xml:space="preserve">
+    <value>Inicial DateTime</value>
+  </data>
+  <data name="InportFromPhoneContacts" xml:space="preserve">
+    <value>Importar de HUB pessoal ...</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interesse</value>
+  </data>
+  <data name="InTwoWeek" xml:space="preserve">
+    <value>De semana passada</value>
+  </data>
+  <data name="IsClaimLabel" xml:space="preserve">
+    <value>Requerer</value>
+  </data>
+  <data name="IsSyncProfile" xml:space="preserve">
+    <value>Definições de sincronização</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value> items</value>
+  </data>
+  <data name="ItemUnit" xml:space="preserve">
+    <value>registro</value>
+  </data>
+  <data name="JustMe" xml:space="preserve">
+    <value>Eu</value>
+  </data>
+  <data name="LanguateChangeTips" xml:space="preserve">
+    <value>Idioma de exibição de alguma página será eficaz depois de reiniciar app. Para llegar categorías localizadas y algunos otros contenidos incorporados en la aplicación, usted puede 'Reset' los datos en "datos central" de la página.</value>
+  </data>
+  <data name="LastMonth" xml:space="preserve">
+    <value>mês passado</value>
+  </data>
+  <data name="LastSyncDateInfoLabelFormatter" xml:space="preserve">
+    <value>Sincronizados em: {0}</value>
+  </data>
+  <data name="LastTimeAccess" xml:space="preserve">
+    <value>  última vez que você registrou : #NewLine#   {0:M/d/yyyy ddd HH:mm}</value>
+  </data>
+  <data name="LastWeek" xml:space="preserve">
+    <value>semana passada</value>
+  </data>
+  <data name="LastYear" xml:space="preserve">
+    <value>ano passado</value>
+  </data>
+  <data name="Legend" xml:space="preserve">
+    <value>legenda</value>
+  </data>
+  <data name="LineOfCredit" xml:space="preserve">
+    <value>Linha de crédito</value>
+  </data>
+  <data name="LineOfCreditRequestValidMessageFormatter" xml:space="preserve">
+    <value>Linha do cartão de crédito deve estar na faixa de 0 a {0}</value>
+  </data>
+  <data name="LinkPeoples" xml:space="preserve">
+    <value>Adicionar pessoas</value>
+  </data>
+  <data name="LinkTo" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="LiveConnectExceptionMessage" xml:space="preserve">
+    <value>Temos problema na conexão com serviço Windows Live, por favor, tente mais tarde.</value>
+  </data>
+  <data name="LoadAssociated" xml:space="preserve">
+    <value>gerenciar dados criados recentemente</value>
+  </data>
+  <data name="LoadDefaultCategory" xml:space="preserve">
+    <value>Carregar categorias padrão</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>carregando...</value>
+  </data>
+  <data name="LoanOut" xml:space="preserve">
+    <value>Emprestado</value>
+  </data>
+  <data name="LoanOutOrRepayToSbFormatter" xml:space="preserve">
+    <value>{0} para {1} {2}.</value>
+  </data>
+  <data name="LocalizedTableName" xml:space="preserve">
+    <value>Accounts,Contas;Categories,Categorias;TransferingItems,Itensdetrasferência;AccountItems,Itensdaconta;Repayments,Emprestado;AppSetting,OpçõesdoApp;BudgetItems,ItensdoOrçamento;BudgetProjects,ProjetosdoOrçamento;BudgetMonthlyReports,RelatórioMensaldoOrçamento;TallyScheduleTable,Registroprogramado;PeopleGroups,Grupos Pessois; Peoples,PerfilPessoal;PictureInfos, Imagens;</value>
+  </data>
+  <data name="LoginLiveIDMessage" xml:space="preserve">
+    <value>Entrando no Live.com...</value>
+  </data>
+  <data name="MainCategoryName" xml:space="preserve">
+    <value>CategoriaPrincipal</value>
+  </data>
+  <data name="MakeSureToCoverCurrentData" xml:space="preserve">
+    <value>Os dados atuais serão cobertos pelos dados do servidor.</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>administração</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>Eu</value>
+  </data>
+  <data name="MessageWhenAmountForOneCategoryOverBudgetItem" xml:space="preserve">
+    <value>O montante é maior que o orçamento para esta categoria.</value>
+  </data>
+  <data name="ModifiedDate" xml:space="preserve">
+    <value>data modificada.</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Mês</value>
+  </data>
+  <data name="MonthlyBudget" xml:space="preserve">
+    <value>Orçamento mensal</value>
+  </data>
+  <data name="MonthlyIncomExpenseChangesTitle" xml:space="preserve">
+    <value>trocas entre {0} e {1}</value>
+  </data>
+  <data name="MonthlyTopNExpenses" xml:space="preserve">
+    <value>{0} maior gasto(in top {1})</value>
+  </data>
+  <data name="MonthlyWeeksExpenseAvgInfo" xml:space="preserve">
+    <value>{0} média de gasto semanal</value>
+  </data>
+  <data name="MontlyDailyExpenseAmount" xml:space="preserve">
+    <value>{0} despesa diária</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>mais</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>mais informações</value>
+  </data>
+  <data name="MoveTo" xml:space="preserve">
+    <value>mover para</value>
+  </data>
+  <data name="MovingCategory" xml:space="preserve">
+    <value>Movendo categoria</value>
+  </data>
+  <data name="MovingCategoryMessage" xml:space="preserve">
+    <value>Todos os itens relacionados a '{0}' categoria serão movidos para colocar sob '{1}'.</value>
+  </data>
+  <data name="Msg_CreatingFolder" xml:space="preserve">
+    <value>Criando pasta...</value>
+  </data>
+  <data name="Msg_StartDownloadFileFromServer" xml:space="preserve">
+    <value>Baixando {0} / {1} arquivo para local, isso pode levar algum tempo ...</value>
+  </data>
+  <data name="Msg_StartTransferingFileToServer" xml:space="preserve">
+    <value>Transferindo {0} / {1} arquivo para o servidor, isso vai levar algum tempo ...</value>
+  </data>
+  <data name="Msg_TotalPicturesNeedToBackup" xml:space="preserve">
+    <value>Total {0} imagem(s) precisa para backup de servidor...</value>
+  </data>
+  <data name="Msg_TotalPicturesNeedToSyncToLocal" xml:space="preserve">
+    <value>Total {0} imagem(s) necessário sincronizar a local...</value>
+  </data>
+  <data name="MutipleManageing" xml:space="preserve">
+    <value>Gestão</value>
+  </data>
+  <data name="My" xml:space="preserve">
+    <value>Meu</value>
+  </data>
+  <data name="MyBook" xml:space="preserve">
+    <value>minha conta</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>nome</value>
+  </data>
+  <data name="NeedIPandPortMessage" xml:space="preserve">
+    <value>Por favor, aperte o botão 'ajuste' para definir o IP e o número da porta, que será usado para conectar ao cliente sincronização com o PC.
+
+Você pode ir {0} para o software cliente do PC.</value>
+  </data>
+  <data name="NeedLoginLiveIdMessage" xml:space="preserve">
+    <value>Você precisa entrar no Live ID primeiro.</value>
+  </data>
+  <data name="NeedToGoToSdfBackupPage" xml:space="preserve">
+    <value>Você quer navegar para a página de backup de banco de dados para gravar seus dados? (Recomendo).</value>
+  </data>
+  <data name="NeverSync" xml:space="preserve">
+    <value>nunca sincronizar</value>
+  </data>
+  <data name="NewPasswordConfrimError" xml:space="preserve">
+    <value>Por favor, verifique a nova senha e confirme-a.</value>
+  </data>
+  <data name="NewPasswordText" xml:space="preserve">
+    <value>Nova senha</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Próximo</value>
+  </data>
+  <data name="NextItem" xml:space="preserve">
+    <value>Próximo</value>
+  </data>
+  <data name="NextStep" xml:space="preserve">
+    <value>Próximo</value>
+  </data>
+  <data name="NoAvailableNetworkMessage" xml:space="preserve">
+    <value>Desculpe! nenhuma rede disponível, por favor, tente mais tarde.</value>
+  </data>
+  <data name="NoEnoughMoneyMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NoneBankOrCreditAccountsMessage" xml:space="preserve">
+    <value>Desculpe, em seu AccountBook, não há nenhum banco ou qualquer contas de crédito.</value>
+  </data>
+  <data name="NoneCategorySelectedMessage" xml:space="preserve">
+    <value>Nenhuma categoria foi selecionado. Por favor, selecione uma ou clique em Adicionar.</value>
+  </data>
+  <data name="NoneItemMessage" xml:space="preserve">
+    <value>Nenhum E&amp;l gravado.</value>
+  </data>
+  <data name="NoneSelectedItem" xml:space="preserve">
+    <value>Nenhum registros que você selecionou.</value>
+  </data>
+  <data name="NoneSelectedMessage" xml:space="preserve">
+    <value>Você não selecionou nenhum registro.</value>
+  </data>
+  <data name="NormalSettingPageTitle" xml:space="preserve">
+    <value>Geral</value>
+  </data>
+  <data name="NoSummaryData" xml:space="preserve">
+    <value>Não há resumo de detalhes dos dados para o envio.</value>
+  </data>
+  <data name="NoTallyOverTimemoutDaysNotificationMessage" xml:space="preserve">
+    <value>Você não tem nada para calcular em suas finanças para perto / sobre {0} dias, gostaria de fazer agora?
+
+(se ok, vá até a página "Adicionar registro").</value>
+  </data>
+  <data name="NotAvaliableEmailAddressMessage" xml:space="preserve">
+    <value>Não é um endereço de e-mail disponível.</value>
+  </data>
+  <data name="NotAvaliableFromPCClientUsedToRestoreDBMessage" xml:space="preserve">
+    <value>O ficheiro não contém quaisquer dados disponíveis que pode ser usado para restaurar banco de dados, por favor, tente novamente.</value>
+  </data>
+  <data name="NotAvaliableObjectMessage" xml:space="preserve">
+    <value>Não disponível '{0}', por favor, escolher ou criar uma.</value>
+  </data>
+  <data name="NotAvaliableObjectMessageFormatter" xml:space="preserve">
+    <value>"{0}" não está disponível, por favor, tente novamente.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>notas</value>
+  </data>
+  <data name="NotesContain" xml:space="preserve">
+    <value>conteúdo da nota</value>
+  </data>
+  <data name="NotificationAndSchedule" xml:space="preserve">
+    <value>Lembrar + Orçamento</value>
+  </data>
+  <data name="NowLoadingFormatter" xml:space="preserve">
+    <value>Carregando {0} ...</value>
+  </data>
+  <data name="ObjectNamesForSyncing" xml:space="preserve">
+    <value>Informaçãodeconfiguração,Categorias Contas,Itensdaconta</value>
+  </data>
+  <data name="ObjectShortNamesForSyncing" xml:space="preserve">
+    <value>Opções,Categorias,Contas,E&amp;I</value>
+  </data>
+  <data name="ObjectsToSyncLable" xml:space="preserve">
+    <value>Objetos para sincronizar</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Desligar</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>ok</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Ligar</value>
+  </data>
+  <data name="OnGoing" xml:space="preserve">
+    <value>em curso</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="OpenAccountBook" xml:space="preserve">
+    <value>abrir</value>
+  </data>
+  <data name="OperationSuccessfullyMessage" xml:space="preserve">
+    <value>Operação é feita com sucesso!</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="OptNeedRestart" xml:space="preserve">
+    <value>Reiniciar o aplicativo é necessário.</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>Ordem</value>
+  </data>
+  <data name="ParentCategoryClass" xml:space="preserve">
+    <value>Categoria superior</value>
+  </data>
+  <data name="ParentCategoryName" xml:space="preserve">
+    <value>Pertence a</value>
+  </data>
+  <data name="Particulars" xml:space="preserve">
+    <value>particulars</value>
+  </data>
+  <data name="PasswordToLoginText" xml:space="preserve">
+    <value>Digite a senha.</value>
+  </data>
+  <data name="PasswordWrongText" xml:space="preserve">
+    <value>Senha incorreta, tente novamente.</value>
+  </data>
+  <data name="PaymentDueDate" xml:space="preserve">
+    <value>Data de vencimento</value>
+  </data>
+  <data name="Paypal" xml:space="preserve">
+    <value>conta de pagamento online</value>
+  </data>
+  <data name="PCClientUpdatedNotificationMessage" xml:space="preserve">
+    <value>PC Client foi atualizado! Por favor, vá para [{0}] e faça o download!</value>
+  </data>
+  <data name="PCClientURL" xml:space="preserve">
+    <value>Você pode visitar: {0} para baixar a versão {1} atualizada, para PC.
+
+Obrigado.</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>pessoas</value>
+  </data>
+  <data name="PeopleInfoWithNumberGreatThanNPeopleFormatter" xml:space="preserve">
+    <value>{0} {1} pessoa(s).</value>
+  </data>
+  <data name="PeopleInfoWithNumberLessThanNPeopleFormatter" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="PeopleWithLink" xml:space="preserve">
+    <value>Pessoas com link </value>
+  </data>
+  <data name="PersonalEmailAddress" xml:space="preserve">
+    <value>Email pessoal</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Imagem</value>
+  </data>
+  <data name="PictureInfoWithNumberFormatter" xml:space="preserve">
+    <value>{0} imagem(s)</value>
+  </data>
+  <data name="PinQuickAccountItemEditorPageToStart" xml:space="preserve">
+    <value>Ele vai fixar a ligação rápida desta página para iniciar o Screen. CONTINUAR?</value>
+  </data>
+  <data name="PinToStart" xml:space="preserve">
+    <value>Fixar para iniciar</value>
+  </data>
+  <data name="PinToStartPage" xml:space="preserve">
+    <value>Mostrar na página principal</value>
+  </data>
+  <data name="PivotToday" xml:space="preserve">
+    <value>Hoje</value>
+  </data>
+  <data name="Place" xml:space="preserve">
+    <value>Lugar</value>
+  </data>
+  <data name="PleaseWaitWhileBusy" xml:space="preserve">
+    <value>Por favor, tente novamente após outro trabalho concluído.</value>
+  </data>
+  <data name="PreferenceSetting" xml:space="preserve">
+    <value>configuração de preferência</value>
+  </data>
+  <data name="PreferenceSetting_AddRule" xml:space="preserve">
+    <value>criar nova regra</value>
+  </data>
+  <data name="PreferenceSetting_AddRuleTips" xml:space="preserve">
+    <value>adicionar um modelo usado em "Adicionar novo registro"para um período de tempo.</value>
+  </data>
+  <data name="PreferenceSetting_SecondTitleFormatter" xml:space="preserve">
+    <value>definir a sua preferência para cada intervalo de tempo de registro</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="PrevItem" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="ProfileSetting" xml:space="preserve">
+    <value>Opções do perfil</value>
+  </data>
+  <data name="ProfileSetting_SecondFormatter" xml:space="preserve">
+    <value>{0} , trancar carteira: {1} </value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Propriedades</value>
+  </data>
+  <data name="Push" xml:space="preserve">
+    <value>Apertar</value>
+  </data>
+  <data name="QuickAddBudgetItemTips" xml:space="preserve">
+    <value>Basta adicionar um novo recorde!</value>
+  </data>
+  <data name="RangeOfThisTimeTitle" xml:space="preserve">
+    <value>intervalo de tempo</value>
+  </data>
+  <data name="RateSyncingSuccessfullyMessage" xml:space="preserve">
+    <value>Taxa de conversão de moeda é sincronizada com sucesso!</value>
+  </data>
+  <data name="RebuildDatabaseDoneMessage" xml:space="preserve">
+    <value>O processo de reconstrução do banco de dados foi feito. Agora, você pode ter que re-iniciar este aplicativo, em seguida, ir [App Settings] -&gt; [Atualização], para restaurar os dados.</value>
+  </data>
+  <data name="Receieved" xml:space="preserve">
+    <value>Recebido</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>Recebimento</value>
+  </data>
+  <data name="Recent" xml:space="preserve">
+    <value>Recente</value>
+  </data>
+  <data name="RecentRepaymentNumbersFormatter" xml:space="preserve">
+    <value>OnGoing RP#: {0}</value>
+  </data>
+  <data name="Record" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="RecordAlreadyExist" xml:space="preserve">
+    <value>Já tem o mesmo registro na sua aplicação.</value>
+  </data>
+  <data name="RecordCountTipsFormatter" xml:space="preserve">
+    <value>sobre {0} {1} registros ...</value>
+  </data>
+  <data name="Records" xml:space="preserve">
+    <value>Registros:</value>
+  </data>
+  <data name="RecordsAmount" xml:space="preserve">
+    <value>Quantidade de registros</value>
+  </data>
+  <data name="RecordsAndAmountInfoForAccountRealtedItems" xml:space="preserve">
+    <value>{0} registros, total {1}: {2}</value>
+  </data>
+  <data name="RedbuildDatabase" xml:space="preserve">
+    <value>refazendo ...</value>
+  </data>
+  <data name="Refine" xml:space="preserve">
+    <value>Refinar</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="RefreshSchedulePlaningMessage" xml:space="preserve">
+    <value>A ação do "Atualizar" vai definir o status das tarefas de volta para: não executada.
+
+Continuar?</value>
+  </data>
+  <data name="Related" xml:space="preserve">
+    <value>relacionado</value>
+  </data>
+  <data name="RelatedItemsTipsAtHeader" xml:space="preserve">
+    <value>por padrão, a lista só irá mostrar itens de transação no mesmo mês e categoria com a visualização item atual. toque em "mais" para total.</value>
+  </data>
+  <data name="ReminderNotication" xml:space="preserve">
+    <value>lembrando</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>remover</value>
+  </data>
+  <data name="RenameFileConfirmMessage" xml:space="preserve">
+    <value>Você vai renomear esse arquivo. O arquivo tem o mesmo nome com '{0}', e será substituído. CONTINUAR?</value>
+  </data>
+  <data name="RepayAccountName" xml:space="preserve">
+    <value>conta para pagar</value>
+  </data>
+  <data name="RepayAt" xml:space="preserve">
+    <value>pagar para</value>
+  </data>
+  <data name="RepayDateShouldBeGreatterThanNowMessage" xml:space="preserve">
+    <value>Data de reembolso em curso deve ser mais tarde do que agora.</value>
+  </data>
+  <data name="Repayed" xml:space="preserve">
+    <value>Rembolsado</value>
+  </data>
+  <data name="RepayFromAccountName" xml:space="preserve">
+    <value>da conta</value>
+  </data>
+  <data name="Repayment" xml:space="preserve">
+    <value>Reembolso</value>
+  </data>
+  <data name="RepaymentItem" xml:space="preserve">
+    <value> item reembolso</value>
+  </data>
+  <data name="RepaymentList" xml:space="preserve">
+    <value>lista de reembolso</value>
+  </data>
+  <data name="RepaymentManager" xml:space="preserve">
+    <value>alerta de reembolso</value>
+  </data>
+  <data name="RepaymentNotificationList" xml:space="preserve">
+    <value>reembolso</value>
+  </data>
+  <data name="RepayToAccountCannotBeEmptyMessage" xml:space="preserve">
+    <value>é melhor definir ou adicionar uma conta para responder.</value>
+  </data>
+  <data name="ReportTotalCountOfObjectsFromSkyDriveText" xml:space="preserve">
+    <value>Total baixado : {0} itens.</value>
+  </data>
+  <data name="RequestCategoryMessage" xml:space="preserve">
+    <value>Por favor selecione uma categoria.</value>
+  </data>
+  <data name="RequestMoneyAvailableMessage" xml:space="preserve">
+    <value>Por favor coloque o valor do dinheiro total disponível.</value>
+  </data>
+  <data name="RequireInputTextDataMessageWithFormatter" xml:space="preserve">
+    <value>O "{0}" valor é necessário.</value>
+  </data>
+  <data name="RequireRestartAppMessage" xml:space="preserve">
+    <value>Por favor, reinicie o seu aplicativo.</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Resetar</value>
+  </data>
+  <data name="ResetAllData_Tips" xml:space="preserve">
+    <value>Isto irá remover todos os dados que você tem atualmente. Continuar?</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>restaurar</value>
+  </data>
+  <data name="RestoreDataAfterUpdating" xml:space="preserve">
+    <value>restaurar os dados após a atualização</value>
+  </data>
+  <data name="RestoreDatabase" xml:space="preserve">
+    <value>Restaurar base de dados</value>
+  </data>
+  <data name="RestoreDatabaseTips" xml:space="preserve">
+    <value>Restaurar arquivos de dados do aplicativo cliente PC.</value>
+  </data>
+  <data name="RestoreDatabase_Confirm" xml:space="preserve">
+    <value>Isto vai substituir o arquivo de banco de dados atual com o do PC cliente, versão: {0}, CONTINUAR?</value>
+  </data>
+  <data name="RestoreDatabase_UnsupportDatabaseVerionAgainstCurrentVersion" xml:space="preserve">
+    <value>O arquivo de banco de dados de cliente de PC, tem uma versão: {0}, que virá para a última versão atual: {1} pela estratégia de atualização, continuar?</value>
+  </data>
+  <data name="RestoreFailedMessage" xml:space="preserve">
+    <value>Restaurar falhou. Por favor, certifique-se de ter tido os dados guardados sempre.</value>
+  </data>
+  <data name="Revert" xml:space="preserve">
+    <value>Reverter</value>
+  </data>
+  <data name="RevertWillDeleteItemConfirmMessage" xml:space="preserve">
+    <value>Esta operação irá definir de volta a informação quantia para duas contas, e excluir este item do histórico transferência selecionado. Ainda assim continuar?</value>
+  </data>
+  <data name="Review" xml:space="preserve">
+    <value>avaliar e comentar</value>
+  </data>
+  <data name="RollIn" xml:space="preserve">
+    <value>colocar</value>
+  </data>
+  <data name="RollOut" xml:space="preserve">
+    <value>tirar</value>
+  </data>
+  <data name="RollOutTo" xml:space="preserve">
+    <value>mudar para</value>
+  </data>
+  <data name="RolloutToSomeAccountName" xml:space="preserve">
+    <value>mudar para '{0}'.</value>
+  </data>
+  <data name="SafeMode" xml:space="preserve">
+    <value>modo de segurança</value>
+  </data>
+  <data name="SameAsSystem" xml:space="preserve">
+    <value>Igual ao sistema</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>salvar</value>
+  </data>
+  <data name="SaveAndClose" xml:space="preserve">
+    <value>Fechar e salvar</value>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Continuar e salvar</value>
+  </data>
+  <data name="SaveChartAsPicture" xml:space="preserve">
+    <value>salvar como imagem...</value>
+  </data>
+  <data name="SaveImageToPictureHubSuccessMessage" xml:space="preserve">
+    <value>Imagem foi salva no HUB</value>
+  </data>
+  <data name="SaveStasticChartToLiabraryError" xml:space="preserve">
+    <value>Desculpe, mas eu tenho um erro ao salvar imagem em seu Hub. Uma das razões é o seu telefone ligado ao ZUNE. Por favor, tente novamente após a desconexão.</value>
+  </data>
+  <data name="SaveSuccessContinueMessage" xml:space="preserve">
+    <value>sucesso.</value>
+  </data>
+  <data name="ScheduledRepayOrReceive" xml:space="preserve">
+    <value>temporização {0}</value>
+  </data>
+  <data name="ScheduleItemNameExapmle" xml:space="preserve">
+    <value>e.g: salário mensal</value>
+  </data>
+  <data name="ScheduleItemNameFormatter" xml:space="preserve">
+    <value>{0}, {1}, {2}</value>
+  </data>
+  <data name="ScheduleManager" xml:space="preserve">
+    <value>gerente de programação</value>
+  </data>
+  <data name="ScheduleManagerSetting" xml:space="preserve">
+    <value>Agendar arefa</value>
+  </data>
+  <data name="ScheduleManagerSetting_Tips" xml:space="preserve">
+    <value>O aplicativo pode ajudar a fazer algumas tarefas agendadas pelo período de tempo.</value>
+  </data>
+  <data name="ScheduleManager_BadScheduledItemNeedToRemoveMessage" xml:space="preserve">
+    <value>Encontramos este item de programação tem alguns dados inválidos associados (conta, ou categoria), que são perdidas no banco de dados atual.
+
+Recomendamos que você exclua este item.</value>
+  </data>
+  <data name="ScheduleManager_RecoveryingRecordsMessage" xml:space="preserve">
+    <value>processing data from created by scheduled items...</value>
+  </data>
+  <data name="ScheduleManager_RequireAsscoiatedAccountItemMessage" xml:space="preserve">
+    <value>Por favor, crie ou selecione um programador de detalhes dos dados.</value>
+  </data>
+  <data name="Scope" xml:space="preserve">
+    <value>âmbito</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>procurar</value>
+  </data>
+  <data name="SearchDate" xml:space="preserve">
+    <value>Intervalo de tempo</value>
+  </data>
+  <data name="SearchingTips" xml:space="preserve">
+    <value>Dicas de pesquisa:
+       · Ao pesquisar, [nomes de categoria] e [nomes de conta] será como um filtro usado para consultar dados.</value>
+  </data>
+  <data name="SearchScope" xml:space="preserve">
+    <value>buscando âmbito</value>
+  </data>
+  <data name="SeeMoreLogsMessage" xml:space="preserve">
+    <value>Você pode ir em "Ajuda + Sobre "-&gt;" Atualizando registros " para mais detalhes sobre as características de versão! Divirta-se!</value>
+  </data>
+  <data name="SelectAccountItemsLabel" xml:space="preserve">
+    <value>transação</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>selecionar tudo</value>
+  </data>
+  <data name="SelectAppSettingLabel" xml:space="preserve">
+    <value>configuração de aplicativo</value>
+  </data>
+  <data name="SelectCategoryItemsLabel" xml:space="preserve">
+    <value>categorias</value>
+  </data>
+  <data name="SelectDayOfMonth" xml:space="preserve">
+    <value>Selecione um dia do mês</value>
+  </data>
+  <data name="SelectFolderAsResult" xml:space="preserve">
+    <value>seleciona a pasta</value>
+  </data>
+  <data name="SelectInvert" xml:space="preserve">
+    <value>selecione inverter</value>
+  </data>
+  <data name="SelectMode" xml:space="preserve">
+    <value>selecionar</value>
+  </data>
+  <data name="SelectTheDataFileCacheBeforeCrashed" xml:space="preserve">
+    <value>Há um arquivo contendo seus dados, e este arquivo é criado antes da ultima vez que o [AccontBook] parou de funcionar. Você quer usá-lo?</value>
+  </data>
+  <data name="SencondaryCategoryName" xml:space="preserve">
+    <value>subcategoria</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>enviar</value>
+  </data>
+  <data name="SendFeedback" xml:space="preserve">
+    <value>enviar feedback</value>
+  </data>
+  <data name="SendFeedBackBody" xml:space="preserve">
+    <value>Traduzido por Rafael Campos.</value>
+  </data>
+  <data name="SendFeedBackSubject" xml:space="preserve">
+    <value>Feedbacks em [AccountBook] pelo usuário</value>
+  </data>
+  <data name="SendReport" xml:space="preserve">
+    <value>enviar relatorio</value>
+  </data>
+  <data name="SetAsDefault" xml:space="preserve">
+    <value>definir como padrão</value>
+  </data>
+  <data name="SetAsDefaultMenuItem" xml:space="preserve">
+    <value>Definir como item de menu padrão</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="SettingLanguageLabelName" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="SettingPageTitle" xml:space="preserve">
+    <value>Configurações do aplicativo</value>
+  </data>
+  <data name="SettingsButtonText" xml:space="preserve">
+    <value>Configurações...</value>
+  </data>
+  <data name="SettleExpense" xml:space="preserve">
+    <value>Definir despesa</value>
+  </data>
+  <data name="SettleIncome" xml:space="preserve">
+    <value>Definir receita</value>
+  </data>
+  <data name="SharedWith" xml:space="preserve">
+    <value>Compartilhado com</value>
+  </data>
+  <data name="SharedWithLevelOverHeightMessage" xml:space="preserve">
+    <value>O objeto é compartilhado com '{0}', isso pode deixa seus dados acessíveis a outros, CONTINUAR?</value>
+  </data>
+  <data name="ShareWithKeyValue" xml:space="preserve">
+    <value>Just me,Apenas eu;People with a link,Pessoas com link;</value>
+  </data>
+  <data name="ShellTileAssets" xml:space="preserve">
+    <value>Fundos</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>mostrar</value>
+  </data>
+  <data name="ShowAssociatedAccountItemSummary" xml:space="preserve">
+    <value>mostrar comparation em 'particular'.</value>
+  </data>
+  <data name="ShowBlance" xml:space="preserve">
+    <value>Mostrar saldo</value>
+  </data>
+  <data name="ShowCashAmountOnAsset" xml:space="preserve">
+    <value>mostrar quantidade dos fundos</value>
+  </data>
+  <data name="ShowGroups" xml:space="preserve">
+    <value>Mostrar grupos</value>
+  </data>
+  <data name="ShowLegend" xml:space="preserve">
+    <value>mostrar legenda</value>
+  </data>
+  <data name="ShowRepaymentInfoOnTile" xml:space="preserve">
+    <value>Mostrar a minha informação AccountBook no Live</value>
+  </data>
+  <data name="SignInText" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="SignOutText" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="SkyDriveSelectFileMessage" xml:space="preserve">
+    <value>toque, e selecione o arquivo de restauração</value>
+  </data>
+  <data name="SkyDriveSelectFileOrFolderMessage" xml:space="preserve">
+    <value>tocar, selecione o arquivo ou pasta {0} para</value>
+  </data>
+  <data name="SomethingIsRequired" xml:space="preserve">
+    <value>{0} é necessário, por favor, defina um valor.</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>início</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>data de início</value>
+  </data>
+  <data name="StartDateMustBeLargerThanEndDate" xml:space="preserve">
+    <value>Hora de início deve ser anterior à hora fim selecionado.</value>
+  </data>
+  <data name="StartTo" xml:space="preserve">
+    <value>Pronto? Comece a contagem.</value>
+  </data>
+  <data name="StasticItemsTips_HasItemsFormatter" xml:space="preserve">
+    <value>Total de {0} registros encontrados na busca detalhada.</value>
+  </data>
+  <data name="StasticItemsTips_NoItemsFormatter" xml:space="preserve">
+    <value>Não há quaisquer itens estáticos</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>estatística</value>
+  </data>
+  <data name="StatisticsAndSearching" xml:space="preserve">
+    <value>Estatísticas + Pesquisa</value>
+  </data>
+  <data name="StatisticsInfoFormatterForCategory" xml:space="preserve">
+    <value>{0} registro(s) {1}, {2}</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>status</value>
+  </data>
+  <data name="StepInfo_CheckingData" xml:space="preserve">
+    <value>Verificando os dados disponíveis ...</value>
+  </data>
+  <data name="StepInfo_ConnectingServer" xml:space="preserve">
+    <value>Conectando ao servidor...</value>
+  </data>
+  <data name="StepInfo_EndingAction" xml:space="preserve">
+    <value>Desligando o servidor ...</value>
+  </data>
+  <data name="StepInfo_TransferingData" xml:space="preserve">
+    <value>Transferindo dados entre servidor e telefone ...</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>parar</value>
+  </data>
+  <data name="SubjectName" xml:space="preserve">
+    <value>nome do assunto</value>
+  </data>
+  <data name="SubscibeNotificationTitle" xml:space="preserve">
+    <value>Assinar atualização de notificações</value>
+  </data>
+  <data name="SuccessReplacer" xml:space="preserve">
+    <value>√</value>
+  </data>
+  <data name="SummaryDetails" xml:space="preserve">
+    <value>detalhes</value>
+  </data>
+  <data name="SummaryTitleFormatter" xml:space="preserve">
+    <value>Resumo de '{0}'.</value>
+  </data>
+  <data name="SupportInformation" xml:space="preserve">
+    <value>ajudar contatos</value>
+  </data>
+  <data name="SyncAction" xml:space="preserve">
+    <value>ação</value>
+  </data>
+  <data name="SyncData" xml:space="preserve">
+    <value>sincronização de Dados</value>
+  </data>
+  <data name="SyncDataTips" xml:space="preserve">
+    <value>Sincronizar registros de trasações, contas, empréstimos e opções do aplicativo.</value>
+  </data>
+  <data name="SynchronizationSettingTips" xml:space="preserve">
+    <value>Você pode usar cliente de sincronização PC para obter este endereço IP e número da porta.</value>
+  </data>
+  <data name="SyncingObjects" xml:space="preserve">
+    <value>objetos para sincronizar</value>
+  </data>
+  <data name="SyncLogs" xml:space="preserve">
+    <value>registros de sincronização</value>
+  </data>
+  <data name="SyncPictures" xml:space="preserve">
+    <value>Sincronização de imagens</value>
+  </data>
+  <data name="SyncPicturesTips" xml:space="preserve">
+    <value>Sincronização de imagens. Grave novas imagens no SkyDrive, ou sincronize imagens perdidadas para aqui,</value>
+  </data>
+  <data name="SyncServerIPAddressLabelText" xml:space="preserve">
+    <value>Endereço IP do servidor</value>
+  </data>
+  <data name="SyncServerPortLabelText" xml:space="preserve">
+    <value>Número da porta do servidor</value>
+  </data>
+  <data name="SystemItemUnDelete" xml:space="preserve">
+    <value>Não é possível excluir um item padrão do sistema.</value>
+  </data>
+  <data name="TakePicture" xml:space="preserve">
+    <value>Camêra</value>
+  </data>
+  <data name="TallyTemplate" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="TapToCrateOrEdit" xml:space="preserve">
+    <value>Toque para criar ou editar informações</value>
+  </data>
+  <data name="TaskCompletedMessageFormatter" xml:space="preserve">
+    <value>{0} registros foram criados.</value>
+  </data>
+  <data name="TaskCompleteWithZeroMessage" xml:space="preserve">
+    <value>Não há registros criados hoje.</value>
+  </data>
+  <data name="Templates" xml:space="preserve">
+    <value>Modelos</value>
+  </data>
+  <data name="Temp_BorrowLeanFeedBackTitle" xml:space="preserve">
+    <value>Comentário sobre o gerente de empréstimo do AccountBook</value>
+  </data>
+  <data name="Temp_BorrowLeanPageFeedbackQ" xml:space="preserve">
+    <value>Nossa página de gereciamento de empréstimo está sendo projetada, você tem alguma idéia para isso? Envie-nos.</value>
+  </data>
+  <data name="TestingMessage" xml:space="preserve">
+    <value>Em breve...</value>
+  </data>
+  <data name="ThanksFor" xml:space="preserve">
+    <value>Obrigado pela ajuda</value>
+  </data>
+  <data name="TheCacheFileWillBeDeletedMessage" xml:space="preserve">
+    <value>O arquivo de cache será excluído.</value>
+  </data>
+  <data name="TheRecordMissing" xml:space="preserve">
+    <value>O registro que você deseja acessar não existe no banco de dados.</value>
+  </data>
+  <data name="TheRecordMissingMessage" xml:space="preserve">
+    <value>O registro está faltando.</value>
+  </data>
+  <data name="TileInfoUpdatingAgentDescription" xml:space="preserve">
+    <value>Este agente é usado para atualizar o TileInfo na tela de início. Ele só será ativado se você fixá-lo para começar a tela.</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>tempo</value>
+  </data>
+  <data name="Tips" xml:space="preserve">
+    <value>ajuda</value>
+  </data>
+  <data name="TipsAfterSyncRate" xml:space="preserve">
+    <value>taxa de câmbio foi atualizada, por favor reinicie o aplicativo, para que os dados possam ser mostrados agora.</value>
+  </data>
+  <data name="TipsToUsePCClientToViewAndExportDataFromSDFfile" xml:space="preserve">
+    <value>Agora você pode visitar [{0}] para baixar "PC AccountBook cliente 2,3 edição", que pode ajudar os dados de exportação de sdf para o que pode ser usado para sincronização de dados no SkyDrive.</value>
+  </data>
+  <data name="TipsWhenSetSafeModeIP" xml:space="preserve">
+    <value>Por favor IP de entrada e porta de serviço, dividido com ':' Linha $ $ (por exemplo 192.168.1.5:10010)</value>
+  </data>
+  <data name="TipsWhenToBackupDatabase" xml:space="preserve">
+    <value>Esta operação precisa do AccountBook cliente PC 2.3 ou superior. Por favor, verifique o que você baixou.</value>
+  </data>
+  <data name="TipsWhenUploadingStasticsReport" xml:space="preserve">
+    <value>Oi, você pode enviar a cada resumo tipo de excel através de seu serviço SkyDrive.
+     
+      · Resumo de texto
+      · Resumo gráfico de pizza
+      · Linha de resumo gráfico gráfico</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>para</value>
+  </data>
+  <data name="ToCurrencyListFormatter" xml:space="preserve">
+    <value>para cada ajuda a lista de câmbios</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Hoje</value>
+  </data>
+  <data name="Toggle" xml:space="preserve">
+    <value>mostrar/esconder</value>
+  </data>
+  <data name="ToggleFavorite" xml:space="preserve">
+    <value>alternar como favorita</value>
+  </data>
+  <data name="TotalExpenses" xml:space="preserve">
+    <value>Despesa total</value>
+  </data>
+  <data name="TotalIncome" xml:space="preserve">
+    <value>Receita total</value>
+  </data>
+  <data name="TotalInDebt" xml:space="preserve">
+    <value>Total em dívida</value>
+  </data>
+  <data name="TotalLoanOut" xml:space="preserve">
+    <value>Total emprestado</value>
+  </data>
+  <data name="TotalMoney" xml:space="preserve">
+    <value>quantidade total</value>
+  </data>
+  <data name="TotalNeedRepayOrReceieveTitle" xml:space="preserve">
+    <value>quantidade de {0}</value>
+  </data>
+  <data name="TotalTransaction" xml:space="preserve">
+    <value>total de transações mensais</value>
+  </data>
+  <data name="TransferFromAccountName" xml:space="preserve">
+    <value>mudar para '{0}'.</value>
+  </data>
+  <data name="TransferingAccount" xml:space="preserve">
+    <value>Transferir</value>
+  </data>
+  <data name="TransferingHistory" xml:space="preserve">
+    <value>histórico de transferência</value>
+  </data>
+  <data name="TransferingPoundage" xml:space="preserve">
+    <value>Taxa de transferência</value>
+  </data>
+  <data name="TransferingPoundageRate" xml:space="preserve">
+    <value>Taxa de transferência(%)</value>
+  </data>
+  <data name="TransferingPoundageRateTips" xml:space="preserve">
+    <value>Nesta versão, para a quantidade personalizada de transferência, defina o padrão percentua de transferência para a implantação a 0.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="TypeInNewFileNameMessage" xml:space="preserve">
+    <value>Por favor, me dê um novo nome de arquivo (sem extensão)</value>
+  </data>
+  <data name="UnCreatedYet" xml:space="preserve">
+    <value>incriado ainda</value>
+  </data>
+  <data name="UnSelectAll" xml:space="preserve">
+    <value>desmarcar todos</value>
+  </data>
+  <data name="UnsertMonthlyBudget" xml:space="preserve">
+    <value>dados não disponíveis</value>
+  </data>
+  <data name="Unset" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="UntitleItem" xml:space="preserve">
+    <value>Item sem título</value>
+  </data>
+  <data name="UpdatingDatabaseStep1" xml:space="preserve">
+    <value>Atualizar seu banco de dados, a partir da versão: {0} para {1} ...</value>
+  </data>
+  <data name="UpdatingLogs" xml:space="preserve">
+    <value>atualizar registros</value>
+  </data>
+  <data name="UpdatingTips" xml:space="preserve">
+    <value>· Antes da grande atualização da versão, por favor grave seus dados, e você poderá restaurá-los caso necessário.
+
+· Localizado em: {0}</value>
+  </data>
+  <data name="UpgratingUnderProcess" xml:space="preserve">
+    <value>Terminando a atualização, por favor aguarde ...</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>carregar</value>
+  </data>
+  <data name="UploadFileToSkyDriveSuccessfullyMessage" xml:space="preserve">
+    <value>Parabéns! Arquivo foi carregado para o SkyDrive!</value>
+  </data>
+  <data name="UseBackgroundImageForMainPage" xml:space="preserve">
+    <value>Imagem de fundo da página principal</value>
+  </data>
+  <data name="UserLocalhostCheckBoxContent" xml:space="preserve">
+    <value>Use localhost (padrão)</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versão: {0}</value>
+  </data>
+  <data name="VewMode" xml:space="preserve">
+    <value>ver ...</value>
+  </data>
+  <data name="ViewBudgetProjectInfo" xml:space="preserve">
+    <value>informações do Projeto</value>
+  </data>
+  <data name="ViewFull" xml:space="preserve">
+    <value>Ver tudo</value>
+  </data>
+  <data name="ViewLogs" xml:space="preserve">
+    <value>ver</value>
+  </data>
+  <data name="ViewMonthlyBalance" xml:space="preserve">
+    <value>Saldo mensal</value>
+  </data>
+  <data name="ViewTransferingHistory" xml:space="preserve">
+    <value>histórico de transferências</value>
+  </data>
+  <data name="WatermaskForAmountInfo" xml:space="preserve">
+    <value>adicionar categorias para configurar montante total</value>
+  </data>
+  <data name="WatermaskForName" xml:space="preserve">
+    <value>digite o nome</value>
+  </data>
+  <data name="WatermaskForNotes" xml:space="preserve">
+    <value>digitar obs.</value>
+  </data>
+  <data name="Weekend" xml:space="preserve">
+    <value>Fim de semana</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Semanal</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bem vindo</value>
+  </data>
+  <data name="WithPasswordToLoginText" xml:space="preserve">
+    <value>Reinicie ou feche.</value>
+  </data>
+  <data name="WontBeUpdateImmediately" xml:space="preserve">
+    <value>Atualmente, a mudança na despesa ou item de renda, não vai ser notado imediatamente, até que os dados da próxima vez recarreguem.</value>
+  </data>
+  <data name="Workday" xml:space="preserve">
+    <value>Dia útil</value>
+  </data>
+  <data name="YearlyMonthsIncomeExpenseAvgInfo" xml:space="preserve">
+    <value>{0} média mensal receitas/despesas</value>
+  </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>Ontem</value>
+  </data>
+  <data name="QuickStart" xml:space="preserve">
+    <value>Início Rápido</value>
+  </data>
+  <data name="QuickStartTips_Currency" xml:space="preserve">
+    <value>Isso é definido como a moeda padrão, você pode fazer mais personalização em 'App Configurações -&gt; Configuração Geral "a página. Por favor verifique, também, a moeda de sua conta padrão na página "Gestão de Conta". Geralmente elas são iguais.</value>
+  </data>
+  <data name="Poundage" xml:space="preserve">
+    <value>Poundage</value>
+  </data>
+  <data name="AllHeOwnMeBlockTitleFormatter" xml:space="preserve">
+    <value>{0} próprios totais ME</value>
+  </data>
+  <data name="AllIOwnHimBlockTitleFormatter" xml:space="preserve">
+    <value>Eu próprios totais {0}</value>
+  </data>
+  <data name="LoaningRelationShipInformation" xml:space="preserve">
+    <value>Informações De Relacionamento</value>
+  </data>
+  <data name="ByInstalments" xml:space="preserve">
+    <value>Instalments</value>
+  </data>
+  <data name="TermFormatter" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="Term_HowMany" xml:space="preserve">
+    <value>quantos termo</value>
+  </data>
+  <data name="AllHeOwnMeBlockTitleShortFormatter" xml:space="preserve">
+    <value>Me possuir total:</value>
+  </data>
+  <data name="AllIOwnHimBlockTitleShortFormatter" xml:space="preserve">
+    <value>Eu possuo o total:</value>
+  </data>
+  <data name="ActualConsumption" xml:space="preserve">
+    <value>Actual Consumption</value>
+  </data>
+  <data name="ByTerms" xml:space="preserve">
+    <value>in {0} term(s)</value>
+  </data>
+  <data name="CategoriesFollowedTitle" xml:space="preserve">
+    <value>Categorias em causa</value>
+  </data>
+  <data name="CategoriesFollowedTitle_SubTitleWithoutRows" xml:space="preserve">
+    <value>Não há categorias que você marcou como "favoritos". Você pode tentar mostrar tudo.</value>
+  </data>
+  <data name="CategoriesFollowedTitle_SubTitleWithRows" xml:space="preserve">
+    <value>Seguem-se as categorias marcadas como "favoritos" no Gerenciador de Categoria.</value>
+  </data>
+  <data name="NetAssetTitle" xml:space="preserve">
+    <value>Activo Líquido</value>
+  </data>
+  <data name="CategoriesSelectionMode" xml:space="preserve">
+    <value>Category selection mode</value>
+  </data>
+  <data name="CategoriesSelectionMode_ParentOnly" xml:space="preserve">
+    <value>Parent category only</value>
+  </data>
+  <data name="CategoriesSelectionMode_SubEnabled" xml:space="preserve">
+    <value>Sub-category enabled</value>
+  </data>
+  <data name="RequireSendingErrors" xml:space="preserve">
+    <value>Would you mind sending those error details to our team to help us fix this issue?</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="NotificationList" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="EndOfMonth1" xml:space="preserve">
+    <value>End of month</value>
+  </data>
+  <data name="HalfOfYear1" xml:space="preserve">
+    <value>Half of year</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="OnlyOnce" xml:space="preserve">
+    <value>Only once</value>
+  </data>
+  <data name="Repeats" xml:space="preserve">
+    <value>Repeats</value>
+  </data>
+  <data name="Yearly" xml:space="preserve">
+    <value>anual</value>
+  </data>
+  <data name="AutoBackupingData" xml:space="preserve">
+    <value>Backup data to local automatically</value>
+  </data>
+  <data name="FileToRestore" xml:space="preserve">
+    <value>File to restore</value>
+  </data>
+  <data name="TipsForRestoreDatafromAutoBackuping" xml:space="preserve">
+    <value>Você pode tentar restaurar os dados do arquivo de backup aqui.</value>
+  </data>
+  <data name="Reorder" xml:space="preserve">
+    <value>Reordenar</value>
+  </data>
+  <data name="HowToGetHelpMessage" xml:space="preserve">
+    <value>Hey, cuando cualquier error se produjo, por favor póngase en contacto con nosotros mediante el envío de información de correo electrónico en "Acerca de la página". Es la mejor manera en lugar de publicar su painpoint a los "comentarios" a través de la página de revisión de la aplicación.</value>
+  </data>
+  <data name="HowToGetHelpTitle" xml:space="preserve">
+    <value>cómo obtener ayuda</value>
+  </data>
+  <data name="CustomizedTheme" xml:space="preserve">
+    <value>utilice tema personalizado</value>
+  </data>
+  <data name="SendLog" xml:space="preserve">
+    <value>enviar registro</value>
+  </data>
+  <data name="ChangeNumbericRange" xml:space="preserve">
+    <value>Alterar Gama</value>
+  </data>
+  <data name="ChangePriceValueRange" xml:space="preserve">
+    <value>Alterar faixa de preço de valor</value>
+  </data>
+  <data name="ConfirmUpdateVoiceDataWhenPriceChanged" xml:space="preserve">
+    <value>Você mudou a faixa de valor do preço, agora para atualizar os dados de comando de voz?</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>fracassado</value>
+  </data>
+  <data name="Formatter_NotSupportTheSpecifiedLanguageInVoiceCommand" xml:space="preserve">
+    <value>Nós não suporta a {0} idioma atualmente.</value>
+  </data>
+  <data name="Lable_CurrentVoiceLanguage" xml:space="preserve">
+    <value>Idioma da voz corrente (de Setting -&gt; Speech)</value>
+  </data>
+  <data name="Lable_CurrentVoiceLanguage_Tips" xml:space="preserve">
+    <value>Você precisa atualizar dados de comando de voz após o Idioma da voz muda.</value>
+  </data>
+  <data name="MaximumValue" xml:space="preserve">
+    <value>Valor Máximo</value>
+  </data>
+  <data name="Message_ContaionsInvalidAccountOrCategoryNameInVoiceData" xml:space="preserve">
+    <value>Não contém algumas "Conta" inválida ou uma "categoria" nomes em dados de comando de voz. Por favor, certifique-se sem qualquer '&gt;', '&lt;', 'e' personagens na lista de conta ou lista de categorias.</value>
+  </data>
+  <data name="Message_ErrorOccuredWhenUpdatingVoiceCommandData" xml:space="preserve">
+    <value>Desculpe, ocorreram erros durante a atualização de dados de comando de voz. Por favor, tente atualizar novamente de acordo com a mensagem de erro.</value>
+  </data>
+  <data name="Message_InvalidVoiceCommandPrefix" xml:space="preserve">
+    <value>O "Prefixo de comando de voz" não é válido, por favor, verifique se não está em conflito com outros aplicativos.</value>
+  </data>
+  <data name="Message_NoticeForPriceValueInVoiceCommandData" xml:space="preserve">
+    <value>Devido a alguma limitação, a gama utilizável dos dados de preços em dados de comando será entre:</value>
+  </data>
+  <data name="Message_RequiredPrivacyAcceptionToUseVoiceCommand" xml:space="preserve">
+    <value>Você terá que aceitar a política de privacidade da fala, a fim de usar o reconhecimento de voz neste app.</value>
+  </data>
+  <data name="MinumValue" xml:space="preserve">
+    <value>O valor mínimo</value>
+  </data>
+  <data name="NeedDigitsPart" xml:space="preserve">
+    <value>Precisa dígitos parte</value>
+  </data>
+  <data name="No_After" xml:space="preserve">
+    <value>Not agora</value>
+  </data>
+  <data name="PrivaryStatement" xml:space="preserve">
+    <value>Comentários e declarações de privacidade</value>
+  </data>
+  <data name="Tips_ChangePriceValueRange" xml:space="preserve">
+    <value>Esta configuração permite que você controle a gama de suporte de valor do preço em dados de comando de voz. Montamos uma variedade padrão, mas muitas línguas / países têm suas próprias utilizado comum. Assim, você pode alterar manualmente esse.</value>
+  </data>
+  <data name="Tips_NeedUpdateVoiceDataToEnableSetting" xml:space="preserve">
+    <value>* As alterações estarão disponíveis depois que você atualizar os dados de comando de voz.</value>
+  </data>
+  <data name="Tips_RecommandPriceValueRange" xml:space="preserve">
+    <value>* Aconselhamos para definir um intervalo usado comum.</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="UpdateVoiceCommandData" xml:space="preserve">
+    <value>Atualizar os dados de comando de voz</value>
+  </data>
+  <data name="VoiceCommandConfirm_CreatingItem" xml:space="preserve">
+    <value>Criando item ...</value>
+  </data>
+  <data name="VoiceCommandConfirm_ItemIsCreated" xml:space="preserve">
+    <value>Criar item de {0}.</value>
+  </data>
+  <data name="VoiceCommandConfirm_OkOrCancel" xml:space="preserve">
+    <value>Você pode dizer OK ou Cancelar.</value>
+  </data>
+  <data name="VoiceCommandConfirm_OkToCreate" xml:space="preserve">
+    <value>Diga OK para criar um item transação.</value>
+  </data>
+  <data name="VoiceCommandConfirm_Summary" xml:space="preserve">
+    <value>Irá criar uma {3} item {0}, por {1}, o total de {2} {4}, você pode dizer OK ou Cancelar.</value>
+  </data>
+  <data name="VoiceCommandData" xml:space="preserve">
+    <value>Dados de comando de voz</value>
+  </data>
+  <data name="VoiceCommandPrefix" xml:space="preserve">
+    <value>Prefixo de comando de voz</value>
+  </data>
+  <data name="VoiceCommandPrefix_Tips" xml:space="preserve">
+    <value>Meios: as principais obras para iniciar comando de voz para accountbook. Deve ser no mesmo idioma com a linguagem de voz para assegurar o comando de voz pode ser detectado.</value>
+  </data>
+  <data name="VoiceCommandSetting" xml:space="preserve">
+    <value>Definição de comando de voz</value>
+  </data>
+  <data name="VoiceCommandSetting_Tips" xml:space="preserve">
+    <value>Você precisa atualizar "os dados da Voz de comando" quando a condição folllowing aconteceu:
+    1. Após a sua mudança de categorias, incluindo valores, nomes ...
+    2. Depois da língua do discurso é modificado na página de configuração OS.
+    3. Depois de definições dessa página alterada.
+    4. Depois de restaurar os dados do SkyDrive ou outros lugares.
+
+* Accountbook não vai compartilhar os dados de voz para todos os outros. </value>
+  </data>
+</root>

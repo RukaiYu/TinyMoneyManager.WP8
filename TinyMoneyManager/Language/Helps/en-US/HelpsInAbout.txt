@@ -1,0 +1,10 @@
+﻿By default, in main page, there are records from Today, and Income and Expenses Pivot List for specified year and month, grouped in Day. You can tap [choose month] to navigate to the data for one month.
+In statistics page, three different kinds of charts are used to show the statistics summary for you.
+In this version, 'accounts', 'categories' and 'E&I items' are related together, for each [delete] opreation on thoese objects, make sure it is valid for yourself.
+[现金cash] account is build-in item, which is not for deleting by user.
+By default, balance of each account is ￥0.00. The avaliable balance, can be updated by changing the [Initial Balance] property. (It's suggestion that is setup at first time the accoun is created.)
+At the [Particulars] pivot, [Top] is income data, [bottom] is expense data.
+In [App Settings-> Conversion Rate Manager], you can update that data.
+The strategy of app updating is looping of big version update and hot-fix version update. Please backup your data by using [PC Client] or [Updating] in [AppSettings] page before each time getting big version update in [Marketplace].
+The risk of unavailability data by incorrect [Currency Conversion Rate table], will be in the charge of user self. 
+When [Send report], it will send all selected items from neither Income list or Expense list.

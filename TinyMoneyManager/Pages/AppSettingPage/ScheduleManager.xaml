@@ -1,0 +1,120 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.ScheduleManager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="728"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="{StaticResource GlobalAppName}">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="{Binding Path=Localizedresources.ScheduleManagerSetting, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}" >
+                <toolkit:LongListSelector x:Name="ScheduledItems" ItemsSource="{Binding Tasks}" SelectionChanged="ScheduledItems_SelectionChanged">
+                    <toolkit:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,0,12,12">
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu  IsZoomEnabled="True" >
+                                        <toolkit:MenuItem
+        Header="{Binding Path=Localizedresources.ExecuteNow,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="ExecuteNow_Item_Click"  />
+                                        <toolkit:Separator/>
+                                        <toolkit:MenuItem
+        Header="{Binding Path=Localizedresources.Delete,Source={StaticResource LocalizedStrings}}" Tag="{Binding}" Click="Delete_Item_Click"  />
+                                        <toolkit:MenuItem
+        Header="{Binding Path=Localizedresources.Edit,Source={StaticResource LocalizedStrings}}" Tag="{Binding}"  Click="Edit_Item_Click"/>
+                                        <toolkit:MenuItem
+        Header="{Binding Path=Localizedresources.LoadAssociated,Source={StaticResource LocalizedStrings}}" Tag="{Binding}"  Click="View_History_Click"/>
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <!--Visibility="{Binding Path=IsNotSelected,Converter={StaticResource BooleanToVisibilityConverter}}" Visibility="{Binding Path=IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}"-->
+                                    <!--<CheckBox Margin="0,0,0,0" Tag="{Binding Id}" IsChecked="{Binding Path=Status,Source={StaticResource expenseAndIncomeListSelectModeManager}}" 
+                                                  Visibility="{Binding Path=IsExpenseListAtSelectMode,Source={StaticResource expenseAndIncomeListSelectModeManager},Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                  Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Row="0" VerticalAlignment="Top" />-->
+                                    <!--Visibility="{Binding Path=IsExpenseListNoAtSelectMode,Source={StaticResource expenseAndIncomeListSelectModeManager}, Converter={StaticResource BooleanToVisibilityConverter}}"-->
+                                    <Rectangle  Margin="0,0,0,0"  Grid.Row="0" Grid.Column="0" Height="80" Width="10" Fill="{Binding Path=ActiveColor}" />
+
+                                    <Grid  Grid.Row="0" Grid.Column="1" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Margin="0,0,0,0" Grid.Row="0" Grid.Column="0"
+                              HorizontalAlignment="Left" Style="{StaticResource PhoneTextNormalStyle}" Foreground="SlateGray"
+                              Text="{Binding Path=FrequencyName}"></TextBlock>
+
+                                        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right"
+                                    Text="{Binding Path=MoneyInfo}" TextWrapping="NoWrap" Margin="0,0,4,0"
+                                    Style="{StaticResource PhoneTextSubtleStyle}"
+                                    FontFamily="{StaticResource PhoneFontFamilyNormal}"/>
+
+                                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Text="{Binding Path=FromAccount.Name}" Style="{StaticResource PhoneTextNormalStyle}"  Margin="0,0,0,0" />
+                                        <TextBlock Grid.Row="2"  Grid.ColumnSpan="2"  HorizontalAlignment="Left" Text="{Binding Path=AssociatedCategory.CategoryInfo}" TextWrapping="NoWrap" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFBEBBBB" Margin="0,0,0,0" />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </toolkit:LongListSelector.ItemTemplate>
+                </toolkit:LongListSelector>
+            </controls:PivotItem>
+
+            <!-- Pivot item two-->
+            <!--<controls:PivotItem Header="item2">
+                <Grid/>
+            </controls:PivotItem>-->
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True"  IsMenuEnabled="True"  >
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.add.rest.png" x:Name="AddScheduleIconButton" Text="添加" Click="AddScheduleIconButton_Click"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Refresh" x:Name="RefreshPlanning" Click="RefreshPlanning_Click"/>
+                <shell:ApplicationBarMenuItem Text="ExecuteNow" x:Name="ExecuteNow" Click="ExecuteNow_Click"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+
+</phone:PhoneApplicationPage>

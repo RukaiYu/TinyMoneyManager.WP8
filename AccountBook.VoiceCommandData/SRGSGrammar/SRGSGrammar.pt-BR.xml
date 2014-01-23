@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<grammar version="1.0" xml:lang="pt-BR" root="confirmation" tag-format="semantics/1.0"
+         xmlns="http://www.w3.org/2001/06/grammar"
+         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+  <!--Sample SRGS Grammar to show syntax.
+      The rule element defines a grammar rule. A rule element 
+      contains text or XML elements that define what speakers can 
+      say, and the order in which they can say it.-->
+
+  <rule id="Cancel">
+    <one-of>
+      <item>cancelar</item>
+      <item>no</item>
+      <item>pasar por alto</item>
+      <item></item>
+      <item>nop</item>
+    </one-of>
+  </rule>
+  <rule id="Ok">
+    <one-of>
+      <item>ok</item>
+      <item>multa</item>
+      <item>crear</item>
+      <item>seguir adelante</item>
+    </one-of>
+  </rule>
+  <rule id="confirmation" scope="public">
+    <one-of>
+      <item >
+        <ruleref uri="#Ok"/>
+        <tag> out.Result = true; </tag>
+      </item>
+      <item>
+        <ruleref uri="#Cancel"/>
+        <tag> out.Result= false; </tag>
+      </item>
+    </one-of>
+  </rule>
+</grammar>

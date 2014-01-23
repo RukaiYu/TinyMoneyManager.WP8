@@ -1,0 +1,122 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="TinyMoneyManager.Pages.AppSettingPage.CurrencyRateSettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+    xmlns:localControls="clr-namespace:TinyMoneyManager.Controls"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:Coding4Fun_Phone_Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"  
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="{StaticResource GlobalAppName}">
+            <controls:PivotItem x:Name="CurrencySettingPivot" Header="{Binding Path=Localizedresources.CurrencySetting, Source={StaticResource LocalizedStrings},Converter={StaticResource ToLowerConverter}}">
+                <!--<ScrollViewer HorizontalScrollBarVisibility="Disabled" Height="600"  VerticalScrollBarVisibility="Auto">-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                            Style="{StaticResource PhoneTextNormalStyle}"
+                            Text="{Binding Path=Localizedresources.From, Source={StaticResource LocalizedStrings}}" 
+                            VerticalAlignment="Center" Margin="12,0,0,4" />
+
+                    <toolkit:ListPicker x:Name="FromCurrencySelector" Grid.Row="1" ItemTemplate="{StaticResource CurrencyInfoListTemplete}"
+                                  SelectionChanged="FromCurrencySelector_SelectionChanged" FullModeItemTemplate="{StaticResource CurrencyInfoListTempleteForFull}"
+                                        />
+
+                    <TextBlock Grid.Row="2" x:Name="ToCurrencyListTips"
+                            Style="{StaticResource PhoneTextNormalStyle}"
+                            Text=""  Foreground="{StaticResource PhoneAccentBrush}"
+                            VerticalAlignment="Center" Margin="12,0,0,4" />
+                    <ListBox x:Name="ToCurrencyListBox" Grid.Row="3" Width="460" Margin="0,0,0,0"
+                      
+                             SelectionChanged="ToCurrencyListBox_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="0,0,12,14">
+                                    <Grid Width="450">
+                                        <TextBlock Text="{Binding CurrencyNameWithSymbol}" FontSize="24" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Left"></TextBlock>
+                                        <TextBlock Text="{Binding RateToCompareToCurrency}" FontSize="22" Style="{StaticResource PhoneTextNormalStyle}" HorizontalAlignment="Right" ></TextBlock>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid Grid.Row="4" VerticalAlignment="Bottom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="72"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Coding4Fun_Phone_Controls:RoundButton Grid.Column="0" VerticalAlignment="Top"  
+                                                               d:LayoutOverrides="Height" 
+                                                               HorizontalAlignment="Left" 
+                                                               ImageSource="/icons/appBar/appBar.sync.rest.png" 
+                                                               Click="btnSyncRates_Click"
+                                                               x:Name="btnSyncRates"  >
+                        </Coding4Fun_Phone_Controls:RoundButton>
+                        <StackPanel Grid.Column="1" Orientation="Vertical">
+                            <toolkit:PerformanceProgressBar x:Name="pb_SyncProgressBar" 
+                                                            Margin="12,0,0,0"
+                                                            Height="4" Width="470" 
+                                                            IsIndeterminate="False" 
+                                                            IsEnabled="True" VerticalAlignment="Top"/>
+                            <TextBlock Margin="4,2,0,0" x:Name="FooterInfo"
+                                       TextWrapping="Wrap" Foreground="Gray"/>
+
+                        </StackPanel>
+
+                    </Grid>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

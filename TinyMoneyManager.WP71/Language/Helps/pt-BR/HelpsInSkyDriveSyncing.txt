@@ -1,0 +1,7 @@
+﻿If want to use SkyDrive to syncing data for AccountBook, please connect to your Windows Live account.
+This syncing process is available only when Net Connection is on.
+When to backup data, you can choose a file under one folder in SkyDrive, or you can choose a Folder, we can create the data file automatially for saving your data (You also can rename it).
+The way to Choose a folder:#NL##T#1)Right Tap on the Folder, then tap the 'Select this Folder As result' menu.
+We're in full-heart giving the suggestion, that's don't leave this page until the syncing finished or any error popuped.
+The 'abd' data file from PC can be used in SkyDrive directly, just rename it as a 'txt' file.
+As a unsupport feature for excel files you upload to SkyDrive, please use your local Microsoft Office Excel to open that files. Web Office Excel can't open them.

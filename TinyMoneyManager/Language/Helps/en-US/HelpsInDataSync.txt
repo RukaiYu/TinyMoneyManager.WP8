@@ -1,0 +1,8 @@
+﻿Make sure your phone has a wifi network connecting or connected to [zune] already, there will make the link stable between phone and pc client.
+It's better to choose and select objects you want to sync.
+Before syncing, you should turn to [Synchronization Setting] page, give correct Server IP Address and Port.Both info will be found when PC client is up.
+It's suggestion to backup all of your data before update App.
+Some reasons that cause the syncing failed:#NL##T##T##T#1) No available network connecting;#NL##T##T##T#2) IP address invalid(localhost is as the firstchoice);#NL##T##T##T#3) Port invalid(check the prevent from the firewall);
+Data backup and restore may raise the imperfection issue.
+You can go to [https://skydrive.live.com/?cid=d9cb9d904309ae62#!/?cid=d9cb9d904309ae62&sc=documents&uc=1&id=D9CB9D904309AE62%21551] to download the PC Client for data synchronization.
+*Some data will only be shown by restarting your app, after syncing.
