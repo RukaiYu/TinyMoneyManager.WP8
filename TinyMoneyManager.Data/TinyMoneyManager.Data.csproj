@@ -91,7 +91,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RapidRepository">
-      <HintPath>..\..\TinyMoneyManager1.97\RapidRepository.dll</HintPath>
+      <HintPath>..\libs\RapidRepository.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

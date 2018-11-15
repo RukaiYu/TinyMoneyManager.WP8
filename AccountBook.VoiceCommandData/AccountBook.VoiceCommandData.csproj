@@ -115,7 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="RapidRepository">
-      <HintPath>..\..\TinyMoneyManager1.97\RapidRepository.dll</HintPath>
+      <HintPath>..\libs\RapidRepository.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

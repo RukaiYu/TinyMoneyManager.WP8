@@ -99,34 +99,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Coding4Fun.Phone.Controls">
-      <HintPath>..\..\TinyMoneyManager1.97\Coding4Fun.Phone.Controls.dll</HintPath>
+      <HintPath>..\libs\Coding4Fun.Phone.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Coding4Fun.Phone.Controls.Toolkit">
-      <HintPath>..\..\TinyMoneyManager1.97\Coding4Fun.Phone.Controls.Toolkit.dll</HintPath>
+      <HintPath>..\libs\Coding4Fun.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZLib.Phone">
-      <HintPath>..\..\TinyMoneyManager1.97\ICSharpCode.SharpZLib.Phone.dll</HintPath>
+      <HintPath>..\libs\ICSharpCode.SharpZLib.Phone.dll</HintPath>
     </Reference>
     <Reference Include="ImageTools">
-      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.dll</HintPath>
+      <HintPath>..\libs\ImageTools.dll</HintPath>
     </Reference>
     <Reference Include="ImageTools.IO.Bmp">
-      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.IO.Bmp.dll</HintPath>
+      <HintPath>..\libs\ImageTools.IO.Bmp.dll</HintPath>
     </Reference>
     <Reference Include="ImageTools.IO.Png">
-      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.IO.Png.dll</HintPath>
+      <HintPath>..\libs\ImageTools.IO.Png.dll</HintPath>
     </Reference>
     <Reference Include="ImageTools.Utils">
-      <HintPath>..\..\TinyMoneyManager1.97\ImageTools.Utils.dll</HintPath>
+      <HintPath>..\libs\ImageTools.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Mangopollo">
-      <HintPath>..\..\..\TDDOWNLOAD\windowsphone\Mangopollo 1.3\Mangopollo 1.3\Libs\Mangopollo.dll</HintPath>
+      <HintPath>..\libs\Mangopollo.dll</HintPath>
     </Reference>
     <Reference Include="MessageBoxService">
-      <HintPath>..\..\TinyMoneyManager1.97\MessageBoxService.dll</HintPath>
+      <HintPath>..\libs\MessageBoxService.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>Bin\Microsoft.Expression.Interactions.dll</HintPath>
+      <HintPath>..\libs\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Live">
       <HintPath>..\packages\LiveSDK.5.5\lib\WindowsPhone8\Microsoft.Live.dll</HintPath>
@@ -137,32 +137,34 @@
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Resources\WP\phone-85215\Bin\WP8\Release\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+      <HintPath>..\libs\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="MultiTouch.Behaviors.Silverlight.WP71">
-      <HintPath>..\..\TinyMoneyManager1.97\MultiTouch.Behaviors.Silverlight.WP71.dll</HintPath>
+      <HintPath>..\libs\MultiTouch.Behaviors.Silverlight.WP71.dll</HintPath>
     </Reference>
     <Reference Include="NkjSoft.WPhone">
-      <HintPath>..\..\TinyMoneyManager1.97\NkjSoft.WPhone.dll</HintPath>
+      <HintPath>..\libs\NkjSoft.WPhone.dll</HintPath>
     </Reference>
     <Reference Include="Phone.Controls">
-      <HintPath>..\..\TinyMoneyManager1.97\Phone.Controls.dll</HintPath>
+      <HintPath>..\libs\Phone.Controls.dll</HintPath>
     </Reference>
     <Reference Include="PhoneCodeContractsAssemblies">
-      <HintPath>..\..\TinyMoneyManager1.97\PhoneCodeContractsAssemblies.dll</HintPath>
+      <HintPath>..\libs\PhoneCodeContractsAssemblies.dll</HintPath>
     </Reference>
     <Reference Include="RapidRepository">
-      <HintPath>..\..\TinyMoneyManager1.97\RapidRepository.dll</HintPath>
+      <HintPath>..\libs\RapidRepository.dll</HintPath>
     </Reference>
     <Reference Include="SLWpVisifire.Charts">
-      <HintPath>..\..\TinyMoneyManager1.97\SLWpVisifire.Charts.dll</HintPath>
+      <HintPath>..\libs\SLWpVisifire.Charts.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Input.Manipulations">
-      <HintPath>..\..\TinyMoneyManager1.97\System.Windows.Input.Manipulations.dll</HintPath>
+      <HintPath>..\libs\System.Windows.Input.Manipulations.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\libs\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="TinyMoneyManager.DataSyncing">
-      <HintPath>..\..\TinyMoneyManager1.97\TinyMoneyManager.DataSyncing.dll</HintPath>
+      <HintPath>..\libs\TinyMoneyManager.DataSyncing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
